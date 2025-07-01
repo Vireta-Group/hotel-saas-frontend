@@ -1,5 +1,10 @@
+import React from 'react'
+import ContentBox from './compoents/ContentBox'
+
 function App() {
-  return <>hello world!</>;
+  return (
+    <ContentBox/>
+  )
 }
 
-export default App;
+export default App
