@@ -1,112 +1,12 @@
-# Hotel Management SaaS - Frontend (React)
+# React + Vite
 
-A modern, modular frontend for a multi-tenant hotel management SaaS platform built with React, Bootstrap 5, and jQuery-based plugins.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Modular structure with reusable components
-- Multi-tenant support with token-based authentication
-- Responsive dashboard & management panels
-- Integration with:
-  - Bootstrap 5 for layout
-  - jQuery plugins (Select2, Toastr, SweetAlert2)
-  - Chart.js for analytics
+## Expanding the ESLint configuration
 
----
-
-## 📁 Folder Structure
-
-See the detailed breakdown in `Frontend Setup Guide`, but highlights include:
-
-```
-/src
-  /components     # Reusable UI components
-  /pages          # Route-based pages
-  /services       # Axios APIs
-  /layouts        # Shared layouts (header, sidebar)
-  /styles         # SCSS/CSS
-```
-
----
-
-## 🛠 Setup
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/vireta/hotel-saas-frontend.git
-   cd hotel-saas-frontend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn
-   ```
-
-3. Create `.env`:
-   ```env
-   REACT_APP_API_BASE_URL=https://api.vireta.com/
-   REACT_APP_TOKEN_KEY=auth_token
-   ```
-
-4. Run dev server:
-   ```bash
-   npm start
-   ```
-
----
-
-## 🔑 Authentication
-
-- JWT token-based auth
-- Token stored in `localStorage`
-- Axios interceptors attach token to headers automatically
-
----
-
-## 🔧 Scripts
-
-| Command         | Description                  |
-|----------------|------------------------------|
-| `npm start`     | Start dev server             |
-| `npm run build` | Build production bundle      |
-| `npm run lint`  | Lint JS/JSX files            |
-
----
-
-## 🧪 Testing
-
-Basic unit tests can be written using Jest + React Testing Library (optional).
-
----
-
-## 📋 Git Branch Strategy
-
-- `main` – Production
-- `dev` – Staging/Integration
-- `feature/*` – New features
-- `bugfix/*` – Fixes
-
----
-
-## 🤝 Contributing
-
-1. Fork this repo
-2. Create a feature branch
-3. Commit with clear messages (`feat:`, `fix:` etc.)
-4. Create a PR to `dev` branch
-
----
-
-## 📞 Contact
-
-For help, contact: [frontend@vireta.com](mailto:frontend@vireta.com)
-
----
-
-## 📅 Last Updated
-
-June 15, 2025
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
