@@ -1,9 +1,9 @@
-import React from 'react'
-import ContentBox from './compoents/ContentBox'
+import { RouterProvider } from 'react-router'
+import routerConfig from './routes/routerConfig'
 
 function App() {
   return (
-    <ContentBox/>
+    <RouterProvider router={routerConfig} />
   )
 }
 
