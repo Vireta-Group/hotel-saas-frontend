@@ -4,7 +4,7 @@ import Root from "./Root";
 
 const routerConfig = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
-        <Route path="home" element={<ContentBox />} />
+        <Route path="" element={<ContentBox />} />
     </Route>
 ))
 
