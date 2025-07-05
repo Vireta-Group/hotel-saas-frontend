@@ -1,169 +1,126 @@
+// components/Header.jsx
 import React from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import './Header.css'; // Optional: for custom styles
-// import "../../../material/assets/css/app.min.css";
 
-const Header = () => {
+function Header({
+  isSidebarOpen,
+  toggleSidebar,
+  isDarkMode,
+  toggleDarkMode,
+  isProfileDropdownOpen,
+  setIsProfileDropdownOpen,
+  profileDropdownRef,
+}) {
   return (
-    <div className="d-flex">
-      {/* LOGO */}
-      <div className="navbar-brand-box horizontal-logo">
-        <a href="index.html" className="logo logo-dark">
-          <span className="logo-sm">
-            <img src="assets/images/logo-sm.png" alt="Logo Small" height="22" />
-          </span>
-          <span className="logo-lg">
-            <img
-              src="assets/images/logo-dark.png"
-              alt="Logo Dark"
-              height="17"
-            />
-          </span>
-        </a>
+    <header className="navbar navbar-expand-lg custom-header">
+      <div className="container-fluid">
+        {/* Mobile Sidebar Toggle Button */}
+        <button
+          id="sidebarToggle"
+          className="navbar-toggler d-lg-none me-3"
+          type="button"
+          onClick={toggleSidebar}
+          aria-controls="sidebar"
+          aria-expanded={isSidebarOpen}
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-        <a href="index.html" className="logo logo-light">
-          <span className="logo-sm">
-            <img src="assets/images/logo-sm.png" alt="Logo Small" height="22" />
-          </span>
-          <span className="logo-lg">
-            <img
-              src="assets/images/logo-light.png"
-              alt="Logo Light"
-              height="17"
-            />
-          </span>
-        </a>
-      </div>
-
-      {/* Hamburger Button */}
-      <button
-        type="button"
-        className="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger shadow-none"
-        id="topnav-hamburger-icon"
-      >
-        <span className="hamburger-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
-
-      {/* App Search */}
-      <form className="app-search d-none d-md-block">
-        <div className="position-relative">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search..."
-            autoComplete="off"
-            id="search-options"
-          />
-          <span className="mdi mdi-magnify search-widget-icon"></span>
-          <span
-            className="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
-            id="search-close-options"
-          ></span>
+        {/* Desktop Search Bar */}
+        <div className="position-relative d-none d-lg-block w-25 search-input-group">
+          <i className="fas fa-search"></i>
+          <input type="text" className="form-control" placeholder="Search..." />
         </div>
 
-        <div className="dropdown-menu dropdown-menu-lg" id="search-dropdown">
-          <div data-simplebar style={{ maxHeight: "320px" }}>
-            {/* Recent Searches */}
-            <div className="dropdown-header">
-              <h6 className="text-overflow text-muted mb-0 text-uppercase">
-                Recent Searches
-              </h6>
-            </div>
-            <div className="dropdown-item bg-transparent text-wrap">
-              <a
-                href="index.html"
-                className="btn btn-soft-secondary btn-sm rounded-pill"
-              >
-                how to setup <i className="mdi mdi-magnify ms-1"></i>
-              </a>
-              <a
-                href="index.html"
-                className="btn btn-soft-secondary btn-sm rounded-pill"
-              >
-                buttons <i className="mdi mdi-magnify ms-1"></i>
-              </a>
-            </div>
-
-            {/* Pages */}
-            <div className="dropdown-header mt-2">
-              <h6 className="text-overflow text-muted mb-1 text-uppercase">
-                Pages
-              </h6>
-            </div>
-            <a href="#" className="dropdown-item notify-item">
-              <i className="ri-bubble-chart-line align-middle fs-18 text-muted me-2"></i>
-              <span>Analytics Dashboard</span>
-            </a>
-            <a href="#" className="dropdown-item notify-item">
-              <i className="ri-lifebuoy-line align-middle fs-18 text-muted me-2"></i>
-              <span>Help Center</span>
-            </a>
-            <a href="#" className="dropdown-item notify-item">
-              <i className="ri-user-settings-line align-middle fs-18 text-muted me-2"></i>
-              <span>My account settings</span>
-            </a>
-
-            {/* Members */}
-            <div className="dropdown-header mt-2">
-              <h6 className="text-overflow text-muted mb-2 text-uppercase">
-                Members
-              </h6>
-            </div>
-            <div className="notification-list">
-              {[
-                {
-                  name: "Angela Bernier",
-                  role: "Manager",
-                  img: "avatar-2.jpg",
-                },
-                {
-                  name: "David Grasso",
-                  role: "Web Designer",
-                  img: "avatar-3.jpg",
-                },
-                {
-                  name: "Mike Bunch",
-                  role: "React Developer",
-                  img: "avatar-5.jpg",
-                },
-              ].map((user, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  className="dropdown-item notify-item py-2"
-                >
-                  <div className="d-flex">
-                    <img
-                      src={`assets/images/users/${user.img}`}
-                      className="me-3 rounded-circle avatar-xs"
-                      alt={`${user.name}`}
-                    />
-                    <div className="flex-grow-1">
-                      <h6 className="m-0">{user.name}</h6>
-                      <span className="fs-11 mb-0 text-muted">{user.role}</span>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
+        <div className="d-flex align-items-center ms-auto">
+          {/* Flag Icon */}
+          <div className="nav-item me-4 header-icon">
+            <i className="fas fa-flag"></i>
           </div>
-
-          <div className="text-center pt-3 pb-1">
+          {/* Grid Icon */}
+          <div className="nav-item me-4 header-icon">
+            <i className="fas fa-th"></i>
+          </div>
+          {/* Notifications */}
+          <div className="nav-item dropdown me-4">
             <a
-              href="pages-search-results.html"
-              className="btn btn-primary btn-sm"
+              className="nav-link position-relative header-icon p-0"
+              href="#"
+              id="navbarDropdownNotifications"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
             >
-              View All Results <i className="ri-arrow-right-line ms-1"></i>
+              <i className="fas fa-bell"></i>
+              <span
+                className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                style={{ fontSize: "0.65rem" }}
+              >
+                3 <span className="visually-hidden">unread messages</span>
+              </span>
             </a>
+            {/* Notification Dropdown Content - Placeholder */}
+          </div>
+          {/* Dark Mode Toggle */}
+          <div
+            className="nav-item me-4 header-icon"
+            onClick={toggleDarkMode}
+            style={{ cursor: "pointer" }}
+          >
+            <i className={isDarkMode ? "fas fa-sun" : "fas fa-moon"}></i>
+          </div>
+          {/* Profile Dropdown */}
+          <div className="nav-item dropdown" ref={profileDropdownRef}>
+            <button
+              className="btn d-flex align-items-center p-0"
+              type="button"
+              id="profileDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded={isProfileDropdownOpen}
+              onClick={() => setIsProfileDropdownOpen((prev) => !prev)}
+            >
+              <img
+                src="https://placehold.co/36x36/cccccc/333333?text=AA"
+                alt="Profile"
+                className="profile-img me-2"
+              />
+              <div className="d-none d-md-block text-end lh-sm">
+                <div className="profile-name">Anna Adame</div>
+                <div className="profile-title">Founder</div>
+              </div>
+            </button>
+            {isProfileDropdownOpen && (
+              <ul
+                className={`dropdown-menu dropdown-menu-end ${
+                  isDarkMode ? "dropdown-menu-dark" : ""
+                }`}
+                aria-labelledby="profileDropdown"
+              >
+                <li>
+                  <a className="dropdown-item" href="#">
+                    <i className="fas fa-user me-2"></i>Profile
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    <i className="fas fa-cog me-2"></i>Settings
+                  </a>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    <i className="fas fa-sign-out-alt me-2"></i>Logout
+                  </a>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </header>
   );
-};
+}
 
 export default Header;
