@@ -1,25 +1,7 @@
 import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
-
-const users = [
-  {
-    id: "U001",
-    name: "John Doe",
-    email: "john@example.com",
-    phone: "01711112222",
-    password: "••••••••",
-    role: "admin",
-  },
-  {
-    id: "U002",
-    name: "Sarah Smith",
-    email: "sarah@example.com",
-    phone: "01712345678",
-    password: "••••••••",
-    role: "receptionist",
-  },
-];
+import { users } from "../data/user";
 
 const UsersPage = () => {
   const handleDelete = (userName) => {
