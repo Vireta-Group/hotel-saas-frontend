@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
 
 :root {
   --main-color: #333;
@@ -7,417 +7,6 @@
   --shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< HEAD
-body {
-  font-family: "Inter", sans-serif;
-  font-size: 0.9375rem; /* ~15px base font size */
-  color: var(--velzon-paragraph-text-light);
-  background-color: var(--velzon-body-bg-light);
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  &.dark-mode {
-    background-color: var(--velzon-dark-mode-body-bg);
-    color: var(--velzon-dark-mode-paragraph-text);
-  }
-}
-
-/* --- Sidebar Styles --- */
-.custom-sidebar {
-  background-color: var(--velzon-dark-sidebar-bg);
-  color: var(--velzon-dark-sidebar-text);
-  width: 260px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: 1050;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  transform: translateX(-100%); /* Hidden by default on mobile */
-  transition: transform 0.3s ease-in-out;
-  overflow-y: auto; /* Enable scrolling for long menus */
-
-  &.active {
-    transform: translateX(0); /* Visible on mobile when toggled */
-  }
-
-  /* Desktop View: Sidebar always visible */
-  @media (min-width: 992px) {
-    /* Bootstrap's 'lg' breakpoint */
-    transform: translateX(0) !important; /* Always visible */
-  }
-
-  .sidebar-header {
-    border-color: rgba(255, 255, 255, 0.1) !important; /* Subtle border for dark sidebar */
-  }
-  .dark-mode & .sidebar-header {
-    border-color: var(--velzon-dark-mode-header-border) !important;
-  }
-
-  .velzon-brand {
-    color: var(--velzon-primary-blue) !important;
-    font-size: 1.5rem; /* text-2xl equivalent */
-  }
-
-  .form-control {
-    background-color: var(--velzon-dark-sidebar-active); /* Bg for search input */
-    border: 1px solid var(--velzon-dark-sidebar-hover);
-    color: var(--velzon-dark-sidebar-text);
-    padding-left: 2.5rem; /* For search icon */
-
-    &::placeholder {
-      color: rgba(255, 255, 255, 0.4);
-    }
-  }
-  .dark-mode & .form-control {
-    background-color: var(--velzon-dark-mode-search-bg);
-    border-color: var(--velzon-dark-mode-search-border);
-    color: var(--velzon-dark-mode-paragraph-text);
-    &::placeholder {
-      color: var(--velzon-dark-mode-breadcrumb-text);
-    }
-  }
-
-  .fa-search {
-    left: 1rem; /* Adjust search icon position */
-    color: var(--velzon-dark-sidebar-text);
-  }
-  .dark-mode & .fa-search {
-    color: var(--velzon-dark-mode-breadcrumb-text);
-  }
-
-  .nav-link {
-    padding: 0.75rem 1rem; /* p-3 equivalent */
-    border-radius: 0.5rem; /* rounded-lg */
-    font-weight: 500; /* Medium weight for active items */
-    display: flex;
-    align-items: center;
-    gap: 0.75rem; /* For icon and text spacing */
-    transition: background-color 0.2s, color 0.2s;
-    color: var(--velzon-dark-sidebar-text); /* Default color */
-
-    i {
-      font-size: 1.125rem; /* text-lg for icons */
-    }
-
-    &:hover {
-      background-color: var(--velzon-dark-sidebar-hover);
-      color: #ffffff; /* text-white on hover */
-    }
-  }
-  .dark-mode & .nav-link:hover {
-    background-color: var(--velzon-dark-mode-dropdown-item-hover);
-  }
-
-  /* Active Sidebar Item Styling (e.g., Pages) */
-  .nav-link.active-sidebar-link {
-    background-color: var(--velzon-dark-sidebar-active);
-    color: #ffffff !important; /* text-white for active */
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 10%; /* Adjust to match screenshot's 4/5 height */
-      bottom: 10%;
-      width: 3px;
-      background-color: var(--velzon-dark-active-indicator);
-      border-top-right-radius: 0.125rem; /* rounded-tr-sm */
-      border-bottom-right-radius: 0.125rem; /* rounded-br-sm */
-    }
-  }
-  .dark-mode & .nav-link.active-sidebar-link {
-    background-color: var(--velzon-dark-mode-dropdown-item-hover);
-  }
-
-  /* Submenu Styles */
-  .collapse .nav-link {
-    padding-left: 2.5rem; /* Indent sub-items */
-    font-size: 0.875rem; /* text-sm */
-  }
-
-  .menu-title {
-    font-size: 0.75rem; /* text-xs */
-    text-transform: uppercase;
-    font-weight: 600; /* font-semibold */
-    padding: 1rem 1rem 0.5rem 1rem; /* pt-4 pb-2 px-4 */
-    color: rgba(255, 255, 255, 0.7); /* opacity-70 */
-  }
-  .dark-mode & .menu-title {
-    color: var(--velzon-dark-mode-breadcrumb-text);
-  }
-
-  .hot-badge {
-    background-color: var(--velzon-hot-badge-bg);
-    color: #fff;
-    font-size: 0.75rem; /* text-xs */
-    padding: 0.25rem 0.5rem; /* px-2 py-1 */
-    border-radius: 0.25rem;
-  }
-}
-
-.main-content-shifted {
-  @media (min-width: 992px) {
-    margin-left: 260px; /* Shift main content */
-  }
-}
-
-/* Chevron icon transition */
-.chevron-transition {
-  transition: transform 0.2s ease-in-out;
-}
-.chevron-rotated {
-  transform: rotate(90deg);
-}
-
-/* --- Header Styles --- */
-.custom-header {
-  background-color: var(--velzon-header-bg-light);
-  border-bottom: 1px solid var(--velzon-header-border-light);
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* shadow-sm */
-  height: 70px; /* Specific height for consistency */
-  display: flex;
-  align-items: center;
-  padding: 1rem 1.5rem; /* p-4 */
-  position: sticky;
-  top: 0;
-  z-index: 1040;
-
-  .dark-mode & {
-    background-color: var(--velzon-dark-mode-header-bg);
-    border-color: var(--velzon-dark-mode-header-border);
-  }
-
-  .navbar-toggler {
-    color: var(--velzon-header-text-light);
-    border: none;
-  }
-  .dark-mode & .navbar-toggler {
-    color: var(--velzon-dark-mode-header-text);
-  }
-
-  .search-input-group {
-    .form-control {
-      background-color: var(--velzon-search-bg-light);
-      border: 1px solid var(--velzon-search-border-light);
-      color: var(--velzon-paragraph-text-light);
-      padding-left: 2.5rem; /* For icon */
-      border-radius: 0.5rem; /* rounded-lg */
-
-      &::placeholder {
-        color: var(--velzon-breadcrumb-text-light); /* placeholder-gray-500 */
-      }
-    }
-    .dark-mode & .form-control {
-      background-color: var(--velzon-dark-mode-search-bg);
-      border-color: var(--velzon-dark-mode-search-border);
-      color: var(--velzon-dark-mode-paragraph-text);
-      &::placeholder {
-        color: var(--velzon-dark-mode-breadcrumb-text);
-      }
-    }
-
-    .input-group-text {
-      background-color: transparent; /* Match input background */
-      border: none;
-      color: var(--velzon-header-text-light);
-      position: absolute; /* Position icon inside input */
-      left: 0.75rem;
-      z-index: 1;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .dark-mode & .input-group-text {
-      color: var(--velzon-dark-mode-header-text);
-    }
-  }
-
-  .header-icon {
-    font-size: 1.25rem; /* text-xl */
-    cursor: pointer;
-    color: var(--velzon-header-text-light);
-  }
-  .dark-mode & .header-icon {
-    color: var(--velzon-dark-mode-header-text);
-  }
-
-  .profile-img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--velzon-header-border-light);
-  }
-  .dark-mode & .profile-img {
-    border-color: var(--velzon-dark-mode-header-border);
-  }
-
-  .profile-name {
-    font-weight: 600; /* font-semibold */
-    font-size: 1rem; /* text-base */
-    color: var(--velzon-page-title-text-light);
-    line-height: 1.2;
-  }
-  .dark-mode & .profile-name {
-    color: var(--velzon-dark-mode-profile-name-text);
-  }
-
-  .profile-title {
-    font-size: 0.875rem; /* text-sm */
-    color: var(--velzon-breadcrumb-text-light);
-    line-height: 1.2;
-  }
-  .dark-mode & .profile-title {
-    color: var(--velzon-dark-mode-profile-title-text);
-  }
-
-  .dropdown-menu {
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* shadow-lg */
-    padding-top: 0.25rem; /* py-1 */
-    padding-bottom: 0.25rem; /* py-1 */
-    min-width: 12rem; /* w-48 */
-    background-color: var(--velzon-header-bg-light);
-    border: 1px solid var(--velzon-header-border-light);
-  }
-  .dark-mode & .dropdown-menu {
-    background-color: var(--velzon-dark-mode-dropdown-bg);
-    border-color: var(--velzon-dark-mode-dropdown-divider);
-  }
-
-  .dropdown-item {
-    padding: 0.5rem 1rem; /* px-4 py-2 */
-    color: var(--velzon-paragraph-text-light);
-
-    &:hover {
-      background-color: var(--velzon-search-bg-light); /* hover:bg-gray-100 */
-      color: var(--velzon-paragraph-text-light); /* Ensure text color stays readable */
-    }
-  }
-  .dark-mode & .dropdown-item {
-    color: var(--velzon-dark-mode-dropdown-text);
-    &:hover {
-      background-color: var(--velzon-dark-mode-dropdown-item-hover);
-      color: var(--velzon-dark-mode-dropdown-text);
-    }
-  }
-
-  .dropdown-divider {
-    border-color: var(--velzon-search-border-light); /* border-gray-200 */
-    margin-top: 0.25rem; /* my-1 */
-    margin-bottom: 0.25rem; /* my-1 */
-  }
-  .dark-mode & .dropdown-divider {
-    border-color: var(--velzon-dark-mode-dropdown-divider);
-  }
-}
-
-/* --- Page Content Styles --- */
-.page-title {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 600; /* font-semibold */
-  text-transform: uppercase;
-  color: var(--velzon-page-title-text-light);
-}
-.dark-mode .page-title {
-  color: var(--velzon-dark-mode-page-title-text);
-}
-
-.breadcrumb-item {
-  color: var(--velzon-breadcrumb-text-light);
-
-  a {
-    color: var(--velzon-primary-blue) !important;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .dark-mode & a {
-    color: var(--bs-info) !important; /* Using BS info for dark mode highlight */
-  }
-
-  .fas {
-    font-size: 0.75rem; /* text-xs */
-    margin: 0 0.25rem; /* mx-1 */
-    color: var(--velzon-breadcrumb-text-light);
-  }
-  .dark-mode & .fas {
-    color: var(--velzon-dark-mode-breadcrumb-text);
-  }
-}
-.dark-mode .breadcrumb-item {
-  color: var(--velzon-dark-mode-breadcrumb-text);
-}
-
-
-.content-card {
-  background-color: var(--velzon-card-bg-light);
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05); /* shadow-md */
-  min-height: 500px;
-  padding: 1.5rem; /* p-6 */
-}
-.dark-mode .content-card {
-  background-color: var(--velzon-dark-mode-card-bg);
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15); /* shadow-lg */
-}
-
-.content-paragraph {
-  color: var(--velzon-paragraph-text-light);
-}
-.dark-mode .content-paragraph {
-  color: var(--velzon-dark-mode-paragraph-text);
-}
-
-/* --- Footer Styles --- */
-.custom-footer {
-  text-align: right;
-  padding: 0.75rem 1rem; /* p-3 */
-  color: var(--velzon-footer-text-light);
-  font-size: 0.875rem; /* text-sm */
-}
-.dark-mode .custom-footer {
-  color: var(--velzon-dark-mode-footer-text);
-}
-
-/* --- Floating Action Button (FAB) --- */
-.fab-button {
-  background-color: var(--velzon-fab-button-bg);
-  color: #ffffff;
-  width: 56px; /* w-14 */
-  height: 56px; /* h-14 */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem; /* text-2xl */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* shadow-lg */
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s;
-  position: fixed;
-  bottom: 2rem; /* bottom-8 */
-  right: 2rem; /* right-8 */
-  z-index: 999; /* Below sidebar/header, above general content */
-
-  &:hover {
-    background-color: var(--velzon-fab-button-hover);
-    color: #ffffff;
-  }
-}
-.dark-mode .fab-button {
-  background-color: var(--bs-info); /* Use Bootstrap info for dark mode */
-  &:hover {
-    background-color: #38a169; /* Slightly darker info on hover */
-  }
-}
-
-/* Specific adjustments for Bootstrap's default styles */
-.nav-item .badge {
-  font-weight: normal; /* To match screenshot's lighter badge text */
-}
-=======
 * {
   padding: 0;
   margin: 0;
@@ -555,12 +144,15 @@ main {
 .single-card:nth-child(1) {
   border-left: 5px solid royalblue;
 }
+
 .single-card:nth-child(2) {
   border-left: 5px solid limegreen;
 }
+
 .single-card:nth-child(3) {
   border-left: 5px solid teal;
 }
+
 .single-card:nth-child(4) {
   border-left: 5px solid orange;
 }
@@ -572,9 +164,11 @@ main {
 .single-card:nth-child(2) span {
   color: limegreen;
 }
+
 .single-card:nth-child(3) span {
   color: teal;
 }
+
 .single-card:nth-child(4) span {
   color: orange;
 }
@@ -618,9 +212,11 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
 }
+
 .projects {
   flex-basis: 60%;
 }
+
 .customers {
   flex-basis: 37%;
 }
@@ -687,6 +283,7 @@ thead :is(tr, td, th) {
 .progress {
   background-color: deeppink;
 }
+
 .pending {
   background-color: orangered;
 }
@@ -702,16 +299,19 @@ thead :is(tr, td, th) {
 }
 
 @media only screen and (max-width: 1100px) {
+
   .customers,
   .projects {
     flex-basis: 100%;
     margin-top: 20px;
   }
 }
+
 @media only screen and (max-width: 979px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .search-box {
     display: none;
   }
@@ -721,9 +321,11 @@ thead :is(tr, td, th) {
   .sidebar {
     width: 65px;
   }
+
   .sidebar:is(:hover, :active) {
     width: 270px;
   }
+
   .main-content {
     margin-left: 65px;
   }
@@ -733,40 +335,51 @@ thead :is(tr, td, th) {
   .wrapper {
     margin-top: 0;
   }
+
   table {
     font-size: 12px;
   }
+
   thead:is(tr, td, th) {
     padding: 8px;
   }
+
   tr,
   td,
   th {
     padding: 8px;
   }
+
   .card-header {
     padding: 10px;
   }
+
   .card-header h3 {
     font-size: 15px;
   }
+
   .card-header button {
     padding: 8px;
   }
+
   .cards {
     grid-template-columns: 1fr;
   }
+
   small {
     margin-top: 0;
   }
+
   header h2 {
     display: none;
   }
+
   .admin-box {
     width: 100%;
     justify-content: right;
     font-size: 20px;
   }
+
   .admin-box img {
     width: 40px;
     height: 40px;
@@ -780,4 +393,4 @@ thead :is(tr, td, th) {
 .toggleContent {
   margin-left: 65px;
 }
->>>>>>> main
+
