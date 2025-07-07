@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router";
+import { Navigate, Outlet } from "react-router";
 
 function ProtectRoutes() {
-  const isLogIn = true;
-  const navigate = useNavigate();
+  const isLogIN = true;
 
-  if (!isLogIn) {
-    navigate("/login", { replace: true });
+  if (!isLogIN) {
+    return <Navigate to="/login" replace />;
   }
+  return <Outlet />;
 }
 
 export default ProtectRoutes;
