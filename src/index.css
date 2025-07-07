@@ -50,11 +50,11 @@ body {
   color: var(--velzon-paragraph-text-light);
   background-color: var(--velzon-body-bg-light);
   transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-body.dark-mode {
-  background-color: var(--velzon-dark-mode-body-bg);
-  color: var(--velzon-dark-mode-paragraph-text);
+  &.dark-mode {
+    background-color: var(--velzon-dark-mode-body-bg);
+    color: var(--velzon-dark-mode-paragraph-text);
+  }
 }
 
 /* --- Sidebar Styles --- */
@@ -71,134 +71,131 @@ body.dark-mode {
   transform: translateX(-100%); /* Hidden by default on mobile */
   transition: transform 0.3s ease-in-out;
   overflow-y: auto; /* Enable scrolling for long menus */
-}
 
-.custom-sidebar.active {
-  transform: translateX(0); /* Visible on mobile when toggled */
-}
+  &.active {
+    transform: translateX(0); /* Visible on mobile when toggled */
+  }
 
-/* Desktop View: Sidebar always visible */
-@media (min-width: 992px) {
-  /* Bootstrap's 'lg' breakpoint */
-  .custom-sidebar {
+  /* Desktop View: Sidebar always visible */
+  @media (min-width: 992px) {
+    /* Bootstrap's 'lg' breakpoint */
     transform: translateX(0) !important; /* Always visible */
   }
-  .main-content-shifted {
-    margin-left: 260px; /* Shift main content */
+
+  .sidebar-header {
+    border-color: rgba(255, 255, 255, 0.1) !important; /* Subtle border for dark sidebar */
+  }
+  .dark-mode & .sidebar-header {
+    border-color: var(--velzon-dark-mode-header-border) !important;
+  }
+
+  .velzon-brand {
+    color: var(--velzon-primary-blue) !important;
+    font-size: 1.5rem; /* text-2xl equivalent */
+  }
+
+  .form-control {
+    background-color: var(--velzon-dark-sidebar-active); /* Bg for search input */
+    border: 1px solid var(--velzon-dark-sidebar-hover);
+    color: var(--velzon-dark-sidebar-text);
+    padding-left: 2.5rem; /* For search icon */
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+  .dark-mode & .form-control {
+    background-color: var(--velzon-dark-mode-search-bg);
+    border-color: var(--velzon-dark-mode-search-border);
+    color: var(--velzon-dark-mode-paragraph-text);
+    &::placeholder {
+      color: var(--velzon-dark-mode-breadcrumb-text);
+    }
+  }
+
+  .fa-search {
+    left: 1rem; /* Adjust search icon position */
+    color: var(--velzon-dark-sidebar-text);
+  }
+  .dark-mode & .fa-search {
+    color: var(--velzon-dark-mode-breadcrumb-text);
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem; /* p-3 equivalent */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-weight: 500; /* Medium weight for active items */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* For icon and text spacing */
+    transition: background-color 0.2s, color 0.2s;
+    color: var(--velzon-dark-sidebar-text); /* Default color */
+
+    i {
+      font-size: 1.125rem; /* text-lg for icons */
+    }
+
+    &:hover {
+      background-color: var(--velzon-dark-sidebar-hover);
+      color: #ffffff; /* text-white on hover */
+    }
+  }
+  .dark-mode & .nav-link:hover {
+    background-color: var(--velzon-dark-mode-dropdown-item-hover);
+  }
+
+  /* Active Sidebar Item Styling (e.g., Pages) */
+  .nav-link.active-sidebar-link {
+    background-color: var(--velzon-dark-sidebar-active);
+    color: #ffffff !important; /* text-white for active */
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10%; /* Adjust to match screenshot's 4/5 height */
+      bottom: 10%;
+      width: 3px;
+      background-color: var(--velzon-dark-active-indicator);
+      border-top-right-radius: 0.125rem; /* rounded-tr-sm */
+      border-bottom-right-radius: 0.125rem; /* rounded-br-sm */
+    }
+  }
+  .dark-mode & .nav-link.active-sidebar-link {
+    background-color: var(--velzon-dark-mode-dropdown-item-hover);
+  }
+
+  /* Submenu Styles */
+  .collapse .nav-link {
+    padding-left: 2.5rem; /* Indent sub-items */
+    font-size: 0.875rem; /* text-sm */
+  }
+
+  .menu-title {
+    font-size: 0.75rem; /* text-xs */
+    text-transform: uppercase;
+    font-weight: 600; /* font-semibold */
+    padding: 1rem 1rem 0.5rem 1rem; /* pt-4 pb-2 px-4 */
+    color: rgba(255, 255, 255, 0.7); /* opacity-70 */
+  }
+  .dark-mode & .menu-title {
+    color: var(--velzon-dark-mode-breadcrumb-text);
+  }
+
+  .hot-badge {
+    background-color: var(--velzon-hot-badge-bg);
+    color: #fff;
+    font-size: 0.75rem; /* text-xs */
+    padding: 0.25rem 0.5rem; /* px-2 py-1 */
+    border-radius: 0.25rem;
   }
 }
 
-.custom-sidebar .sidebar-header {
-  border-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ) !important; /* Subtle border for dark sidebar */
-}
-.dark-mode .custom-sidebar .sidebar-header {
-  border-color: var(--velzon-dark-mode-header-border) !important;
-}
-
-.custom-sidebar .velzon-brand {
-  color: var(--velzon-primary-blue) !important;
-  font-size: 1.5rem; /* text-2xl equivalent */
-}
-
-.custom-sidebar .form-control {
-  background-color: var(--velzon-dark-sidebar-active); /* Bg for search input */
-  border: 1px solid var(--velzon-dark-sidebar-hover);
-  color: var(--velzon-dark-sidebar-text);
-  padding-left: 2.5rem; /* For search icon */
-}
-.custom-sidebar .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-.dark-mode .custom-sidebar .form-control {
-  background-color: var(--velzon-dark-mode-search-bg);
-  border-color: var(--velzon-dark-mode-search-border);
-  color: var(--velzon-dark-mode-paragraph-text);
-}
-.dark-mode .custom-sidebar .form-control::placeholder {
-  color: var(--velzon-dark-mode-breadcrumb-text);
-}
-
-.custom-sidebar .fa-search {
-  left: 1rem; /* Adjust search icon position */
-  color: var(--velzon-dark-sidebar-text);
-}
-.dark-mode .custom-sidebar .fa-search {
-  color: var(--velzon-dark-mode-breadcrumb-text);
-}
-
-.custom-sidebar .nav-link {
-  padding: 0.75rem 1rem; /* p-3 equivalent */
-  border-radius: 0.5rem; /* rounded-lg */
-  font-weight: 500; /* Medium weight for active items */
-  display: flex;
-  align-items: center;
-  gap: 0.75rem; /* For icon and text spacing */
-  transition: background-color 0.2s, color 0.2s;
-  color: var(--velzon-dark-sidebar-text); /* Default color */
-}
-.custom-sidebar .nav-link i {
-  font-size: 1.125rem; /* text-lg for icons */
-}
-
-.custom-sidebar .nav-link:hover {
-  background-color: var(--velzon-dark-sidebar-hover);
-  color: #ffffff; /* text-white on hover */
-}
-.dark-mode .custom-sidebar .nav-link:hover {
-  background-color: var(--velzon-dark-mode-dropdown-item-hover);
-}
-
-/* Active Sidebar Item Styling (e.g., Pages) */
-.custom-sidebar .nav-link.active-sidebar-link {
-  background-color: var(--velzon-dark-sidebar-active);
-  color: #ffffff !important; /* text-white for active */
-  position: relative;
-}
-.dark-mode .custom-sidebar .nav-link.active-sidebar-link {
-  background-color: var(--velzon-dark-mode-dropdown-item-hover);
-}
-
-/* Left indicator bar for active link */
-.custom-sidebar .nav-link.active-sidebar-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10%; /* Adjust to match screenshot's 4/5 height */
-  bottom: 10%;
-  width: 3px;
-  background-color: var(--velzon-dark-active-indicator);
-  border-top-right-radius: 0.125rem; /* rounded-tr-sm */
-  border-bottom-right-radius: 0.125rem; /* rounded-br-sm */
-}
-
-/* Submenu Styles */
-.custom-sidebar .collapse .nav-link {
-  padding-left: 2.5rem; /* Indent sub-items */
-  font-size: 0.875rem; /* text-sm */
-}
-
-.custom-sidebar .menu-title {
-  font-size: 0.75rem; /* text-xs */
-  text-transform: uppercase;
-  font-weight: 600; /* font-semibold */
-  padding: 1rem 1rem 0.5rem 1rem; /* pt-4 pb-2 px-4 */
-  color: rgba(255, 255, 255, 0.7); /* opacity-70 */
-}
-.dark-mode .custom-sidebar .menu-title {
-  color: var(--velzon-dark-mode-breadcrumb-text);
-}
-
-.custom-sidebar .hot-badge {
-  background-color: var(--velzon-hot-badge-bg);
-  color: #fff;
-  font-size: 0.75rem; /* text-xs */
-  padding: 0.25rem 0.5rem; /* px-2 py-1 */
-  border-radius: 0.25rem;
+.main-content-shifted {
+  @media (min-width: 992px) {
+    margin-left: 260px; /* Shift main content */
+  }
 }
 
 /* Chevron icon transition */
@@ -221,131 +218,134 @@ body.dark-mode {
   position: sticky;
   top: 0;
   z-index: 1040;
-}
-.dark-mode .custom-header {
-  background-color: var(--velzon-dark-mode-header-bg);
-  border-color: var(--velzon-dark-mode-header-border);
-}
 
-.custom-header .navbar-toggler {
-  color: var(--velzon-header-text-light);
-  border: none;
-}
-.dark-mode .custom-header .navbar-toggler {
-  color: var(--velzon-dark-mode-header-text);
-}
+  .dark-mode & {
+    background-color: var(--velzon-dark-mode-header-bg);
+    border-color: var(--velzon-dark-mode-header-border);
+  }
 
-.custom-header .search-input-group .form-control {
-  background-color: var(--velzon-search-bg-light);
-  border: 1px solid var(--velzon-search-border-light);
-  color: var(--velzon-paragraph-text-light);
-  padding-left: 2.5rem; /* For icon */
-  border-radius: 0.5rem; /* rounded-lg */
-}
-.custom-header .search-input-group .form-control::placeholder {
-  color: var(--velzon-breadcrumb-text-light); /* placeholder-gray-500 */
-}
-.dark-mode .custom-header .search-input-group .form-control {
-  background-color: var(--velzon-dark-mode-search-bg);
-  border-color: var(--velzon-dark-mode-search-border);
-  color: var(--velzon-dark-mode-paragraph-text);
-}
-.dark-mode .custom-header .search-input-group .form-control::placeholder {
-  color: var(--velzon-dark-mode-breadcrumb-text);
-}
+  .navbar-toggler {
+    color: var(--velzon-header-text-light);
+    border: none;
+  }
+  .dark-mode & .navbar-toggler {
+    color: var(--velzon-dark-mode-header-text);
+  }
 
-.custom-header .search-input-group .input-group-text {
-  background-color: transparent; /* Match input background */
-  border: none;
-  color: var(--velzon-header-text-light);
-  position: absolute; /* Position icon inside input */
-  left: 0.75rem;
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.dark-mode .custom-header .search-input-group .input-group-text {
-  color: var(--velzon-dark-mode-header-text);
-}
+  .search-input-group {
+    .form-control {
+      background-color: var(--velzon-search-bg-light);
+      border: 1px solid var(--velzon-search-border-light);
+      color: var(--velzon-paragraph-text-light);
+      padding-left: 2.5rem; /* For icon */
+      border-radius: 0.5rem; /* rounded-lg */
 
-.custom-header .header-icon {
-  font-size: 1.25rem; /* text-xl */
-  cursor: pointer;
-  color: var(--velzon-header-text-light);
-}
-.dark-mode .custom-header .header-icon {
-  color: var(--velzon-dark-mode-header-text);
-}
+      &::placeholder {
+        color: var(--velzon-breadcrumb-text-light); /* placeholder-gray-500 */
+      }
+    }
+    .dark-mode & .form-control {
+      background-color: var(--velzon-dark-mode-search-bg);
+      border-color: var(--velzon-dark-mode-search-border);
+      color: var(--velzon-dark-mode-paragraph-text);
+      &::placeholder {
+        color: var(--velzon-dark-mode-breadcrumb-text);
+      }
+    }
 
-.custom-header .profile-img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--velzon-header-border-light);
-}
-.dark-mode .custom-header .profile-img {
-  border-color: var(--velzon-dark-mode-header-border);
-}
+    .input-group-text {
+      background-color: transparent; /* Match input background */
+      border: none;
+      color: var(--velzon-header-text-light);
+      position: absolute; /* Position icon inside input */
+      left: 0.75rem;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .dark-mode & .input-group-text {
+      color: var(--velzon-dark-mode-header-text);
+    }
+  }
 
-.custom-header .profile-name {
-  font-weight: 600; /* font-semibold */
-  font-size: 1rem; /* text-base */
-  color: var(--velzon-page-title-text-light);
-  line-height: 1.2;
-}
-.dark-mode .custom-header .profile-name {
-  color: var(--velzon-dark-mode-profile-name-text);
-}
+  .header-icon {
+    font-size: 1.25rem; /* text-xl */
+    cursor: pointer;
+    color: var(--velzon-header-text-light);
+  }
+  .dark-mode & .header-icon {
+    color: var(--velzon-dark-mode-header-text);
+  }
 
-.custom-header .profile-title {
-  font-size: 0.875rem; /* text-sm */
-  color: var(--velzon-breadcrumb-text-light);
-  line-height: 1.2;
-}
-.dark-mode .custom-header .profile-title {
-  color: var(--velzon-dark-mode-profile-title-text);
-}
+  .profile-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--velzon-header-border-light);
+  }
+  .dark-mode & .profile-img {
+    border-color: var(--velzon-dark-mode-header-border);
+  }
 
-.custom-header .dropdown-menu {
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* shadow-lg */
-  padding-top: 0.25rem; /* py-1 */
-  padding-bottom: 0.25rem; /* py-1 */
-  min-width: 12rem; /* w-48 */
-  background-color: var(--velzon-header-bg-light);
-  border: 1px solid var(--velzon-header-border-light);
-}
-.dark-mode .custom-header .dropdown-menu {
-  background-color: var(--velzon-dark-mode-dropdown-bg);
-  border-color: var(--velzon-dark-mode-dropdown-divider);
-}
+  .profile-name {
+    font-weight: 600; /* font-semibold */
+    font-size: 1rem; /* text-base */
+    color: var(--velzon-page-title-text-light);
+    line-height: 1.2;
+  }
+  .dark-mode & .profile-name {
+    color: var(--velzon-dark-mode-profile-name-text);
+  }
 
-.custom-header .dropdown-item {
-  padding: 0.5rem 1rem; /* px-4 py-2 */
-  color: var(--velzon-paragraph-text-light);
-}
-.custom-header .dropdown-item:hover {
-  background-color: var(--velzon-search-bg-light); /* hover:bg-gray-100 */
-  color: var(
-    --velzon-paragraph-text-light
-  ); /* Ensure text color stays readable */
-}
-.dark-mode .custom-header .dropdown-item {
-  color: var(--velzon-dark-mode-dropdown-text);
-}
-.dark-mode .custom-header .dropdown-item:hover {
-  background-color: var(--velzon-dark-mode-dropdown-item-hover);
-  color: var(--velzon-dark-mode-dropdown-text);
-}
+  .profile-title {
+    font-size: 0.875rem; /* text-sm */
+    color: var(--velzon-breadcrumb-text-light);
+    line-height: 1.2;
+  }
+  .dark-mode & .profile-title {
+    color: var(--velzon-dark-mode-profile-title-text);
+  }
 
-.custom-header .dropdown-divider {
-  border-color: var(--velzon-search-border-light); /* border-gray-200 */
-  margin-top: 0.25rem; /* my-1 */
-  margin-bottom: 0.25rem; /* my-1 */
-}
-.dark-mode .custom-header .dropdown-divider {
-  border-color: var(--velzon-dark-mode-dropdown-divider);
+  .dropdown-menu {
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* shadow-lg */
+    padding-top: 0.25rem; /* py-1 */
+    padding-bottom: 0.25rem; /* py-1 */
+    min-width: 12rem; /* w-48 */
+    background-color: var(--velzon-header-bg-light);
+    border: 1px solid var(--velzon-header-border-light);
+  }
+  .dark-mode & .dropdown-menu {
+    background-color: var(--velzon-dark-mode-dropdown-bg);
+    border-color: var(--velzon-dark-mode-dropdown-divider);
+  }
+
+  .dropdown-item {
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    color: var(--velzon-paragraph-text-light);
+
+    &:hover {
+      background-color: var(--velzon-search-bg-light); /* hover:bg-gray-100 */
+      color: var(--velzon-paragraph-text-light); /* Ensure text color stays readable */
+    }
+  }
+  .dark-mode & .dropdown-item {
+    color: var(--velzon-dark-mode-dropdown-text);
+    &:hover {
+      background-color: var(--velzon-dark-mode-dropdown-item-hover);
+      color: var(--velzon-dark-mode-dropdown-text);
+    }
+  }
+
+  .dropdown-divider {
+    border-color: var(--velzon-search-border-light); /* border-gray-200 */
+    margin-top: 0.25rem; /* my-1 */
+    margin-bottom: 0.25rem; /* my-1 */
+  }
+  .dark-mode & .dropdown-divider {
+    border-color: var(--velzon-dark-mode-dropdown-divider);
+  }
 }
 
 /* --- Page Content Styles --- */
@@ -359,32 +359,33 @@ body.dark-mode {
   color: var(--velzon-dark-mode-page-title-text);
 }
 
-.breadcrumb-item a {
-  color: var(--velzon-primary-blue) !important;
-  text-decoration: none;
-}
-.breadcrumb-item a:hover {
-  text-decoration: underline;
-}
-.dark-mode .breadcrumb-item a {
-  color: var(--bs-info) !important; /* Using BS info for dark mode highlight */
-}
-
 .breadcrumb-item {
   color: var(--velzon-breadcrumb-text-light);
+
+  a {
+    color: var(--velzon-primary-blue) !important;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .dark-mode & a {
+    color: var(--bs-info) !important; /* Using BS info for dark mode highlight */
+  }
+
+  .fas {
+    font-size: 0.75rem; /* text-xs */
+    margin: 0 0.25rem; /* mx-1 */
+    color: var(--velzon-breadcrumb-text-light);
+  }
+  .dark-mode & .fas {
+    color: var(--velzon-dark-mode-breadcrumb-text);
+  }
 }
 .dark-mode .breadcrumb-item {
   color: var(--velzon-dark-mode-breadcrumb-text);
 }
 
-.breadcrumb-item .fas {
-  font-size: 0.75rem; /* text-xs */
-  margin: 0 0.25rem; /* mx-1 */
-  color: var(--velzon-breadcrumb-text-light);
-}
-.dark-mode .breadcrumb-item .fas {
-  color: var(--velzon-dark-mode-breadcrumb-text);
-}
 
 .content-card {
   background-color: var(--velzon-card-bg-light);
@@ -435,16 +436,17 @@ body.dark-mode {
   bottom: 2rem; /* bottom-8 */
   right: 2rem; /* right-8 */
   z-index: 999; /* Below sidebar/header, above general content */
-}
-.fab-button:hover {
-  background-color: var(--velzon-fab-button-hover);
-  color: #ffffff;
+
+  &:hover {
+    background-color: var(--velzon-fab-button-hover);
+    color: #ffffff;
+  }
 }
 .dark-mode .fab-button {
   background-color: var(--bs-info); /* Use Bootstrap info for dark mode */
-}
-.dark-mode .fab-button:hover {
-  background-color: #38a169; /* Slightly darker info on hover */
+  &:hover {
+    background-color: #38a169; /* Slightly darker info on hover */
+  }
 }
 
 /* Specific adjustments for Bootstrap's default styles */
