@@ -6,9 +6,12 @@ import Footer from "../compoents/Footer/Footer";
 function Root() {
   return (
     <>
-      <Header />
       <Sidebar />
-      <Outlet />
+      <div class="main-content" id="main-content">
+        <Header />
+        <Outlet />
+      </div>
+
       <Footer />
     </>
   );
