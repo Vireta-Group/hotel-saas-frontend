@@ -1,16 +1,8 @@
-import { RouterProvider } from 'react-router'
-import routerConfig from './routes/routerConfig'
-import AuthSingInCover from './compoents/singin/AuthSingInCover';
-import Header from './compoents/header/Header';
+import { RouterProvider } from "react-router";
+import router from "./routes/routes";
 
 function App() {
-  return (
-    // <AuthSingInCover />
-    <Header />
-    // <RouterProvider router={routerConfig} />
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
-
-
+export default App;

@@ -1,18 +1,20 @@
 import { Outlet } from "react-router";
-import Header from "../compoents/header/Header";
-import Footer from "../compoents/footer/Footer";
-import Sidebar from "../compoents/siderbar/Sidebar";
+import Header from "../compoents/Header/Header";
+import Sidebar from "../compoents/Sidebar/Sidebar";
+import Footer from "../compoents/Footer/Footer";
 
 function Root() {
   return (
-    <div>
-      <Header />
+    <>
       <Sidebar />
-      <Outlet />
+      <div class="main-content" id="main-content">
+        <Header />
+        <Outlet />
+      </div>
+
       <Footer />
-    </div>
+    </>
   );
 }
-
 
 export default Root;
