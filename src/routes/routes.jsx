@@ -6,7 +6,7 @@ import {
 import ProtectRoutes from "./ProtectRoutes";
 import Root from "./Root";
 import MainContent from "../compoents/Main/MainContent";
-import AuthSignInCover from "../compoents/SingIn/AuthSingInCover";
+import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
