@@ -1,0 +1,25 @@
+/* Make table and dropdown compact */
+.compact-cell {
+  padding: 4px 6px !important;
+}
+
+/* Box that is 50% wide on large screen, 100% on small */
+.responsive-box {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .responsive-box {
+    width: 100%;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  select.form-select {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import './RoomFacilities.css'; // Custom responsive styles
 
 const RoomFacilities = () => {
   const [selectedFloor, setSelectedFloor] = useState(1);
 
-  // Checkbox data
   const [floorData, setFloorData] = useState({
     1: generateInitialData(),
     2: generateInitialData(),
     3: generateInitialData(),
   });
 
-  // Disabled status for each row
   const [floorDisabled, setFloorDisabled] = useState({
     1: [false, false, false],
     2: [false, false, false],
@@ -20,9 +19,9 @@ const RoomFacilities = () => {
 
   function generateInitialData() {
     return [
-      [false, false, false, false, false, false], // Room 1          
-      [false, false, false, false, false, false], // Room 2
-      [false, false, false, false, false, false], // Room 3
+      [false, false, false, false, false, false],
+      [false, false, false, false, false, false],
+      [false, false, false, false, false, false],
     ];
   }
 
@@ -59,69 +58,71 @@ const RoomFacilities = () => {
   };
 
   const renderTable = (floor) => (
-    <div className="w-75 mt-4">
+    <div className="responsive-box m-4 mt-4">
       <b>Floor Number {floor}</b>
-      <table className="table table-bordered w-100">
-        <thead>
-          <tr>
-            <th>Room No.</th>
-            <th>WIFI</th>
-            <th>AC</th>
-            <th>TV</th>
-            <th>Washroom</th>
-            <th>Bath Tub</th>
-            <th>Balcony</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {floorData[floor]?.map((roomFacilities, roomIndex) => (
-            <tr key={roomIndex}>
-              <td>No. {roomIndex + 1}</td>
-              {roomFacilities.map((checked, facilityIndex) => (
-                <td key={facilityIndex}>
-                  <input
-                    type="checkbox"
-                    checked={checked}
-                    disabled={floorDisabled[floor][roomIndex]}
-                    onChange={() =>
-                      handleCheckboxChange(floor, roomIndex, facilityIndex)
-                    }
-                  />
-                </td>
-              ))}
-              <td>
-                {floorDisabled[floor][roomIndex] ? (
-                  <Button
-                    className="bg-warning text-dark"
-                    onClick={() => handleEdit(floor, roomIndex)}
-                  >
-                    Edit
-                  </Button>
-                ) : (
-                  <Button
-                    className="bg-success"
-                    onClick={() => handleSave(floor, roomIndex)}
-                  >
-                    Save
-                  </Button>
-                )}
-              </td>
+      <div className="table-responsive">
+        <table className="table table-bordered table-sm w-100">
+          <thead>
+            <tr>
+              <th className="compact-cell">Room No.</th>
+              <th className="compact-cell">WIFI</th>
+              <th className="compact-cell">AC</th>
+              <th className="compact-cell">TV</th>
+              <th className="compact-cell">Washroom</th>
+              <th className="compact-cell">Bath Tub</th>
+              <th className="compact-cell">Balcony</th>
+              <th className="compact-cell">Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {floorData[floor]?.map((roomFacilities, roomIndex) => (
+              <tr key={roomIndex}>
+                <td className="compact-cell">No. {roomIndex + 1}</td>
+                {roomFacilities.map((checked, facilityIndex) => (
+                  <td className="compact-cell" key={facilityIndex}>
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      disabled={floorDisabled[floor][roomIndex]}
+                      onChange={() =>
+                        handleCheckboxChange(floor, roomIndex, facilityIndex)
+                      }
+                    />
+                  </td>
+                ))}
+                <td className="compact-cell">
+                  {floorDisabled[floor][roomIndex] ? (
+                    <Button
+                      className="bg-warning text-dark py-1 px-2"
+                      onClick={() => handleEdit(floor, roomIndex)}
+                    >
+                      Edit
+                    </Button>
+                  ) : (
+                    <Button
+                      className="bg-success text-light py-1 px-2"
+                      onClick={() => handleSave(floor, roomIndex)}
+                    >
+                      Save
+                    </Button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center min-vh-100 gap-4">
-      
-      {/* Dropdown */}
-      <div>
-        <h3>Here you see our room facilities</h3>
+    <div className="d-flex flex-column justify-content-center align-items-center min-vh-100 gap-4 py-4">
+      <h3 className="text-center">Here you see our room facilities</h3>
+
+      {/* Dropdown Box */}
+      <div className="responsive-box">
         <select
-          className="form-select w-100 shadow-sm p-4 cursor-pointer"
+          className="form-select shadow-sm p-3"
           value={selectedFloor}
           onChange={(e) => setSelectedFloor(Number(e.target.value))}
         >
