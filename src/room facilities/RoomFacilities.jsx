@@ -27,7 +27,7 @@ const RoomFacilities = () => {
   }
 
   const handleCheckboxChange = (floor, roomIndex, facilityIndex) => {
-    if (floorDisabled[floor][roomIndex]) return; // যদি disable থাকে, কিছু না করো
+    if (floorDisabled[floor][roomIndex]) return;
 
     const updatedData = [...floorData[floor]];
     updatedData[roomIndex][facilityIndex] = !updatedData[roomIndex][facilityIndex];
@@ -38,7 +38,6 @@ const RoomFacilities = () => {
     }));
   };
 
-  // Save করলে সেই row disable হবে
   const handleSave = (floor, roomIndex) => {
     const updatedDisabled = [...floorDisabled[floor]];
     updatedDisabled[roomIndex] = true;
@@ -49,16 +48,18 @@ const RoomFacilities = () => {
     }));
   };
 
-  // Edit করলে সব row আবার enable হবে
-  const handleEdit = (floor) => {
+  const handleEdit = (floor, roomIndex) => {
+    const updatedDisabled = [...floorDisabled[floor]];
+    updatedDisabled[roomIndex] = false;
+
     setFloorDisabled(prev => ({
       ...prev,
-      [floor]: [false, false, false],
+      [floor]: updatedDisabled,
     }));
   };
 
   const renderTable = (floor) => (
-    <div className="w-50 mt-4">
+    <div className="w-75 mt-4">
       <b>Floor Number {floor}</b>
       <table className="table table-bordered w-100">
         <thead>
@@ -70,7 +71,7 @@ const RoomFacilities = () => {
             <th>Washroom</th>
             <th>Bath Tub</th>
             <th>Balcony</th>
-            <th><Button onClick={() => handleEdit(floor)}>Edit</Button></th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -90,13 +91,21 @@ const RoomFacilities = () => {
                 </td>
               ))}
               <td>
-                <Button
-                  className="bg-success"
-                  disabled={floorDisabled[floor][roomIndex]}
-                  onClick={() => handleSave(floor, roomIndex)}
-                >
-                  Save
-                </Button>
+                {floorDisabled[floor][roomIndex] ? (
+                  <Button
+                    className="bg-warning text-dark"
+                    onClick={() => handleEdit(floor, roomIndex)}
+                  >
+                    Edit
+                  </Button>
+                ) : (
+                  <Button
+                    className="bg-success"
+                    onClick={() => handleSave(floor, roomIndex)}
+                  >
+                    Save
+                  </Button>
+                )}
               </td>
             </tr>
           ))}
