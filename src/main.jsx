@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import "./style/veriable/veriable.css";
 import App from "./App";
 // main.jsx or main.tsx
 import "bootstrap/dist/css/bootstrap.min.css";

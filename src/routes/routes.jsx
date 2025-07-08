@@ -7,7 +7,7 @@ import ProtectRoutes from "./ProtectRoutes";
 import Root from "./Root";
 import MainContent from "../compoents/Main/MainContent";
 import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
-import HotelProfile from "../pages/hotel-profile/HotelProfile";
+import HotelProfile from "../pages/HotelProfile/HotelProfile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
