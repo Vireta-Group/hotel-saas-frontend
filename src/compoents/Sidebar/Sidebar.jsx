@@ -1,5 +1,3 @@
-// components/Sidebar.jsx
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHotel } from "@fortawesome/free-solid-svg-icons/faHotel";
 
