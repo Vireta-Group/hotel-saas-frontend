@@ -1,13 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "../../style/header/header.css"
 
 function Header() {
+
+  const toggleHandler = () =>{
+    const sideBar = document.getElementById("sidebar")
+    const mainContent = document.querySelector("main")
+
+    sideBar.classList.toggle = "toggleMenu"
+    mainContent.classList.toggle = "main-content"
+
+
+
+  }
+
+
   return (
     <header className="flex">
       <h2>
         <i className="uil uil-bars" id="menu-icon">
           <FontAwesomeIcon
-            // onClick={toggleHandler}
+            onClick={toggleHandler}
             icon={faBars}
             style={{ cursor: "pointer", marginRight: "10px" }}
           />
