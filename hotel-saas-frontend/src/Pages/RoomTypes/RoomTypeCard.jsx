@@ -8,24 +8,18 @@ function RoomTypeCard({ room, onEdit }) {
                     <img
                         src={room.imageUrl}
                         className="card-img-top"
-                        alt={room.name}
+                        alt={`Room ${room.roomNo}`}
                         style={{ height: "200px", objectFit: "cover" }}
                     />
                 )}
                 <div className="card-body">
-                    <h5 className="card-title">{room.name}</h5>
+                    <h5 className="card-title">Room #{room.roomNo}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{room.remarks}</h6>
                     <p className="card-text">{room.description}</p>
                     <ul className="list-group list-group-flush mb-3">
-                        <li className="list-group-item">💰 Price: ${room.pricePerNight} / night</li>
+                        <li className="list-group-item">💰 Price: ${room.pricePerDay} / day</li>
                         <li className="list-group-item">🛏️ Beds: {room.beds}</li>
                         <li className="list-group-item">👥 Capacity: {room.capacity} person(s)</li>
-                        <li className="list-group-item">
-                            ❄️ AC: {room.hasAC ? "Available" : "Not Available"}
-                        </li>
-                        <li className="list-group-item">
-                            📶 WiFi: {room.hasWifi ? "Available" : "Not Available"}
-                        </li>
                     </ul>
                     <button className="btn btn-primary w-100" onClick={onEdit}>
                         Edit

@@ -4,24 +4,20 @@ import RoomTypeCard from "./RoomTypeCard";
 const initialRoomTypes = [
     {
         id: 1,
-        name: "Deluxe",
-        pricePerNight: 120,
+        roomNo: 1,
+        pricePerDay: 120,
         beds: 2,
         capacity: 4,
-        hasAC: true,
-        hasWifi: true,
         remarks: "Sea view",
         description: "Spacious deluxe room with sea view.",
         imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLvJRjydrlaVUX1j8iZEziEOEJzCwZoSemzg&s",
     },
     {
         id: 2,
-        name: "Standard",
-        pricePerNight: 80,
+        roomNo: 2,
+        pricePerDay: 80,
         beds: 1,
         capacity: 2,
-        hasAC: false,
-        hasWifi: true,
         remarks: "City view",
         description: "Comfortable standard room with city view.",
         imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLvJRjydrlaVUX1j8iZEziEOEJzCwZoSemzg&s",
@@ -31,12 +27,10 @@ const initialRoomTypes = [
 function RoomTypes() {
     const [roomTypes, setRoomTypes] = useState(initialRoomTypes);
     const [newRoom, setNewRoom] = useState({
-        name: "",
-        pricePerNight: "",
+        roomNo: "",
+        pricePerDay: "",
         beds: "",
         capacity: "",
-        hasAC: false,
-        hasWifi: false,
         remarks: "",
         imageUrl: "",
         description: "",
@@ -46,36 +40,34 @@ function RoomTypes() {
     const [editRoom, setEditRoom] = useState(null);
 
     const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        const val = type === "checkbox" ? checked : value;
+        const { name, value } = e.target;
         if (editId !== null) {
-            setEditRoom({ ...editRoom, [name]: val });
+            setEditRoom({ ...editRoom, [name]: value });
         } else {
-            setNewRoom({ ...newRoom, [name]: val });
+            setNewRoom({ ...newRoom, [name]: value });
         }
     };
 
     const handleAdd = () => {
-        if (!newRoom.name || !newRoom.pricePerNight) {
-            return alert("Room name and price are required");
+        if (!newRoom.roomNo || !newRoom.pricePerDay) {
+            return alert("Room number and price are required");
         }
 
         const newEntry = {
             ...newRoom,
             id: Date.now(),
-            pricePerNight: parseFloat(newRoom.pricePerNight),
+            roomNo: parseInt(newRoom.roomNo),
+            pricePerDay: parseFloat(newRoom.pricePerDay),
             beds: parseInt(newRoom.beds),
             capacity: parseInt(newRoom.capacity),
         };
 
         setRoomTypes([...roomTypes, newEntry]);
         setNewRoom({
-            name: "",
-            pricePerNight: "",
+            roomNo: "",
+            pricePerDay: "",
             beds: "",
             capacity: "",
-            hasAC: false,
-            hasWifi: false,
             remarks: "",
             imageUrl: "",
             description: "",
@@ -94,15 +86,16 @@ function RoomTypes() {
     };
 
     const saveEdit = () => {
-        if (!editRoom.name || !editRoom.pricePerNight) {
-            return alert("Room name and price are required");
+        if (!editRoom.roomNo || !editRoom.pricePerDay) {
+            return alert("Room number and price are required");
         }
 
         const updatedRoomTypes = roomTypes.map((room) =>
             room.id === editId
                 ? {
                     ...editRoom,
-                    pricePerNight: parseFloat(editRoom.pricePerNight),
+                    roomNo: parseInt(editRoom.roomNo),
+                    pricePerDay: parseFloat(editRoom.pricePerDay),
                     beds: parseInt(editRoom.beds),
                     capacity: parseInt(editRoom.capacity),
                 }
@@ -118,19 +111,19 @@ function RoomTypes() {
             <h4 className="text-center">Add New Room</h4>
             <div className="mb-3">
                 <input
-                    type="text"
+                    type="number"
                     className="form-control mb-2"
-                    placeholder="Room Name"
-                    name="name"
-                    value={newRoom.name}
+                    placeholder="Room Number"
+                    name="roomNo"
+                    value={newRoom.roomNo}
                     onChange={handleChange}
                 />
                 <input
                     type="number"
                     className="form-control mb-2"
-                    placeholder="Price Per Night"
-                    name="pricePerNight"
-                    value={newRoom.pricePerNight}
+                    placeholder="Price Per Day"
+                    name="pricePerDay"
+                    value={newRoom.pricePerDay}
                     onChange={handleChange}
                 />
                 <input
@@ -144,40 +137,11 @@ function RoomTypes() {
                 <input
                     type="number"
                     className="form-control mb-2"
-                    placeholder="Capacity (number of people)"
+                    placeholder="Capacity"
                     name="capacity"
                     value={newRoom.capacity}
                     onChange={handleChange}
                 />
-
-                <div className="form-check mb-2">
-                    <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="hasAC"
-                        checked={newRoom.hasAC}
-                        onChange={handleChange}
-                        id="acCheck"
-                    />
-                    <label className="form-check-label" htmlFor="acCheck">
-                        Air Conditioning (AC)
-                    </label>
-                </div>
-
-                <div className="form-check mb-2">
-                    <input
-                        className="form-check-input"
-                        type="checkbox"
-                        name="hasWifi"
-                        checked={newRoom.hasWifi}
-                        onChange={handleChange}
-                        id="wifiCheck"
-                    />
-                    <label className="form-check-label" htmlFor="wifiCheck">
-                        WiFi Available
-                    </label>
-                </div>
-
                 <input
                     type="text"
                     className="form-control mb-2"
@@ -194,10 +158,9 @@ function RoomTypes() {
                     value={newRoom.imageUrl}
                     onChange={handleChange}
                 />
-
                 <textarea
                     className="form-control mb-2"
-                    placeholder="Short Description"
+                    placeholder="Description"
                     name="description"
                     value={newRoom.description}
                     onChange={handleChange}
@@ -219,20 +182,20 @@ function RoomTypes() {
                         <div key={room.id} className="col-md-6 mb-3">
                             <div className="card p-3 shadow-sm">
                                 <input
-                                    type="text"
+                                    type="number"
                                     className="form-control mb-2"
-                                    name="name"
-                                    value={editRoom.name}
+                                    name="roomNo"
+                                    value={editRoom.roomNo}
                                     onChange={handleChange}
-                                    placeholder="Room Name"
+                                    placeholder="Room Number"
                                 />
                                 <input
                                     type="number"
                                     className="form-control mb-2"
-                                    name="pricePerNight"
-                                    value={editRoom.pricePerNight}
+                                    name="pricePerDay"
+                                    value={editRoom.pricePerDay}
                                     onChange={handleChange}
-                                    placeholder="Price Per Night"
+                                    placeholder="Price Per Day"
                                 />
                                 <input
                                     type="number"
@@ -240,7 +203,7 @@ function RoomTypes() {
                                     name="beds"
                                     value={editRoom.beds}
                                     onChange={handleChange}
-                                    placeholder="Number of Beds"
+                                    placeholder="Beds"
                                 />
                                 <input
                                     type="number"
@@ -250,35 +213,6 @@ function RoomTypes() {
                                     onChange={handleChange}
                                     placeholder="Capacity"
                                 />
-
-                                <div className="form-check mb-2">
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        name="hasAC"
-                                        checked={editRoom.hasAC}
-                                        onChange={handleChange}
-                                        id={`editAcCheck-${room.id}`}
-                                    />
-                                    <label className="form-check-label" htmlFor={`editAcCheck-${room.id}`}>
-                                        Air Conditioning (AC)
-                                    </label>
-                                </div>
-
-                                <div className="form-check mb-2">
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        name="hasWifi"
-                                        checked={editRoom.hasWifi}
-                                        onChange={handleChange}
-                                        id={`editWifiCheck-${room.id}`}
-                                    />
-                                    <label className="form-check-label" htmlFor={`editWifiCheck-${room.id}`}>
-                                        WiFi Available
-                                    </label>
-                                </div>
-
                                 <input
                                     type="text"
                                     className="form-control mb-2"
@@ -295,17 +229,16 @@ function RoomTypes() {
                                     onChange={handleChange}
                                     placeholder="Image URL"
                                 />
-
                                 <textarea
                                     className="form-control mb-2"
                                     name="description"
                                     value={editRoom.description}
                                     onChange={handleChange}
                                     rows={3}
-                                    placeholder="Short Description"
+                                    placeholder="Description"
                                 ></textarea>
 
-                                <button className="btn btn-success me-2" onClick={saveEdit}>
+                                <button className="btn btn-success mb-2" onClick={saveEdit}>
                                     Save
                                 </button>
                                 <button className="btn btn-secondary" onClick={cancelEdit}>
