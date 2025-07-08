@@ -1,19 +1,14 @@
-
-
-import './App.css'
-import RoomFacilities from './room facilities/RoomFacilities'
-
+import { RouterProvider } from "react-router";
+import router from "./routes/routes";
+import { Provider } from "react-redux";
+import store from "./app/store";
 
 function App() {
-
-
   return (
-    <>
-  
-      <RoomFacilities/>
-       
-    </>
-  )
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
 }
 
-export default App
+export default App;
