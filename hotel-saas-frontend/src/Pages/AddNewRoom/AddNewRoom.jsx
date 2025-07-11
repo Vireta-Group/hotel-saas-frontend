@@ -9,7 +9,7 @@ const amenitiesList = [
 const defaultRoom = {
     property: "",
     roomNo: "",
-    floor: "", // ✅ Added
+    floor: "",
     pricePerDay: "",
     beds: "",
     capacity: "",
