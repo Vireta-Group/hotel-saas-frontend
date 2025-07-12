@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHotel } from "@fortawesome/free-solid-svg-icons/faHotel";
-import "../../style/sidebar/sidebar.css"
+import { forwardRef } from "react";
+import "../../style/sidebar/sidebar.css";
 
-function Sidebar() {
+const Sidebar = forwardRef((props, ref) => {
   return (
-    <div className="sidebar" id="sidebar">
+    <div className="sidebar" id="sidebar" ref={ref}>
       <div className="logo">
         <h2>
           <i className="uil uil-apple-alt">
@@ -24,6 +25,6 @@ function Sidebar() {
       </div>
     </div>
   );
-}
+});
 
 export default Sidebar;
