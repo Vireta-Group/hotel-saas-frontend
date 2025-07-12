@@ -107,7 +107,7 @@ const AssetManagement = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">অফিস অ্যাসেট ম্যানেজমেন্ট</h2>
+      <h2 className="mb-4">office asset management</h2>
 
       <div className="d-flex justify-content-between mb-3">
         <input
@@ -118,26 +118,26 @@ const AssetManagement = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button className="btn btn-primary" onClick={openAddModal}>
-          নতুন অ্যাসেট যোগ করুন
+          add new asset
         </button>
       </div>
 
       <table className="table table-bordered table-hover">
         <thead className="table-light">
           <tr>
-            <th>নাম</th>
-            <th>ক্যাটাগরি</th>
-            <th>ক্রয়ের তারিখ</th>
-            <th>অবস্থান</th>
-            <th>স্ট্যাটাস</th>
-            <th>অ্যাকশন</th>
+            <th>name</th>
+            <th>category</th>
+            <th>Purchase Date</th>
+            <th>Location</th>
+            <th>status</th>
+            <th>action</th>
           </tr>
         </thead>
         <tbody>
           {filteredAssets.length === 0 ? (
             <tr>
               <td colSpan="6" className="text-center">
-                কোন তথ্য পাওয়া যায়নি
+                No information was found
               </td>
             </tr>
           ) : (
@@ -183,10 +183,8 @@ const AssetManagement = () => {
           >
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <div className="modal-header">
-                <h5 className="modal-title">
-                  {editAsset
-                    ? "অ্যাসেট সম্পাদনা করুন"
-                    : "নতুন অ্যাসেট যোগ করুন"}
+                <h5 class="modal-title">
+                  {editAsset ? "Edit Asset" : "Add New Asset"}
                 </h5>
                 <button
                   type="button"
@@ -197,7 +195,7 @@ const AssetManagement = () => {
               <form onSubmit={handleSubmit}>
                 <div className="modal-body">
                   <div className="mb-3">
-                    <label className="form-label">নাম</label>
+                    <label className="form-label">name</label>
                     <input
                       type="text"
                       name="name"
@@ -209,7 +207,7 @@ const AssetManagement = () => {
                   </div>
 
                   <div className="mb-3">
-                    <label className="form-label">ক্যাটাগরি</label>
+                    <label class="form-label">Category</label>
                     <select
                       name="category"
                       className="form-select"
@@ -217,16 +215,16 @@ const AssetManagement = () => {
                       onChange={handleChange}
                       required
                     >
-                      <option value="">-- নির্বাচন করুন --</option>
-                      <option value="Electronics">ইলেকট্রনিক্স</option>
-                      <option value="Furniture">ফার্নিচার</option>
-                      <option value="Stationery">স্টেশনারি</option>
-                      <option value="Other">অন্যান্য</option>
+                      <option value="">-- Select --</option>
+                      <option value="Electronics">Electronics</option>
+                      <option value="Furniture">Furniture</option>
+                      <option value="Stationery">Stationery</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
 
                   <div className="mb-3">
-                    <label className="form-label">ক্রয়ের তারিখ</label>
+                    <label class="form-label">Purchase Date</label>
                     <input
                       type="date"
                       name="purchaseDate"
@@ -238,7 +236,7 @@ const AssetManagement = () => {
                   </div>
 
                   <div className="mb-3">
-                    <label className="form-label">অবস্থান</label>
+                    <label className="form-label">Location</label>
                     <input
                       type="text"
                       name="location"
@@ -249,16 +247,16 @@ const AssetManagement = () => {
                   </div>
 
                   <div className="mb-3">
-                    <label className="form-label">স্ট্যাটাস</label>
+                    <label class="form-label">Status</label>
                     <select
                       name="status"
                       className="form-select"
                       value={formData.status}
                       onChange={handleChange}
                     >
-                      <option value="In Use">ব্যবহার হচ্ছে</option>
-                      <option value="Needs Repair">মেরামত দরকার</option>
-                      <option value="Inactive">নিষ্ক্রিয়</option>
+                      <option value="In Use">In Use</option>
+                      <option value="Needs Repair">Needs Repair</option>
+                      <option value="Inactive">Inactive</option>
                     </select>
                   </div>
                 </div>
@@ -269,10 +267,10 @@ const AssetManagement = () => {
                     className="btn btn-secondary"
                     onClick={() => setModalOpen(false)}
                   >
-                    বাতিল
+                    canal
                   </button>
                   <button type="submit" className="btn btn-primary">
-                    {editAsset ? "সংরক্ষণ করুন" : "যোগ করুন"}
+                    {editAsset ? "Save" : "Add"}
                   </button>
                 </div>
               </form>
