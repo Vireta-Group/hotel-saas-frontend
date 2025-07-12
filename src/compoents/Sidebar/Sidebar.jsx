@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHotel } from "@fortawesome/free-solid-svg-icons/faHotel";
 import { forwardRef } from "react";
+import "../../style/sidebar/sidebar.css";
 
 const Sidebar = forwardRef((props, ref) => {
   return (
@@ -17,8 +18,8 @@ const Sidebar = forwardRef((props, ref) => {
       <div className="sidebar-menu">
         <ul className="p-0">
           <li>
-            <i className="bi bi-person-fill"></i>
-            <span className="ms-2">User Management</span>
+            <i className="bi bi-building-fill"></i>
+            <span className="ms-2">Hotel Profile</span>
           </li>
         </ul>
       </div>

@@ -3,6 +3,7 @@ import Header from "../compoents/Header/Header";
 import Sidebar from "../compoents/Sidebar/Sidebar";
 import Footer from "../compoents/Footer/Footer";
 import { useRef } from "react";
+import "../style/main/main.css";
 
 function Root() {
   const sideBar = useRef(null);
@@ -12,11 +13,13 @@ function Root() {
     sideBar.current.classList.toggle("toggleMenu");
     mainContent.current.classList.toggle("toggleContent");
   };
+
   return (
     <>
       <Sidebar ref={sideBar} />
       <div ref={mainContent} className="main-content" id="main-content">
         <Header toggleHandler={toggleHandler} />
+
         <Outlet />
       </div>
 
