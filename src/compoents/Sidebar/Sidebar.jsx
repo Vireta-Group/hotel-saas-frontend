@@ -1,9 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHotel } from "@fortawesome/free-solid-svg-icons/faHotel";
+<<<<<<< HEAD
 
 function Sidebar() {
   return (
     <div className="sidebar" id="sidebar">
+=======
+import { forwardRef } from "react";
+import "../../style/sidebar/sidebar.css";
+
+const Sidebar = forwardRef((props, ref) => {
+  return (
+    <div className="sidebar" id="sidebar" ref={ref}>
+>>>>>>> omur
       <div className="logo">
         <h2>
           <i className="uil uil-apple-alt">
@@ -16,6 +25,7 @@ function Sidebar() {
       <div className="sidebar-menu">
         <ul className="p-0">
           <li>
+<<<<<<< HEAD
             <i className="bi bi-person-fill"></i>
             <span className="ms-2">User Management</span>
           </li>
@@ -67,10 +77,19 @@ function Sidebar() {
             <i className="bi bi-house-fill"></i>
             <span className="ms-2">Housekeeping Management</span>
           </li>
+=======
+            <i className="bi bi-building-fill"></i>
+            <span className="ms-2">Hotel Profile</span>
+          </li>
+>>>>>>> omur
         </ul>
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+});
+>>>>>>> omur
 
 export default Sidebar;

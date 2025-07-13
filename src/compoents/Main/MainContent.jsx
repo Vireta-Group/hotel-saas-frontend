@@ -1,5 +1,6 @@
 // components/MainContent.jsx
 import React from "react";
+<<<<<<< HEAD
 
 function MainContent({ isSidebarOpen }) {
   return (
@@ -240,6 +241,14 @@ function MainContent({ isSidebarOpen }) {
           </table>
         </div>
       </div>
+=======
+import "../../style/main/main.css";
+
+function MainContent() {
+  return (
+    <main>
+      <h1>this is main</h1>
+>>>>>>> omur
     </main>
   );
 }

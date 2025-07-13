@@ -6,6 +6,10 @@ const initialState = {
 
 const demoSlice = createSlice({
   name: "sidebar toggle",
+<<<<<<< HEAD
+=======
+
+>>>>>>> omur
   initialState,
   reducers: {
     demoRedu: (state, action) => {
