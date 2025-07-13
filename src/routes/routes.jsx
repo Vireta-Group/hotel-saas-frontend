@@ -8,6 +8,7 @@ import Root from "./Root";
 import MainContent from "../compoents/Main/MainContent";
 import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
+import RoomManegment from "../pages/roomManegment/Roommanegment";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
           <Route path="hotel-profile" element={<HotelProfile />} />
+          <Route path="room" element={<RoomManegment />} />
         </Route>
       </Route>
     </Route>
