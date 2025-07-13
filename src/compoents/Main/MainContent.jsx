@@ -1,6 +1,7 @@
 // components/MainContent.jsx
 import React from "react";
-import "../../style/main/main.css"
+
+import "../../style/main/main.css";
 
 function MainContent() {
   return (

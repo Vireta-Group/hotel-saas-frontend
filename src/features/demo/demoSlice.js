@@ -6,6 +6,7 @@ const initialState = {
 
 const demoSlice = createSlice({
   name: "demo",
+
   initialState,
   reducers: {
     demoRedu: (state, action) => {
