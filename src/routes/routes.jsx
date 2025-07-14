@@ -7,7 +7,8 @@ import ProtectRoutes from "./ProtectRoutes";
 import Root from "./Root";
 import MainContent from "../compoents/Main/MainContent";
 import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
-import BookingRegistration from "../pages/bookingRegistration/BookingRegistration";
+import SearchingRegistrate from "../pages/SearchingRegistrate/SearchingRegistrate";
+
 
 
 
@@ -19,7 +20,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
-           <Route path="BookingRegistration" element={<BookingRegistration></BookingRegistration>}/> 
+           <Route path="SearchingRegistrate" element={<SearchingRegistrate></SearchingRegistrate>}/> 
       
         </Route>
       </Route>

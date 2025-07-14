@@ -1,6 +1,6 @@
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
-function BookingRegistration() {
+function SearchingRegistrate () {
   return (
     <Container
       fluid
@@ -9,7 +9,7 @@ function BookingRegistration() {
     >
       <Row className="w-100 justify-content-center">
         <Col xs={12} sm={10} md={8} lg={6} xl={5} className="border rounded-3 p-4 shadow bg-white">
-          <h3 className="text-center mb-4">Booking Registration</h3>
+          <h4 className="text-center mb-3">Searching for   Registrate<br></br> user</h4>
           <Form>
             <Form.Group controlId="nid" className="mb-3">
               <Form.Label>NID Number</Form.Label>
@@ -36,4 +36,4 @@ function BookingRegistration() {
   );
 }
 
-export default BookingRegistration;
+export default SearchingRegistrate;
