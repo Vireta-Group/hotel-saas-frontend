@@ -8,6 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+<<<<<<< HEAD
+=======
+material
+>>>>>>> d098403091fc44dd67dc79347cbd03e90b237302
 dist
 dist-ssr
 *.local
@@ -21,4 +25,8 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
+<<<<<<< HEAD
+=======
+
+>>>>>>> d098403091fc44dd67dc79347cbd03e90b237302
 *.sw?

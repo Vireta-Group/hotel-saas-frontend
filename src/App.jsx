@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -15,3 +16,19 @@ function App() {
 }
 
 export default App
+=======
+import { RouterProvider } from "react-router";
+import router from "./routes/routes";
+import { Provider } from "react-redux";
+import store from "./app/store";
+
+function App() {
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
+}
+
+export default App;
+>>>>>>> d098403091fc44dd67dc79347cbd03e90b237302
