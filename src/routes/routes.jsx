@@ -15,6 +15,7 @@ import SearchingRegistrate from "../pages/SearchingRegistrate/SearchingRegistrat
 
 
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
+import UserInformation from "../pages/userInformation/UserInformation";
 
 
 const router = createBrowserRouter(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
           <Route index element={<MainContent />} />
 
            <Route path="SearchingRegistrate" element={<SearchingRegistrate></SearchingRegistrate>}/> 
+           <Route path="userInformation" element={<UserInformation></UserInformation>}/>
 
           <Route path="hotel-profile" element={<HotelProfile />} />
  
