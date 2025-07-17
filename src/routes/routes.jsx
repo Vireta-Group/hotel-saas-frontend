@@ -9,6 +9,7 @@ import MainContent from "../compoents/Main/MainContent";
 import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
 import AddNewRoom from '../pages/RoomManagement/AddNewRoom/AddNewRoom';
+import AllRooms from "../pages/RoomManagement/AllRooms/AllRooms";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
           <Route index element={<MainContent />} />
           <Route path="hotel-profile" element={<HotelProfile />} />
           <Route path="add-room" element={<AddNewRoom></AddNewRoom>}></Route>
+          <Route path="all-rooms" element={<AllRooms></AllRooms>}></Route>
         </Route>
       </Route>
     </Route>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import PopUp from '../../../popupAlert/PopUp/PopUp'
+
 
 const amenitiesList = [
     "TV", "Air Conditioning", "Heating", "Wifi", "Phone", "Minibar",
@@ -24,9 +26,12 @@ const defaultRoom = {
     amenities: []
 };
 
+
 function AddNewRoom() {
     const [newRoom, setNewRoom] = useState({ ...defaultRoom });
-    const [showSuccess, setShowSuccess] = useState(false);
+    //  const [showSuccess, setShowSuccess] = useState(false);
+
+    const [popup, setPopup] = useState(null);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -49,17 +54,31 @@ function AddNewRoom() {
             !newRoom.pricePerDay ||
             !newRoom.status
         ) {
-            return alert("Floor no, Room no, Room type, Price and Status are required");
+            // return alert("Floor no, Room no, Room type, Price and Status are required");
+            return setPopup({
+                type: "error",
+                message: "Please fill all fields",
+            });
         }
 
         const prevRooms = JSON.parse(localStorage.getItem("rooms")) || [];
         const updatedRooms = [...prevRooms, { ...newRoom, id: Date.now() }];
         localStorage.setItem("rooms", JSON.stringify(updatedRooms));
 
-        setShowSuccess(true);
+        // setShowSuccess(true);
+
+        // setTimeout(() => {
+        //     setShowSuccess(false);
+        //     navigate("/all-rooms");
+        // }, 2000);
+
+        setPopup({
+            type: "success",
+            message: "Room added successfully!",
+        });
 
         setTimeout(() => {
-            setShowSuccess(false);
+            setPopup(null);
             navigate("/all-rooms");
         }, 2000);
     };
@@ -67,7 +86,7 @@ function AddNewRoom() {
     return (
         <div className="container my-4 px-3 px-md-5 position-relative">
             {/* Success Alert */}
-            {showSuccess && (
+            {/* {showSuccess && (
                 <div
                     className="alert alert-success position-fixed top-0 end-0 m-3"
                     style={{ zIndex: 1050, minWidth: "250px" }}
@@ -75,7 +94,7 @@ function AddNewRoom() {
                 >
                     Room added successfully!
                 </div>
-            )}
+            )} */}
 
             <h3 className="text-center mb-4">Add New Room</h3>
 
@@ -278,6 +297,16 @@ function AddNewRoom() {
                 <button className="btn btn-primary mt-4 px-4" onClick={handleAddRoom}>
                     Add Room
                 </button>
+
+                {/* Show popup */}
+                {popup && (
+                    <PopUp
+                        type={popup.type}
+                        message={popup.message}
+                        duration={3000}
+                        onClose={() => setPopup(null)}
+                    />
+                )}
             </div>
         </div>
     );
