@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const demoSlice = createSlice({
-  name: "sidebar toggle",
+  name: "demo",
 
   initialState,
   reducers: {
