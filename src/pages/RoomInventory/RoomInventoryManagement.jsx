@@ -16,6 +16,9 @@ const customStyles = `
 export default function RoomInventoryManagement() {
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [inventoryItems, setInventoryItems] = useState([
+    { id: 1, name: "", quantity: 1, condition: "Good" },
+  ]);
 
   const properties = [
     {
@@ -36,17 +39,39 @@ export default function RoomInventoryManagement() {
     },
   ];
 
-  const inventoryData = [
-    { id: 1, name: "Sofa", quantity: 2, condition: "Good" },
-    { id: 2, name: "TV", quantity: 1, condition: "Excellent" },
-    { id: 3, name: "Mini Fridge", quantity: 1, condition: "Good" },
-  ];
-   
-  //This Find specific properties Room
-    const propertySelect = properties.find((p) => p.id === selectedProperty);
-    const availableRooms = propertySelect?.rooms || [];
-    const roomFind = availableRooms.find((r) => r.id === selectedRoom)
-    
+  const propertySelect = properties.find((p) => p.id === selectedProperty);
+  const availableRooms = propertySelect?.rooms || [];
+  const roomFind = availableRooms.find((r) => r.id === selectedRoom);
+
+  const conditionOptions = ["Excellent", "Good", "Fair", "Poor", "Broken"];
+
+  // Function to add a new inventory item
+  const handleAddInventory = () => {
+    setInventoryItems([
+      ...inventoryItems,
+      {
+        id: Date.now(),
+        name: "",
+        quantity: 1,
+        condition: "Good",
+      },
+    ]);
+  };
+
+  // Function to remove an inventory item
+  const handleRemoveItem = (id) => {
+    setInventoryItems(inventoryItems.filter((item) => item.id !== id));
+  };
+
+  // Handle input changes for inventory items
+  const handleInputChange = (id, field, value) => {
+    setInventoryItems(
+      inventoryItems.map((item) =>
+        item.id === id ? { ...item, [field]: value } : item
+      )
+    );
+  };
+
   return (
     <div className="container mt-4">
       {/* Inject custom CSS to remove hover effects */}
@@ -62,8 +87,6 @@ export default function RoomInventoryManagement() {
               onSelect={(id) => {
                 setSelectedProperty(Number(id));
                 setSelectedRoom(null);
-                // console.log(id);
-                
               }}
             >
               <Dropdown.Toggle
@@ -72,7 +95,7 @@ export default function RoomInventoryManagement() {
               >
                 <span className="text-truncate">
                   {selectedProperty
-                    ?propertySelect ?.name
+                    ? propertySelect?.name
                     : "Select Property"}
                 </span>
               </Dropdown.Toggle>
@@ -105,9 +128,7 @@ export default function RoomInventoryManagement() {
                 className="w-100 d-flex justify-content-between align-items-center no-hover"
               >
                 <span className="text-truncate">
-                  {selectedRoom
-                    ? roomFind ?.name
-                    : "Select Room"}
+                  {selectedRoom ? roomFind?.name : "Select Room"}
                 </span>
               </Dropdown.Toggle>
 
@@ -132,7 +153,7 @@ export default function RoomInventoryManagement() {
         <>
           <div className="d-flex justify-content-between align-items-center mb-3">
             <h4>Inventory Items</h4>
-            <Button variant="primary" size="sm">
+            <Button onClick={handleAddInventory} variant="primary" size="sm">
               <i className="bi bi-plus"></i> Add Item
             </Button>
           </div>
@@ -147,48 +168,57 @@ export default function RoomInventoryManagement() {
               </tr>
             </thead>
             <tbody>
-              {inventoryData.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td className="text-center">{item.quantity}</td>
-                  <td className="text-center">
-                    <span
-                      className={`badge rounded-pill ${
-                        item.condition === "Excellent"
-                          ? "bg-success"
-                          : item.condition === "Good"
-                          ? "bg-primary"
-                          : "bg-warning"
-                      }`}
-                    >
-                      {item.condition}
-                    </span>
-                  </td>
-                  <td className="text-center">
-                    <Button
-                      variant="outline-primary"
-                      size="sm"
-                      className="me-2"
-                    >
-                      <i className="bi bi-pencil"></i> Edit
-                    </Button>
-                    <Button variant="outline-danger" size="sm">
-                      <i className="bi bi-trash"></i> Remove
-                    </Button>
-                  </td>
-                </tr>
-              ))}
+              {inventoryItems.map((inventory) => {
+                return (
+                  <tr key={inventory.id}>
+                    <td>
+                      <Form.Control
+                        type="text"
+                        value={inventory.name}
+                        placeholder="Enter Asset"
+                        onChange={(e) =>
+                          handleInputChange(inventory.id, "name", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <Form.Control
+                        type="number"
+                        min={1}
+                        value={inventory.quantity}
+                        onChange={(e) =>
+                          handleInputChange(inventory.id, "quantity", Number(e.target.value))
+                        }
+                      />
+                    </td>
+                    <td>
+                      <Form.Select
+                        value={inventory.condition}
+                        onChange={(e) =>
+                          handleInputChange(inventory.id, "condition", e.target.value)
+                        }
+                      >
+                        {conditionOptions.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </Form.Select>
+                    </td>
+                    <td className="text-center">
+                      <Button
+                        variant="outline-danger"
+                        size="sm"
+                        onClick={() => handleRemoveItem(inventory.id)}
+                      >
+                        <i className="bi bi-trash"></i>
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </Table>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Notes</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={3}
-              placeholder="Enter any special notes about this room's inventory..."
-            />
-          </Form.Group>
 
           <div className="d-flex justify-content-end gap-2">
             <Button variant="outline-secondary">Cancel</Button>

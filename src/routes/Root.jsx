@@ -1,16 +1,7 @@
 import { Outlet } from "react-router";
-import Header from "../compoents/Header/Header";
+import Header from "../compoents/header/Header";
 import Sidebar from "../compoents/Sidebar/Sidebar";
-import Footer from "../compoents/Footer/Footer";
-<<<<<<< HEAD
-
-function Root() {
-  return (
-    <>
-      <Sidebar />
-      <div className="main-content" id="main-content">
-        <Header />
-=======
+import Footer from "../compoents/footer/Footer";
 import { useRef } from "react";
 import "../style/main/main.css";
 
@@ -29,7 +20,6 @@ function Root() {
       <div ref={mainContent} className="main-content" id="main-content">
         <Header toggleHandler={toggleHandler} />
 
->>>>>>> omur
         <Outlet />
       </div>
 

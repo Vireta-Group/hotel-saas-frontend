@@ -7,10 +7,11 @@ import ProtectRoutes from "./ProtectRoutes";
 import Root from "./Root";
 import MainContent from "../compoents/Main/MainContent";
 import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
-<<<<<<< HEAD
-=======
+
+
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
->>>>>>> omur
+import RoomInventoryManagement from "../pages/RoomInventory/RoomInventoryManagement";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,10 +20,10 @@ const router = createBrowserRouter(
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
-<<<<<<< HEAD
-=======
+
+
           <Route path="hotel-profile" element={<HotelProfile />} />
->>>>>>> omur
+          <Route path="room-inventory" element={<RoomInventoryManagement/>}/>
         </Route>
       </Route>
     </Route>

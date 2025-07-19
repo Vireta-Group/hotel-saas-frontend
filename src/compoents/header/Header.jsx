@@ -1,23 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-<<<<<<< HEAD
-
-function Header() {
-=======
 import "../../style/header/header.css";
 
 function Header({ toggleHandler }) {
->>>>>>> omur
   return (
     <header className="flex">
       <h2>
         <i className="uil uil-bars" id="menu-icon">
           <FontAwesomeIcon
-<<<<<<< HEAD
-            // onClick={toggleHandler}
-=======
             onClick={toggleHandler}
->>>>>>> omur
             icon={faBars}
             style={{ cursor: "pointer", marginRight: "10px" }}
           />
