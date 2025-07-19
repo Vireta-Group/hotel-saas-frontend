@@ -1,7 +1,10 @@
 import { Outlet } from "react-router";
 import Header from "../compoents/header/Header";
 import Sidebar from "../compoents/Sidebar/Sidebar";
-import Footer from "../compoents/footer/Footer";
+import Footer from "../compoents/Footer/Footer";
+
+import "../style/main/main.css";
+
 import { useRef } from "react";
 import "../style/main/main.css";
 

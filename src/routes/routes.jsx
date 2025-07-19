@@ -12,6 +12,13 @@ import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
 import RoomInventoryManagement from "../pages/RoomInventory/RoomInventoryManagement";
 
+import AddNewRoom from "../pages/RoomManagement/AddNewRoom/AddNewRoom";
+import AllRooms from "../pages/RoomManagement/AllRooms/AllRooms";
+
+import AssetManagement from "../pages/AssetManagement/AssetManagement";
+import OfficeAsset from "../pages/OfficeAsset/OfficeAsset";
+import WalkInFrom from "../compoents/booking/WalkInForm";
+import Registration from "../compoents/booking/RegistrationForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +31,14 @@ const router = createBrowserRouter(
 
           <Route path="hotel-profile" element={<HotelProfile />} />
           <Route path="room-inventory" element={<RoomInventoryManagement/>}/>
+
+          <Route path="asset-management" element={<AssetManagement />} />
+          <Route path="office-asset" element={<OfficeAsset />} />
+
+          <Route path="walkin" element={<WalkInFrom />} />
+          <Route path="registration" element={<Registration />} />
+          <Route path="add-room" element={<AddNewRoom />} />
+          <Route path="all-rooms" element={<AllRooms />} />
         </Route>
       </Route>
     </Route>
