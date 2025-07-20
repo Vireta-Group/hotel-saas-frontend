@@ -7,7 +7,11 @@ import ProtectRoutes from "./ProtectRoutes";
 import Root from "./Root";
 import MainContent from "../compoents/Main/MainContent";
 import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
+
+
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
+import RoomInventoryManagement from "../pages/RoomInventory/RoomInventoryManagement";
+
 import AddNewRoom from "../pages/RoomManagement/AddNewRoom/AddNewRoom";
 import AllRooms from "../pages/RoomManagement/AllRooms/AllRooms";
 
@@ -15,6 +19,7 @@ import AssetManagement from "../pages/AssetManagement/AssetManagement";
 import OfficeAsset from "../pages/OfficeAsset/OfficeAsset";
 import WalkInFrom from "../compoents/booking/WalkInForm";
 import Registration from "../compoents/booking/RegistrationForm";
+import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/EmployeeJobroleProfile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,7 +28,10 @@ const router = createBrowserRouter(
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
+
+          <Route path="employee-job-profile" element={<EmployeeJobroleProfile/>}/>
           <Route path="hotel-profile" element={<HotelProfile />} />
+          <Route path="room-inventory" element={<RoomInventoryManagement/>}/>
 
           <Route path="asset-management" element={<AssetManagement />} />
           <Route path="office-asset" element={<OfficeAsset />} />
