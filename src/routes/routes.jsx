@@ -15,6 +15,7 @@ import AssetManagement from "../pages/AssetManagement/AssetManagement";
 import OfficeAsset from "../pages/OfficeAsset/OfficeAsset";
 import WalkInFrom from "../compoents/booking/WalkInForm";
 import Registration from "../compoents/booking/RegistrationForm";
+import EmployeeProfileDocument from "../pages/hrmPayroll/employeeProfileDocument/EmployeeProfileDocument";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
           <Route path="registration" element={<Registration />} />
           <Route path="add-room" element={<AddNewRoom />} />
           <Route path="all-rooms" element={<AllRooms />} />
+          <Route path="employee-profile" element={<EmployeeProfileDocument></EmployeeProfileDocument>}></Route>
         </Route>
       </Route>
     </Route>
