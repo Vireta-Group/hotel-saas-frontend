@@ -21,6 +21,10 @@ import Registration from "../compoents/booking/RegistrationForm";
 import EmployeeProfile from "../pages/hrmPayroll/EmployeeProfile/EmployeeProfile";
 import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/EmployeeJobroleProfile";
 
+import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
+import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
+import AdminLeaveDetailList from "../pages/leaveManagement/AdminLeaveDetailList/AdminLeaveDetailList";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<div>page not found</div>}>
@@ -44,6 +48,13 @@ const router = createBrowserRouter(
           <Route path="add-room" element={<AddNewRoom />} />
           <Route path="all-rooms" element={<AllRooms />} />
           <Route path="employee-profile" element={<EmployeeProfile />} />
+
+          <Route path="search-leave" element={<SearchLeave />} />
+          <Route
+            path="admin-leave-detaillist"
+            element={<AdminLeaveDetailList />}
+          />
+          <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
         </Route>
       </Route>
     </Route>
