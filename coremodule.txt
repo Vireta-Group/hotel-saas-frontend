@@ -1,0 +1,109 @@
+3. booking and reservation
+
+1. walk-in 
+	Name, Father, Mother, Address, NID-Dob, Mobile, Check-In date and Check-Out date {booking info- price, room 	number, status(pending or confirm)}
+
+2. registration 
+	1. NID-DOB, Mobile, Search,
+	2. Name, Father, Mother (With Bangla and English), Address (Full {Dis-Upazilla-Union-Village-Holding No}), NID-			Dob, Mobile, Check-In date and Check-Out date {booking 	info}
+
+3. data table {Manage Booking List Data Table view with filter by date, room, guest, status}
+
+
+
+settings and configuration
+	1. settings
+		1. hotel logo, hotel name, hotel, hotel address, hotel number(2), hotel email,
+	2.notifications
+ 		1.booking reminders, payment, room cleaning pending,  E attendance notification, E leave notification, House keeping schedule,{active 			and inactive}
+
+
+
+
+
+HRM and Payroll Modules 
+
+	1.eploye management
+		1.employe personal profile
+			name, father name, {cv}, bank detail {form}
+		2.employ job role profile
+			degination, salary, duty time, shift, monthly leave, off day, EID, yearly leave{form}
+		3. documents
+			personal profile and rob role profile {report file} {bangla and English for print}
+		4. search form(EID, search button{module(total salary for the day, reason, submit[conformation module])})
+
+
+
+
+
+
+
+attendance and shift management
+
+	1. Biometric/API
+	2. form employee id, name, degignation, check-in and check-out time, total duty time,
+	3. Roster Schedule {amader decided korte hobe kivabe handler korbo hobe}
+
+
+leave management 
+	1. search form {EID}
+		1. deatail table { total leaver, total spend leave, spend leave detail{reason, date, status(pending, approve, spend)}, obosistho leave, button for request{model(date to date, reason)}.
+
+		2. leave detail form for HRM {EID, name, regignation,reason, total, leave, total spend leave, spend leave detail, approve(model{date to date, leave without pay or leave with pay}), reject(model{reason})}
+
+
+	
+
+
+
+
+
+
+
+1. form search (date picker)
+	1. form employee id, name, degignation, check-in and check-out time(24hours), total duty time, submite button{module(today attendence already submitted)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+12. 
+	3. job role attendance{EID, month-year (search form)}
+		1. table {date, check-in, check-out, total hours, action(for edit {module(check-in, check-out, total hours not editable, date not editable)}))}
+
+
+
+*. accounting module
+	1. bank page {bank detail + balance} form and data table bank detail
+	2. earn category form{category name, status(assets, not assets), category description,}
+	3. expense category form {category name, status(assets, not assets), category description}
+	4. earning form {date, category name, total earning, submit button}
+	5. expense form{category name, total expense, date, voucher number, submit button}
+	6. back form {two tab}
+		1. withdraw{date, bank name, account number, check number, amount, submit button}
+		2. deposit {date, bank name, account number, slipe number, amount , submit button}
+	7. monthly cash book 
+	8. monthly ledger
+	9. trail shit
+	10. final statement  
+
+
+
+	
+
+
+
+
+
+
+
+
+	
