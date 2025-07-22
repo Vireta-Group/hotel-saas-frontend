@@ -20,6 +20,7 @@ import OfficeAsset from "../pages/OfficeAsset/OfficeAsset";
 import WalkInFrom from "../compoents/booking/WalkInForm";
 import Registration from "../compoents/booking/RegistrationForm";
 import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/EmployeeJobroleProfile";
+import SettingsAndConfigureForm from "../pages/settingsAndConfiguration/settings/SettingsAndConfigureForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
 
           <Route path="asset-management" element={<AssetManagement />} />
           <Route path="office-asset" element={<OfficeAsset />} />
+          <Route path="setting-and-configure-form" element={<SettingsAndConfigureForm/>}/>
 
           <Route path="walkin" element={<WalkInFrom />} />
           <Route path="registration" element={<Registration />} />
