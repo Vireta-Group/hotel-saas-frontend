@@ -21,7 +21,9 @@ const bookings = [
   { id: "B017", guestName: "Rezwana Ahmed", email: "rezwana@example.com", phone: "01710000016", roomNumber: "217", roomType: "Deluxe AC", status: "Pending" },
   { id: "B018", guestName: "Sakib Rahman", email: "sakib@example.com", phone: "01710000017", roomNumber: "218", roomType: "Suite", status: "Cancelled" },
   { id: "B019", guestName: "Nabila Karim", email: "nabila@example.com", phone: "01710000018", roomNumber: "219", roomType: "Standard Non-AC", status: "Checked-in" },
-  { id: "B020", guestName: "Riyad Khan", email: "riyad@example.com", phone: "01710000019", roomNumber: "220", roomType: "Deluxe AC", status: "Confirmed" }
+  { id: "B020", guestName: "Riyad Khan", email: "riyad@example.com", phone: "01710000019", roomNumber: "220", roomType: "Deluxe AC", status: "Confirmed" },
+
+
 ];
 
 const UserInformation = () => {

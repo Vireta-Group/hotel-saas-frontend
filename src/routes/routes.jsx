@@ -16,6 +16,7 @@ import SearchingRegistrate from "../pages/SearchingRegistrate/SearchingRegistrat
 
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
 import UserInformation from "../pages/userInformation/UserInformation";
+import EmployeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/EmployeJobroleProfile";
 
 
 const router = createBrowserRouter(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
            <Route path="userInformation" element={<UserInformation></UserInformation>}/>
 
           <Route path="hotel-profile" element={<HotelProfile />} />
+          <Route path='employJobRole' element={<EmployeJobroleProfile/>}></Route>
  
         </Route>
       </Route>
