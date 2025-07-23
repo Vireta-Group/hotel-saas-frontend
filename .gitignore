@@ -1,3 +1,4 @@
+node_modules
 # Logs
 logs
 *.log
@@ -9,9 +10,13 @@ lerna-debug.log*
 
 node_modules
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 material
 >>>>>>> d098403091fc44dd67dc79347cbd03e90b237302
+=======
+material
+>>>>>>> 1ec8137b4ebe2b39e7b13395054e8ae926b49d0d
 dist
 dist-ssr
 *.local
@@ -26,7 +31,11 @@ dist-ssr
 *.njsproj
 *.sln
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d098403091fc44dd67dc79347cbd03e90b237302
+=======
+
+>>>>>>> 1ec8137b4ebe2b39e7b13395054e8ae926b49d0d
 *.sw?
