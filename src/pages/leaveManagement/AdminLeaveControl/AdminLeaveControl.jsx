@@ -176,11 +176,11 @@ const AdminLeaveManagement = () => {
   };
 
   // Calculate total days between two dates
-  const calculateDays = (from, to) => {
-    const fromDate = new Date(from);
-    const toDate = new Date(to);
-    return Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24)) + 1;
-  };
+  // const calculateDays = (from, to) => {
+  //   const fromDate = new Date(from);
+  //   const toDate = new Date(to);
+  //   return Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24)) + 1;
+  // };
 
   return (
     <div className="container-fluid py-4">
