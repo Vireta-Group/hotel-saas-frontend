@@ -20,10 +20,12 @@ import WalkInFrom from "../compoents/booking/WalkInForm";
 import Registration from "../compoents/booking/RegistrationForm";
 import EmployeeProfile from "../pages/hrmPayroll/EmployeeProfile/EmployeeProfile";
 import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/EmployeeJobroleProfile";
+import SettingsAndConfigureForm from "../pages/settingsAndConfiguration/settings/SettingsAndConfigureForm";
 
 import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
+import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,6 +44,7 @@ const router = createBrowserRouter(
 
           <Route path="asset-management" element={<AssetManagement />} />
           <Route path="office-asset" element={<OfficeAsset />} />
+          <Route path="setting-and-configure-form" element={<SettingsAndConfigureForm/>}/>
 
           <Route path="walkin" element={<WalkInFrom />} />
           <Route path="registration" element={<Registration />} />
@@ -53,6 +56,7 @@ const router = createBrowserRouter(
 
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
+          <Route path="job-role-attendance" element={<JobRoleAttendance />} />
         </Route>
       </Route>
     </Route>
