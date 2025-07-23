@@ -37,10 +37,10 @@ export default function SettingsAndConfigureForm() {
             </Col>
             <Col md={6}>
               <Form.Group controlId="hotelNumber">
-                <Form.Label>Hotel Number</Form.Label>
+                <Form.Label>Whats app Number</Form.Label>
                 <Form.Control
                   type="Number"
-                  placeholder="Enter hotel number"
+                  placeholder="Enter whats app number"
                   required
                 />
               </Form.Group>
@@ -89,19 +89,6 @@ export default function SettingsAndConfigureForm() {
                 <Form.Control
                   type="tel"
                   placeholder="Enter hotel Phone Number"
-                  required
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-          {/* Website */}
-          <Row className="card-body">
-            <Col md={6}>
-              <Form.Group controlId="hotelWebsite">
-                <Form.Label>Website</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter website url"
                   required
                 />
               </Form.Group>
