@@ -23,7 +23,7 @@ import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/E
 
 import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
-import AdminLeaveDetailList from "../pages/leaveManagement/AdminLeaveDetailList/AdminLeaveDetailList";
+import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -50,11 +50,9 @@ const router = createBrowserRouter(
           <Route path="employee-profile" element={<EmployeeProfile />} />
 
           <Route path="search-leave" element={<SearchLeave />} />
-          <Route
-            path="admin-leave-detaillist"
-            element={<AdminLeaveDetailList />}
-          />
+
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
+          <Route path="admin-leave-control" element={<AdminLeaveControl />} />
         </Route>
       </Route>
     </Route>
