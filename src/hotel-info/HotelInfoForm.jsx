@@ -18,7 +18,7 @@ const HotelInfoForm = () => {
 
         <Form.Group className="mb-3">
           <Form.Label>Email<span className="text-danger">*</span></Form.Label>
-          <Form.Control type="email" placeholder="demo@email.com" disabled />
+          <Form.Control type="email" placeholder="demo@email.com"  />
         </Form.Group>
 
         <Form.Group className="mb-3">

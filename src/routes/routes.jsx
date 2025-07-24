@@ -24,6 +24,7 @@ import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/E
 import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveDetailList from "../pages/leaveManagement/AdminLeaveDetailList/AdminLeaveDetailList";
+import HotelInfoForm from "../hotel-info/HotelInfoForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -55,6 +56,7 @@ const router = createBrowserRouter(
             element={<AdminLeaveDetailList />}
           />
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
+          <Route path="hotel-info" element={<HotelInfoForm />} />
         </Route>
       </Route>
     </Route>
