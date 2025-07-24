@@ -27,6 +27,8 @@ import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
 
+import BankPage from "../coreModule/accounting/backPage/BackPage";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<div>page not found</div>}>
@@ -44,7 +46,10 @@ const router = createBrowserRouter(
 
           <Route path="asset-management" element={<AssetManagement />} />
           <Route path="office-asset" element={<OfficeAsset />} />
-          <Route path="setting-and-configure-form" element={<SettingsAndConfigureForm/>}/>
+          <Route
+            path="setting-and-configure-form"
+            element={<SettingsAndConfigureForm />}
+          />
 
           <Route path="walkin" element={<WalkInFrom />} />
           <Route path="registration" element={<Registration />} />
@@ -57,6 +62,7 @@ const router = createBrowserRouter(
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
+          <Route path="bank" element={<BankPage />} />
         </Route>
       </Route>
     </Route>
