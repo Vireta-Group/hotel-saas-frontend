@@ -35,6 +35,7 @@ import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
+import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceCategorey";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -72,6 +73,7 @@ const router = createBrowserRouter(
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
+          <Route path="exepenceCategorey" element={<ExpenceCategorey/>}/>
         </Route>
       </Route>
     </Route>
