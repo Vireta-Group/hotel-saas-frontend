@@ -8,7 +8,16 @@ import Root from "./Root";
 import MainContent from "../compoents/Main/MainContent";
 import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
 
+import SearchingRegistrate from "../pages/SearchingRegistrate/SearchingRegistrate";
+
+
+
+
+
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
+import UserInformation from "../pages/userInformation/UserInformation";
+import EmployeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/EmployeJobroleProfile";
+
 import RoomInventoryManagement from "../pages/RoomInventory/RoomInventoryManagement";
 
 import AddNewRoom from "../pages/RoomManagement/AddNewRoom/AddNewRoom";
@@ -36,6 +45,13 @@ const router = createBrowserRouter(
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
           <Route path="earn-category-form" element={<EarnCategory/>}/>
+
+           <Route path="SearchingRegistrate" element={<SearchingRegistrate></SearchingRegistrate>}/> 
+           <Route path="userInformation" element={<UserInformation></UserInformation>}/>
+
+          <Route path="hotel-profile" element={<HotelProfile />} />
+          <Route path='employJobRole' element={<EmployeJobroleProfile/>}></Route>
+ 
           <Route
             path="employee-job-profile"
             element={<EmployeeJobroleProfile />}
