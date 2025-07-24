@@ -30,9 +30,23 @@ const EmployeJobroleProfile = () => {
         className="p-4 shadow rounded bg-light border"
         style={{ maxWidth: '900px', margin: '0 auto' }}
       >
-        <h3 className="text-center mb-4 text-primary">Employee Job Role/Profile Form</h3>
+        <h3 className="text-center mb-4 text-primary">Employee Job Role</h3>
         <Form onSubmit={handleSubmit}>
-          <Row className="g-3">
+          <Row className="g-3"> 
+            <Col md={6}>
+              <Form.Group controlId="employEid">
+                <Form.Label>EID</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="employID"
+                  value={formData.eidHoliday}
+                  onChange={handleChange}
+                  placeholder='employ ID'
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <col />
             <Col md={6}>
               <Form.Group controlId="designation">
                 <Form.Label>Designation</Form.Label>
@@ -116,18 +130,19 @@ const EmployeJobroleProfile = () => {
                 </Form.Select>
               </Form.Group>
             </Col>
-            <Col md={6}>
+            {/* <Col md={6}>
               <Form.Group controlId="eidHoliday">
-                <Form.Label>Eid Holiday (days)</Form.Label>
+                <Form.Label>EID</Form.Label>
                 <Form.Control
                   type="number"
                   name="eidHoliday"
                   value={formData.eidHoliday}
                   onChange={handleChange}
+                  placeholder='employ ID'
                   required
                 />
               </Form.Group>
-            </Col>
+            </Col> */}
             <Col md={6}>
               <Form.Group controlId="yearlyLeave">
                 <Form.Label>Yearly Leave</Form.Label>
