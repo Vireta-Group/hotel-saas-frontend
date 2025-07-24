@@ -10,10 +10,6 @@ import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
 
 import SearchingRegistrate from "../pages/SearchingRegistrate/SearchingRegistrate";
 
-
-
-
-
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
 import UserInformation from "../pages/userInformation/UserInformation";
 import EmployeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/EmployeJobroleProfile";
@@ -35,8 +31,9 @@ import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
+import EarnCategory from "../coreModule/earnCategory/EarnCategory";
 
-import BankPage from "../coreModule/accounting/backPage/BackPage";
+import BankPage from "../coreModule/accounting/bankPage/BankPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,13 +42,23 @@ const router = createBrowserRouter(
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
+          <Route path="earn-category-form" element={<EarnCategory />} />
 
-           <Route path="SearchingRegistrate" element={<SearchingRegistrate></SearchingRegistrate>}/> 
-           <Route path="userInformation" element={<UserInformation></UserInformation>}/>
+          <Route
+            path="SearchingRegistrate"
+            element={<SearchingRegistrate></SearchingRegistrate>}
+          />
+          <Route
+            path="userInformation"
+            element={<UserInformation></UserInformation>}
+          />
 
           <Route path="hotel-profile" element={<HotelProfile />} />
-          <Route path='employJobRole' element={<EmployeJobroleProfile/>}></Route>
- 
+          <Route
+            path="employJobRole"
+            element={<EmployeJobroleProfile />}
+          ></Route>
+
           <Route
             path="employee-job-profile"
             element={<EmployeeJobroleProfile />}
@@ -83,5 +90,4 @@ const router = createBrowserRouter(
     </Route>
   )
 );
-
 export default router;
