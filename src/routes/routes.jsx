@@ -35,6 +35,7 @@ import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
+import EarnCategory from "../coreModule/earnCategory/EarnCategory";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,6 +44,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
+          <Route path="earn-category-form" element={<EarnCategory/>}/>
 
            <Route path="SearchingRegistrate" element={<SearchingRegistrate></SearchingRegistrate>}/> 
            <Route path="userInformation" element={<UserInformation></UserInformation>}/>
@@ -59,7 +61,10 @@ const router = createBrowserRouter(
 
           <Route path="asset-management" element={<AssetManagement />} />
           <Route path="office-asset" element={<OfficeAsset />} />
-          <Route path="setting-and-configure-form" element={<SettingsAndConfigureForm/>}/>
+          <Route
+            path="setting-and-configure-form"
+            element={<SettingsAndConfigureForm />}
+          />
 
           <Route path="walkin" element={<WalkInFrom />} />
           <Route path="registration" element={<Registration />} />
@@ -77,5 +82,4 @@ const router = createBrowserRouter(
     </Route>
   )
 );
-
 export default router;
