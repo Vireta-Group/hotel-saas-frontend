@@ -1,6 +1,6 @@
 .sidebar {
   width: 270px;
-  position: absolute;
+  position: static;
   height: 100%;
   left: 0;
   top: 0;
