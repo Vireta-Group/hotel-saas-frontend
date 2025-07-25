@@ -1,5 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHotel } from "@fortawesome/free-solid-svg-icons/faHotel";
+
+import "../../style/sidebar/sidebar.css";
+
 import { forwardRef } from "react";
 import "../../style/sidebar/sidebar.css";
 

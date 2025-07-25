@@ -11,14 +11,15 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js"; // includes Popper
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 
-// font 
-import '@fontsource/poppins/300.css';
-import '@fontsource/poppins/400.css';
-import '@fontsource/poppins/500.css';
-import '@fontsource/poppins/700.css';
+// font
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/700.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
   </StrictMode>
 );
+
