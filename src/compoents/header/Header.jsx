@@ -4,7 +4,7 @@ import "../../style/header/header.css";
 
 function Header({ toggleHandler }) {
   return (
-    <header className="flex">
+    <header className="flex ">
       <h2>
         <i className="uil uil-bars" id="menu-icon">
           <FontAwesomeIcon

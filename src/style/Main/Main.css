@@ -5,6 +5,8 @@
 
 main {
   padding: 30px 20px;
+  height: 200vh;
+  background-color: red;
 }
 
 .toggleContent {

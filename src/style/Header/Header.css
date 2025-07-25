@@ -9,6 +9,8 @@
 header {
   padding: 15px 30px;
   box-shadow: var(--shadow);
+  z-index: 1000;
+  
 }
 
 header h2 {

@@ -5,7 +5,7 @@ import "../../style/sidebar/sidebar.css";
 
 const Sidebar = forwardRef((props, ref) => {
   return (
-    <div className="sidebar" id="sidebar" ref={ref}>
+    <div className="sidebar position-fixed" id="sidebar" ref={ref}>
       <div className="logo">
         <h2>
           <i className="uil uil-apple-alt">
