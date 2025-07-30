@@ -25,7 +25,7 @@ import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveDetailList from "../pages/leaveManagement/AdminLeaveDetailList/AdminLeaveDetailList";
 import ExpenseForm from "../coreModule/expenseForm/expenseForm";
-import ExpenseReport from "../coreModule/ExpenseReport";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -58,7 +58,6 @@ const router = createBrowserRouter(
           />
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="expense-form" element={<ExpenseForm></ExpenseForm>}></Route>
-          <Route path="expense-report" element={<ExpenseReport></ExpenseReport>}></Route>
         </Route>
       </Route>
     </Route>
