@@ -35,6 +35,8 @@ import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceC
 import EarnCategory from "../coreModule/earnCategory/EarnCategory";
 
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
+import Deposit from "../coreModule/bankForm/deposit/Deposit";
+import RootBankForm from "../coreModule/bankForm/rootBankForm/rootBankForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -85,8 +87,10 @@ const router = createBrowserRouter(
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
-          <Route path="exepenceCategorey" element={<ExpenceCategorey/>}/>
+          <Route path="exepenceCategorey" element={<ExpenceCategorey />} />
           <Route path="bank" element={<BankPage />} />
+          <Route path="deposit" element={<Deposit />} />
+          <Route path="root-bank-form" element={<RootBankForm />} />
         </Route>
       </Route>
     </Route>
