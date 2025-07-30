@@ -35,6 +35,7 @@ import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceC
 import EarnCategory from "../coreModule/earnCategory/EarnCategory";
 
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
+import Withdraw from "../coreModule/bankForm/withdraw/Withdraw";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -87,6 +88,7 @@ const router = createBrowserRouter(
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
           <Route path="exepenceCategorey" element={<ExpenceCategorey/>}/>
           <Route path="bank" element={<BankPage />} />
+          <Route path="withdraw" element={<Withdraw/>}/>
         </Route>
       </Route>
     </Route>
