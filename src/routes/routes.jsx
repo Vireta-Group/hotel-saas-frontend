@@ -36,6 +36,7 @@ import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
 import EarnCategory from "../coreModule/earnCategory/EarnCategory";
+import EarningForm from "../coreModule/earningForm/EarningForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,7 +46,7 @@ const router = createBrowserRouter(
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
           <Route path="earn-category-form" element={<EarnCategory/>}/>
-
+          <Route path="earning-form" element={<EarningForm/>} />
            <Route path="SearchingRegistrate" element={<SearchingRegistrate></SearchingRegistrate>}/> 
            <Route path="userInformation" element={<UserInformation></UserInformation>}/>
 
