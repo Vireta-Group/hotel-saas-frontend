@@ -29,6 +29,7 @@ import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminL
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
 import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceCategorey";
 import EarnCategory from "../coreModule/earnCategory/EarnCategory";
+import EarningForm from "../coreModule/earningForm/EarningForm";
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
 import Withdraw from "../coreModule/bankForm/withdraw/Withdraw";
 
@@ -39,6 +40,11 @@ const router = createBrowserRouter(
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
+          <Route path="earn-category-form" element={<EarnCategory/>}/>
+          <Route path="earning-form" element={<EarningForm/>} />
+           <Route path="SearchingRegistrate" element={<SearchingRegistrate></SearchingRegistrate>}/> 
+           <Route path="userInformation" element={<UserInformation></UserInformation>}/>
+
           <Route path="earn-category-form" element={<EarnCategory />} />
           <Route
             path="SearchingRegistrate"
