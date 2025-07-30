@@ -32,6 +32,7 @@ import EarnCategory from "../coreModule/earnCategory/EarnCategory";
 import EarningForm from "../coreModule/earningForm/EarningForm";
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
 import Withdraw from "../coreModule/bankForm/withdraw/Withdraw";
+import AddTableForm from "../coreModule/restaurant/addTable/AddTable";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -84,6 +85,7 @@ const router = createBrowserRouter(
           <Route path="exepenceCategorey" element={<ExpenceCategorey />} />
           <Route path="bank" element={<BankPage />} />
           <Route path="withdraw" element={<Withdraw />} />
+          <Route path="add-table" element={<AddTableForm></AddTableForm>}></Route>
         </Route>
       </Route>
     </Route>
