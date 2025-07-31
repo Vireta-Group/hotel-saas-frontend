@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { FaArrowLeft, FaArrowUp, FaPlus } from "react-icons/fa";
-import "../../../style/coreModule/bankFrom/withdraw.css";
+import "../../../../style/coreModule/bankFrom/withdraw.css";
 
 const Withdraw = () => {
   const [formData, setFormData] = useState({

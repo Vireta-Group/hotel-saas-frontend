@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container, Button, Form } from "react-bootstrap";
 import { FaArrowLeft, FaArrowUp, FaPlus } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import "../../../style/coreModule/bankFrom/deposit.css";
+import { useNavigate } from "react-router";
+import "../../../../style/coreModule/bankFrom/deposit.css";
 
 const DepositForm = () => {
   const navigate = useNavigate();
@@ -21,7 +21,6 @@ const DepositForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Deposit submitted:", form);
   };
 
   return (

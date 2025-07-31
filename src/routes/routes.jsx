@@ -27,15 +27,15 @@ import HotelInfoForm from "../hotel-info/HotelInfoForm";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
 import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceCategorey";
-import EarnCategory from "../coreModule/earnCategory/EarnCategory";
+import EarnCategory from "../coreModule/accounting/earnCategory/EarnCategory";
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
-import Deposit from "../coreModule/bankForm/deposit/Deposit";
-import RootBankForm from "../coreModule/bankForm/rootBankForm/rootBankForm";
-import Withdraw from "../coreModule/bankForm/withdraw/Withdraw";
+import Deposit from "../coreModule/accounting/bankForm/deposit/Deposit";
+import RootBankForm from "../coreModule/accounting/bankForm/rootBankForm/rootBankForm";
+import Withdraw from "../coreModule/accounting/bankForm/withdraw/Withdraw";
 import AddTableForm from "../coreModule/restaurant/addTable/AddTable";
 import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
-import EarningForm from "../coreModule/earningForm/EarningForm";
-
+import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
+import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,12 +44,18 @@ const router = createBrowserRouter(
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
-
+          <Route path="add-table" element={<AddTableForm />} />
           <Route path="earn-category-form" element={<EarnCategory />} />
           <Route path="earning-form" element={<EarningForm />} />
-          <Route path="SearchingRegistrate" element={<SearchingRegistrate></SearchingRegistrate>} />
-          <Route path="userInformation" element={<UserInformation></UserInformation>} />
-
+          <Route path="expense-form" element={<ExpenseForm />} />
+          <Route
+            path="SearchingRegistrate"
+            element={<SearchingRegistrate></SearchingRegistrate>}
+          />
+          <Route
+            path="userInformation"
+            element={<UserInformation></UserInformation>}
+          />
 
           <Route path="earn-category-form" element={<EarnCategory />} />
           <Route path="earning-form" element={<EarningForm />} />

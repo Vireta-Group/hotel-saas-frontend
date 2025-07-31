@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { FaArrowUp, FaArrowDown, FaBuilding, FaWallet } from "react-icons/fa";
-import "../../../style/coreModule/bankFrom/rootBankForm.css";
+import "../../../../style/coreModule/bankFrom/rootBankForm.css";
 
 import { useNavigate } from "react-router-dom";
 
