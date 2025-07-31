@@ -1,0 +1,14 @@
+.deposit-hero {
+  background: linear-gradient(135deg, #e53935, #f6685e);
+}
+
+.bg-light {
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+/* DepositPage.css */
+.custom-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
