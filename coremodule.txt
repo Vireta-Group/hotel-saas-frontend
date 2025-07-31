@@ -100,9 +100,9 @@ leave management
 	5. add table form {table number, table sets}
 	6. order form {two button(table or room sirvice)}
 
-		1. table {table number(dropdown), order number, (item image, item name, food variant, quountity, discount, price)maltiple, item name and quantity and price, total, total + discount, total amount,comments, is paid or not, check-out button} edite before payment after payment any one cann't change or edite.
+		1. table form {table number(dropdown), order number, ( food variant, quountity, discount, price)maltiple, item name and quantity and price, total, total + discount, total amount,comments, is paid or not, check-out button} edite before payment after payment any one cann't change or edite.
 
-		2. room service {flore(dropdown), room number, order number, (item image, item name, food variant, quountity, discount, price)maltiple, item name and quantity and price, total, total + discount, extra charge, total amount, comments, is paid or not, check-out button} edite before payment after payment any one cann't change or edite.
+		2. room service form {flore(dropdown), room number, order number, (item name, food variant, quountity, discount, price)maltiple, item name and quantity and price, total, total + discount, extra charge, total amount, comments, is paid or not, check-out button} edite before payment after payment any one cann't change or edite.
 
 	7. after check-out print a slipe with castom QR code
 	8. edite form {search with order number (same like order form but table number, room number, flore number, order number cann't be change)}
@@ -121,5 +121,8 @@ leave management
 		1. current stock table(show all stock)
 		2. low stock alert()
 		3. stock ledger ()
+	4. issue form {product, product category[dropdown(furnicture, electrical, others)], quantity, employee name(dropdown), logged user name(static), require place[dropdown(hotel{flore number, room number}, rasturant, office, others)], button for print, cancel button}
+
+
 
 	
