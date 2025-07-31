@@ -29,7 +29,7 @@ const Withdraw = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="deposit-hero text-white text-center py-5">
+      <div className="withdraw-hero text-white text-center py-5">
         <FaArrowUp size={50} className="mb-3" />
         <h2>Withdraw Money</h2>
         <p className="lead">

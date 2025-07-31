@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Button, Form } from "react-bootstrap";
 import { FaArrowLeft, FaArrowUp, FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import "../../../style/coreModule/bankFrom/deposit.css"; // CSS for styling the hero section
+import "../../../style/coreModule/bankFrom/deposit.css";
 
 const DepositForm = () => {
   const navigate = useNavigate();
