@@ -33,6 +33,9 @@ import EarningForm from "../coreModule/earningForm/EarningForm";
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
 import Withdraw from "../coreModule/bankForm/withdraw/Withdraw";
 import AddTableForm from "../coreModule/restaurant/addTable/AddTable";
+import OrderForm from "../coreModule/restaurant/orderForm/OrderForm";
+import TableOrder from "../coreModule/restaurant/orderForm/TableOrder";
+import RoomService from "../coreModule/restaurant/orderForm/RoomService";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -86,6 +89,9 @@ const router = createBrowserRouter(
           <Route path="bank" element={<BankPage />} />
           <Route path="withdraw" element={<Withdraw />} />
           <Route path="add-table" element={<AddTableForm></AddTableForm>}></Route>
+          <Route path="order-form" element={<OrderForm></OrderForm>}></Route>
+          <Route path="table-order" element={<TableOrder></TableOrder>}></Route>
+          <Route path="room-service" element={<RoomService></RoomService>}></Route>
         </Route>
       </Route>
     </Route>

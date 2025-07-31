@@ -20,13 +20,13 @@ const AddTableForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         toast.success("Table added successfully!");
-        console.log(formData);
+        //console.log(formData);
     };
 
     return (
         <Container
             fluid
-            className="d-flex justify-content-center align-items-center min-vh-100 bg-light px-3"
+            className="d-flex justify-content-center align-items-center min-vh-100 px-3"
         >
             <Row className="w-100 justify-content-center">
                 <Col xs={12} md={8} lg={9}>
@@ -44,7 +44,7 @@ const AddTableForm = () => {
                             className="text-center mb-5 fw-bold text-primary"
                             style={{ letterSpacing: "1.2px" }}
                         >
-                            Add New Table
+                            Add Restuarent Table
                         </h3>
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-4" controlId="tableType">
@@ -104,7 +104,7 @@ const AddTableForm = () => {
                                         fontWeight: "600",
                                     }}
                                 >
-                                    Add Table
+                                    Add
                                 </Button>
                             </div>
                         </Form>
