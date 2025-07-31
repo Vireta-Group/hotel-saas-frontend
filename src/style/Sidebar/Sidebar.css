@@ -55,16 +55,3 @@
 .toggleContent {
   margin-left: 65px;
 }
-
-
-
-@media only screen and (max-width: 697px) {
-  .sidebar {
-    width: 65px;
-  }
-
-  .sidebar:is(:hover, :active) {
-    width: 270px;
-  }
-
-}
