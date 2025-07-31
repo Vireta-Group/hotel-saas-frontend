@@ -56,9 +56,6 @@ const router = createBrowserRouter(
             path="userInformation"
             element={<UserInformation></UserInformation>}
           />
-
-          <Route path="earn-category-form" element={<EarnCategory />} />
-          <Route path="earning-form" element={<EarningForm />} />
           <Route
             path="SearchingRegistrate"
             element={<SearchingRegistrate></SearchingRegistrate>}
