@@ -35,7 +35,7 @@ const RoomService = () => {
     );
 
     const handleCheckout = () => {
-        toast.success("✅ Room Order Checked Out Successfully!", {
+        toast.success("Room Order Checked Out Successfully!", {
             autoClose: 2000,
         });
         setTimeout(() => {
