@@ -103,7 +103,7 @@ const AddTableForm = () => {
                     fontWeight: "600",
                   }}
                 >
-                  Add Table
+                  Add
                 </Button>
               </div>
             </Form>

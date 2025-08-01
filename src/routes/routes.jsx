@@ -35,6 +35,9 @@ import Deposit from "../coreModule/accounting/bankForm/deposit/Deposit";
 import RootBankForm from "../coreModule/accounting/bankForm/rootBankForm/rootBankForm";
 import Withdraw from "../coreModule/accounting/bankForm/withdraw/Withdraw";
 import AddTableForm from "../coreModule/restaurant/addTable/AddTable";
+import OrderForm from "../coreModule/restaurant/orderForm/OrderForm";
+import TableOrder from "../coreModule/restaurant/orderForm/TableOrder";
+import RoomService from "../coreModule/restaurant/orderForm/RoomService";
 import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
 import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
 import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
@@ -111,6 +114,10 @@ const router = createBrowserRouter(
           <Route path="deposit" element={<Deposit />} />
           <Route path="root-bank-form" element={<RootBankForm />} />
           <Route path="withdraw" element={<Withdraw />} />
+          <Route path="add-table" element={<AddTableForm></AddTableForm>}></Route>
+          <Route path="order-form" element={<OrderForm></OrderForm>}></Route>
+          <Route path="table-order" element={<TableOrder></TableOrder>}></Route>
+          <Route path="room-service" element={<RoomService></RoomService>}></Route>
           <Route path="addcategoryform" element={<AddCategoryForm />} />
         </Route>
       </Route>
