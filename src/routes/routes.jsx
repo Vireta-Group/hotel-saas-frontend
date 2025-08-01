@@ -23,7 +23,8 @@ import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/E
 import SettingsAndConfigureForm from "../pages/settingsAndConfiguration/settings/SettingsAndConfigureForm";
 import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
-import HotelInfoForm from "../hotel-info/HotelInfoForm";
+import HotelInfoForm from "../pages/hotel-info/HotelInfoForm";
+import NotFoundPage from "../notFoundPage/NotFoundPage";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
 import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceCategorey";
@@ -102,6 +103,7 @@ const router = createBrowserRouter(
           <Route path="search-leave" element={<SearchLeave />} />
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="hotel-info" element={<HotelInfoForm />} />
+         
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
           <Route path="exepenceCategorey" element={<ExpenceCategorey />} />
@@ -120,6 +122,7 @@ const router = createBrowserRouter(
           <Route path="room-service" element={<RoomService></RoomService>}></Route>
           <Route path="addcategoryform" element={<AddCategoryForm />} />
         </Route>
+         <Route path="404" element={<NotFoundPage />} />
       </Route>
     </Route>
   )
