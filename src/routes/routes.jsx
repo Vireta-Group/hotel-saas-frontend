@@ -25,6 +25,7 @@ import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
 import AdminLeaveDetailList from "../pages/leaveManagement/AdminLeaveDetailList/AdminLeaveDetailList";
 import HotelInfoForm from "../hotel-info/HotelInfoForm";
+import NotFoundPage from "../notFoundPage/NotFoundPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -57,7 +58,9 @@ const router = createBrowserRouter(
           />
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="hotel-info" element={<HotelInfoForm />} />
+         
         </Route>
+         <Route path="404" element={<NotFoundPage />} />
       </Route>
     </Route>
   )
