@@ -29,7 +29,7 @@ import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttenda
 import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceCategorey";
 import EarnCategory from "../coreModule/accounting/earnCategory/EarnCategory";
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
-import AddCategory from "../coreModule/resturant/addCategory/AddCategory";
+import AddCategory from "../coreModule/restaurant/addCategory/AddCategory";
 
 import Deposit from "../coreModule/accounting/bankForm/deposit/Deposit";
 import RootBankForm from "../coreModule/accounting/bankForm/rootBankForm/rootBankForm";
@@ -38,7 +38,6 @@ import AddTableForm from "../coreModule/restaurant/addTable/AddTable";
 import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
 import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
 import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
-
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -104,13 +103,15 @@ const router = createBrowserRouter(
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
           <Route path="exepenceCategorey" element={<ExpenceCategorey />} />
           <Route path="bank" element={<BankPage />} />
-         
-          <Route path="addCategory"  element={<AddCategory></AddCategory>}></Route>
+
+          <Route
+            path="addCategory"
+            element={<AddCategory></AddCategory>}
+          ></Route>
           <Route path="deposit" element={<Deposit />} />
           <Route path="root-bank-form" element={<RootBankForm />} />
           <Route path="withdraw" element={<Withdraw />} />
           <Route path="addcategoryform" element={<AddCategoryForm />} />
-
         </Route>
       </Route>
     </Route>
