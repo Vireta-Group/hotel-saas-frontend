@@ -37,6 +37,7 @@ import Withdraw from "../coreModule/bankForm/withdraw/Withdraw";
 import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
 
 import EarningForm from "../coreModule/earningForm/EarningForm";
+import DailySalesReport from "../coreModule/restaurant/dailySellReport/DailySellReport";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -96,6 +97,7 @@ const router = createBrowserRouter(
           <Route path="root-bank-form" element={<RootBankForm />} />
           <Route path="withdraw" element={<Withdraw />} />
           <Route path="addcategoryform" element={<AddCategoryForm />} />
+          <Route path="daily-sell-report" element={<DailySalesReport />} />
         </Route>
       </Route>
     </Route>
