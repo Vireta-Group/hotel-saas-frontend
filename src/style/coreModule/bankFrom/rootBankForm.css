@@ -1,0 +1,23 @@
+.hero-section {
+  background: linear-gradient(to bottom, #4facfe, #00f2fe);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.bg-light-green {
+  background-color: #d4f9e2;
+}
+.bg-light-red {
+  background-color: #fddddd;
+}
+.bg-light-blue {
+  background-color: #dde8fd;
+}
