@@ -41,6 +41,7 @@ import RoomService from "../coreModule/restaurant/orderForm/RoomService";
 import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
 import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
 import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
+import EditTableOrder from "../coreModule/restaurant/editOrderForm/EditOrderForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -119,6 +120,7 @@ const router = createBrowserRouter(
           <Route path="table-order" element={<TableOrder></TableOrder>}></Route>
           <Route path="room-service" element={<RoomService></RoomService>}></Route>
           <Route path="addcategoryform" element={<AddCategoryForm />} />
+          <Route path="edit-order-form" element={<EditTableOrder></EditTableOrder>}></Route>
         </Route>
       </Route>
     </Route>
