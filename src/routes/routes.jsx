@@ -23,21 +23,26 @@ import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/E
 import SettingsAndConfigureForm from "../pages/settingsAndConfiguration/settings/SettingsAndConfigureForm";
 import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
-// import AdminLeaveDetailList from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
-import HotelInfoForm from "../hotel-info/HotelInfoForm";
+import HotelInfoForm from "../pages/hotel-info/HotelInfoForm";
+import NotFoundPage from "../notFoundPage/NotFoundPage";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
 import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceCategorey";
-import EarnCategory from "../coreModule/earnCategory/EarnCategory";
-
+import EarnCategory from "../coreModule/accounting/earnCategory/EarnCategory";
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
-import Deposit from "../coreModule/bankForm/deposit/Deposit";
-import RootBankForm from "../coreModule/bankForm/rootBankForm/rootBankForm";
-import Withdraw from "../coreModule/bankForm/withdraw/Withdraw";
-import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
+import AddCategory from "../coreModule/restaurant/addCategory/AddCategory";
 
-import EarningForm from "../coreModule/earningForm/EarningForm";
 import DailySalesReport from "../coreModule/restaurant/dailySellReport/DailySellReport";
+import Deposit from "../coreModule/accounting/bankForm/deposit/Deposit";
+import RootBankForm from "../coreModule/accounting/bankForm/rootBankForm/rootBankForm";
+import Withdraw from "../coreModule/accounting/bankForm/withdraw/Withdraw";
+import AddTableForm from "../coreModule/restaurant/addTable/AddTable";
+import OrderForm from "../coreModule/restaurant/orderForm/OrderForm";
+import TableOrder from "../coreModule/restaurant/orderForm/TableOrder";
+import RoomService from "../coreModule/restaurant/orderForm/RoomService";
+import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
+import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
+import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,8 +51,18 @@ const router = createBrowserRouter(
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
+          <Route path="add-table" element={<AddTableForm />} />
           <Route path="earn-category-form" element={<EarnCategory />} />
           <Route path="earning-form" element={<EarningForm />} />
+          <Route path="expense-form" element={<ExpenseForm />} />
+          <Route
+            path="SearchingRegistrate"
+            element={<SearchingRegistrate></SearchingRegistrate>}
+          />
+          <Route
+            path="userInformation"
+            element={<UserInformation></UserInformation>}
+          />
           <Route
             path="SearchingRegistrate"
             element={<SearchingRegistrate></SearchingRegistrate>}
@@ -89,16 +104,33 @@ const router = createBrowserRouter(
           <Route path="search-leave" element={<SearchLeave />} />
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="hotel-info" element={<HotelInfoForm />} />
+
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
           <Route path="exepenceCategorey" element={<ExpenceCategorey />} />
           <Route path="bank" element={<BankPage />} />
+
+          <Route
+            path="addCategory"
+            element={<AddCategory></AddCategory>}
+          ></Route>
           <Route path="deposit" element={<Deposit />} />
           <Route path="root-bank-form" element={<RootBankForm />} />
           <Route path="withdraw" element={<Withdraw />} />
+          <Route
+            path="add-table"
+            element={<AddTableForm></AddTableForm>}
+          ></Route>
+          <Route path="order-form" element={<OrderForm></OrderForm>}></Route>
+          <Route path="table-order" element={<TableOrder></TableOrder>}></Route>
+          <Route
+            path="room-service"
+            element={<RoomService></RoomService>}
+          ></Route>
           <Route path="addcategoryform" element={<AddCategoryForm />} />
           <Route path="daily-sell-report" element={<DailySalesReport />} />
         </Route>
+        <Route path="404" element={<NotFoundPage />} />
       </Route>
     </Route>
   )
