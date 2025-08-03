@@ -1,6 +1,6 @@
 .sidebar {
   width: 270px;
-  position: absolute;
+  position: static;
   height: 100%;
   left: 0;
   top: 0;
@@ -10,6 +10,7 @@
   z-index: 100;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #fff;
 }
 
 .logo {
@@ -25,46 +26,70 @@
   gap: 15px;
 }
 
-.sidebar-menu ul li {
-  width: 100%;
-  font-size: 16px;
-  color: var(--text-white);
-  margin: 8px 0;
-  padding: 8px 17px;
-  border-radius: 30px 0 0 30px;
-  cursor: pointer;
-  position: relative;
+.sidebar-menu {
+  padding: 15px;
+}
+
+.nav-section {
+  margin-bottom: 5px;
+}
+
+.nav-link {
   display: flex;
   align-items: center;
-  gap: 16px;
+  padding: 10px 15px;
+  color: #333;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.sidebar-menu ul li i {
-  font-size: 22px;
+.nav-link:hover {
+  background-color: #f5f5f5;
 }
 
-.sidebar-menu ul li:is(:hover, :first-child) {
-  background-color: var(--text-white);
-  color: var(--main-color);
+.nav-link.active {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.section-header {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 20px;
+}
+
+.submenu.show {
+  max-height: 1000px;
+}
+
+.submenu-item {
+  padding: 8px 15px 8px 30px;
+  font-size: 0.9rem;
+}
+
+.collapse-icon {
+  transition: transform 0.2s ease;
+  font-size: 0.8rem;
+}
+
+.bi {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
 }
 
 .toggleMenu {
-  width: 65px;
+  width: 0px;
 }
 
 .toggleContent {
-  margin-left: 65px;
-}
-
-
-
-@media only screen and (max-width: 697px) {
-  .sidebar {
-    width: 65px;
-  }
-
-  .sidebar:is(:hover, :active) {
-    width: 270px;
-  }
-
+  margin-left: 0px;
 }
