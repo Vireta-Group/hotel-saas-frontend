@@ -21,7 +21,6 @@ function Root() {
     <>
       <Sidebar ref={sideBar} />
       <div ref={mainContent} className="main-content" id="main-content">
-        
         <Header toggleHandler={toggleHandler} />
 
         <Outlet />
