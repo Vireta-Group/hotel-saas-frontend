@@ -12,13 +12,13 @@
   --main-color: #333;
   --text-grey: #8390a2;
   --text-white: #fff;
-  --shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
-  /* box shadow */
   --shadow: 10px 10px 22px rgba(0, 0, 0, 0.2),
     -10px -10px 22px rgba(255, 255, 255, 0.75);
   --shadow-inset: inset 5px 5px 11px rgba(0, 0, 0, 0.2),
     inset -5px -5px 11px rgba(255, 255, 255, 0.75);
+
+  --shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
   /* Primary Colors */
   --primary-blue: #0d6efd;

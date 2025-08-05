@@ -1,0 +1,246 @@
+/* Reset default styles and set base font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* Center the content and set background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e6e7ee;
+  padding: 20px;
+}
+
+/* Container for centering and limiting width */
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Main heading style */
+h1 {
+  color: #4a5568;
+  margin-bottom: 50px;
+  font-size: 28px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Main dropdown container */
+.color-dropdown {
+  position: relative;
+  width: 320px;
+  margin: 0 auto;
+}
+
+/* Dropdown button style */
+.color-dropdown-btn {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-radius: 16px;
+  /* Neumorphic shadow effect */
+  box-shadow: 6px 6px 12px #cdd0d4, -6px -6px 12px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for dropdown button */
+.color-dropdown-btn:hover {
+  box-shadow: 5px 5px 10px #cdd0d4, -5px -5px 10px #ffffff;
+}
+
+/* Active state for dropdown button */
+.color-dropdown-btn.active {
+  box-shadow: inset 4px 4px 8px #cdd0d4, inset -4px -4px 8px #ffffff;
+}
+
+/* Text container inside button */
+.color-dropdown-btn-text {
+  font-weight: 500;
+  font-size: 16px;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+}
+
+/* Color preview circle */
+.color-preview {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+    -1px -1px 3px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+  background: #4a5568;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scale up color preview when dropdown is active */
+.color-dropdown-btn.active .color-preview {
+  transform: scale(1.2);
+}
+
+/* Shimmer effect for color preview */
+.color-preview::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+/* Shimmer animation keyframes */
+@keyframes shimmer {
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+/* Dropdown arrow icon */
+.color-dropdown-btn-icon {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #4a5568;
+  border-bottom: 2px solid #4a5568;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when dropdown is active */
+.color-dropdown-btn.active .color-dropdown-btn-icon {
+  transform: rotate(225deg);
+}
+
+/* Dropdown content container */
+.color-dropdown-content {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: #e6e7ee;
+  border-radius: 16px;
+  box-shadow: 6px 6px 12px #cdd0d4, -6px -6px 12px #ffffff;
+  overflow: hidden;
+  /* Grid layout for color items */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 20px;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 100;
+}
+
+/* Show dropdown content when active */
+.color-dropdown-content.active {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Individual color item */
+.color-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Show color items with animation */
+.color-dropdown-content.active .color-item {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Staggered animation delays for items */
+.color-dropdown-content.active .color-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.color-dropdown-content.active .color-item:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.color-dropdown-content.active .color-item:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.color-dropdown-content.active .color-item:nth-child(4) {
+  transition-delay: 0.25s;
+}
+
+.color-dropdown-content.active .color-item:nth-child(5) {
+  transition-delay: 0.3s;
+}
+
+.color-dropdown-content.active .color-item:nth-child(6) {
+  transition-delay: 0.35s;
+}
+
+/* Hover effect for color items */
+.color-item:hover {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Selected state for color items */
+.color-item.selected {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Color preview circle in items */
+.color-item-preview {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    -1px -1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Color name text */
+.color-item-text {
+  font-size: 14px;
+  color: #4a5568;
+  font-weight: 400;
+}
+
+/* Bold text for selected color */
+.color-item.selected .color-item-text {
+  font-weight: 500;
+}

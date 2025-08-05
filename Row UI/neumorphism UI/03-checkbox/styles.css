@@ -1,0 +1,617 @@
+/* CSS variables for theme colors and shadows */
+:root {
+    --bg-color: #e0e5ec;
+    --text-color: #4d3252;
+    --shadow-light: #ffffff80;
+    --shadow-dark: #a3b1c699;
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --purple-color: #9c27b0;
+    --orange-color: #ff9800;
+    --pink-color: #e91e63;
+    --teal-color: #009688;
+    --indigo-color: #3f51b5;
+    --emerald-color: #2ecc71;
+    --ruby-color: #e74c3c;
+    --easing-cubic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Main body styling */
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+}
+
+.container {
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background: var(--bg-color);
+    box-shadow: 5px 5px 10px var(--shadow-dark),
+        -5px -5px 10px var(--shadow-light);
+}
+
+/* Style 1: Classic Neumorphic */
+.checkbox-1 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.checkbox-1 input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkmark-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.checkmark-1:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--primary-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input:checked~.checkmark-1 {
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+input:checked~.checkmark-1:after {
+    display: block;
+}
+
+/* Style 2: Glowing Neumorphic */
+.checkbox-2 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.checkmark-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.checkmark-2:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--purple-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input:checked~.checkmark-2 {
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light),
+        0 0 10px var(--purple-color);
+}
+
+input:checked~.checkmark-2:after {
+    display: block;
+}
+
+/* Style 3: 3D Neumorphic */
+.checkbox-3 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.checkmark-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.checkmark-3:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--orange-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input:checked~.checkmark-3 {
+    box-shadow: 5px 5px 10px var(--shadow-dark),
+        -5px -5px 10px var(--shadow-light);
+    transform: translateY(-2px);
+}
+
+input:checked~.checkmark-3:after {
+    display: block;
+}
+
+/* Style 4: Pulse Effect */
+.checkbox-4 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.checkmark-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.checkmark-4:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--pink-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input:checked~.checkmark-4 {
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+    animation: pulse 1.5s infinite;
+}
+
+input:checked~.checkmark-4:after {
+    display: block;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Style 5: Gradient Neumorphic */
+.checkbox-5 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.checkmark-5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.checkmark-5:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--teal-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input:checked~.checkmark-5 {
+    background: linear-gradient(135deg, var(--teal-color), var(--secondary-color));
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+input:checked~.checkmark-5:after {
+    display: block;
+    border-color: white;
+}
+
+/* Style 6: Bounce Neumorphic */
+.checkbox-6 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.checkmark-6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.checkmark-6:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--indigo-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input:checked~.checkmark-6 {
+    animation: bounce 0.5s var(--easing-cubic);
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+input:checked~.checkmark-6:after {
+    display: block;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Style 7: Shine Effect */
+.checkbox-7 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.checkmark-7 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.checkmark-7:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--primary-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkmark-7:before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+input:checked~.checkmark-7 {
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+input:checked~.checkmark-7:after {
+    display: block;
+}
+
+input:checked~.checkmark-7:before {
+    opacity: 1;
+    animation: shine 1.5s forwards;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(25deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(25deg) translateX(100%);
+    }
+}
+
+/* Style 8: Morphing Effect */
+.checkbox-8 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.checkmark-8 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.5s var(--easing-cubic);
+}
+
+.checkmark-8:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--emerald-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input:checked~.checkmark-8 {
+    border-radius: 50%;
+    transform: scale(1.2);
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+input:checked~.checkmark-8:after {
+    display: block;
+    animation: morphCheck 0.3s ease-in-out;
+}
+
+@keyframes morphCheck {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+/* Style 9: Wave Effect */
+.checkbox-9 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.checkmark-9 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.checkmark-9:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--ruby-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--ruby-color) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+
+input:checked~.checkmark-9 {
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+input:checked~.checkmark-9:after {
+    display: block;
+}
+
+.wave {
+    display: none;
+}
+
+input:checked~.wave {
+    display: block;
+    animation: wave 0.5s ease-out;
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.checkbox-label {
+    font-size: 16px;
+    color: var(--text-color);
+    min-width: 150px;
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.design-group {
+    margin-bottom: 2rem;
+}
+
+.design-group h2 {
+    color: var(--text-color);
+    margin-left: 20px;
+    font-size: 1.2rem;
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--bg-color);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px var(--shadow-dark),
+        -5px -5px 10px var(--shadow-light);
+        width: 100%;
+    
+}
+
+.footer-text {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-text:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    background: var(--bg-color);
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+.footer-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px var(--shadow-dark),
+        -4px -4px 8px var(--shadow-light);
+}
+
+.footer-links a:active {
+    transform: translateY(0);
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+}
+
+.footer-links .github {
+    background: linear-gradient(145deg, var(--bg-color), #f0f1f6);
+}
+
+.footer-links .github:hover {
+    background: linear-gradient(145deg, #f0f1f6, var(--bg-color));
+}
