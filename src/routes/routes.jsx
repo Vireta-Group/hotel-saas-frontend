@@ -32,6 +32,7 @@ import EarnCategory from "../coreModule/accounting/earnCategory/EarnCategory";
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
 import AddCategory from "../coreModule/restaurant/addCategory/AddCategory";
 
+import DailySalesReport from "../coreModule/restaurant/dailySellReport/DailySellReport";
 import Deposit from "../coreModule/accounting/bankForm/deposit/Deposit";
 import RootBankForm from "../coreModule/accounting/bankForm/rootBankForm/rootBankForm";
 import Withdraw from "../coreModule/accounting/bankForm/withdraw/Withdraw";
@@ -42,6 +43,8 @@ import RoomService from "../coreModule/restaurant/orderForm/RoomService";
 import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
 import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
 import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
+import Input from "../ui/input/Input";
+import Button from "../ui/submitButton/SubmitButton";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -103,7 +106,7 @@ const router = createBrowserRouter(
           <Route path="search-leave" element={<SearchLeave />} />
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="hotel-info" element={<HotelInfoForm />} />
-         
+
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
           <Route path="exepenceCategorey" element={<ExpenceCategorey />} />
@@ -116,13 +119,20 @@ const router = createBrowserRouter(
           <Route path="deposit" element={<Deposit />} />
           <Route path="root-bank-form" element={<RootBankForm />} />
           <Route path="withdraw" element={<Withdraw />} />
-          <Route path="add-table" element={<AddTableForm></AddTableForm>}></Route>
+          <Route
+            path="add-table"
+            element={<AddTableForm></AddTableForm>}
+          ></Route>
           <Route path="order-form" element={<OrderForm></OrderForm>}></Route>
           <Route path="table-order" element={<TableOrder></TableOrder>}></Route>
-          <Route path="room-service" element={<RoomService></RoomService>}></Route>
+          <Route
+            path="room-service"
+            element={<RoomService></RoomService>}
+          ></Route>
           <Route path="addcategoryform" element={<AddCategoryForm />} />
+          <Route path="daily-sell-report" element={<DailySalesReport />} />
         </Route>
-         <Route path="404" element={<NotFoundPage />} />
+        <Route path="404" element={<NotFoundPage />} />
       </Route>
     </Route>
   )
