@@ -7,8 +7,8 @@ function Header({ toggleHandler }) {
   return (
     <header className="flex">
       <ul className="nav">
-        <li tabindex="0" onClick={toggleHandler}>
-          <i className="uil uil-bars" id="menu-icon">
+        <li tabindex="0" >
+          <i className="uil uil-bars" id="menu-icon" onClick={toggleHandler}>
             <FontAwesomeIcon icon={faBars} style={{ cursor: "pointer" }} />
           </i>
         </li>
