@@ -5,6 +5,7 @@
   font-family: "Poppins", sans-serif;
   list-style: none;
   text-decoration: none;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -13,7 +14,32 @@
   --text-white: #fff;
   --shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
+<<<<<<< HEAD
 
 
   
 }
+=======
+  /* box shadow */
+  --shadow: 10px 10px 22px rgba(0, 0, 0, 0.2),
+    -10px -10px 22px rgba(255, 255, 255, 0.75);
+  --shadow-inset: inset 5px 5px 11px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 11px rgba(255, 255, 255, 0.75);
+
+  /* Primary Colors */
+  --primary-blue: #0d6efd;
+  --secondary-gray: #6c757d; /* Bootstrap's Secondary Gray */
+  --yellow: #ffc107;
+  --red: #dc3545;
+  --green: #198754;
+
+  /* Light/Dark Colors */
+  --light: #f8f9fa; /* Light color for backgrounds */
+  --light-gray: #f8f9fa; /* Light gray */
+  --dark: #212529;
+}
+
+body {
+  background-color: var(--light-gray);
+}
+>>>>>>> 9aeafea94bc1bde1340fc2e621b709dc531c9115
