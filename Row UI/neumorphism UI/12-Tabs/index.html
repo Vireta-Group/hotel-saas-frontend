@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphic Tabs - Multiple Styles | Acawon</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e0e0e0'/><path d='M30 50 L50 30 L70 50 L50 70 Z' fill='%23bebebe' stroke='%23ffffff' stroke-width='2' filter='drop-shadow(2px 2px 2px rgba(0,0,0,0.3))'/></svg>">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <h1>Neumorphic Tabs Collection</h1>
+
+    <!-- Style 1: Classic Sliding Tabs -->
+    <div class="tabs-classic">
+        <div class="tabs-classic-nav">
+            <div class="tab-classic active" data-tab="home">Home</div>
+            <div class="tab-classic" data-tab="about">About</div>
+            <div class="tab-classic" data-tab="services">Services</div>
+            <div class="tab-classic" data-tab="contact">Contact</div>
+        </div>
+        <div class="tab-content-classic">
+            <div class="content-panel active" id="home">
+                <h3>🏠 Welcome Home</h3>
+                <p>This is the home section with a beautiful neumorphic design. The soft shadows create a gentle, modern
+                    look that's easy on the eyes and provides excellent user experience.</p>
+            </div>
+            <div class="content-panel" id="about">
+                <h3>👤 About Us</h3>
+                <p>Learn more about our company and mission. We specialize in creating beautiful, functional user
+                    interfaces using modern design principles like neumorphism.</p>
+            </div>
+            <div class="content-panel" id="services">
+                <h3>⚙️ Our Services</h3>
+                <p>We offer comprehensive UI/UX design services, frontend development, and consulting to help bring your
+                    digital products to life with stunning visual appeal.</p>
+            </div>
+            <div class="content-panel" id="contact">
+                <h3>📞 Contact Information</h3>
+                <p>Get in touch with us for your next project. We're always excited to work on new challenges and create
+                    amazing user experiences together.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Style 2: Pill-shaped Tabs -->
+    <div class="tabs-pill">
+        <div class="tabs-pill-nav">
+            <div class="tab-pill active" data-tab="dashboard">📊 Dashboard</div>
+            <div class="tab-pill" data-tab="analytics">📈 Analytics</div>
+            <div class="tab-pill" data-tab="reports">📋 Reports</div>
+            <div class="tab-pill" data-tab="settings">⚙️ Settings</div>
+        </div>
+        <div class="tab-content-pill">
+            <div class="content-panel active" id="dashboard">
+                <h3>📊 Dashboard Overview</h3>
+                <p>Your main dashboard with key metrics and insights. Monitor your performance with beautiful charts and
+                    real-time data visualization in this neumorphic interface.</p>
+            </div>
+            <div class="content-panel" id="analytics">
+                <h3>📈 Advanced Analytics</h3>
+                <p>Deep dive into your data with comprehensive analytics tools. Track user behavior, conversion rates,
+                    and growth metrics with our intuitive neumorphic design.</p>
+            </div>
+            <div class="content-panel" id="reports">
+                <h3>📋 Detailed Reports</h3>
+                <p>Generate and view detailed reports about your business performance. Export data in various formats
+                    and share insights with your team effortlessly.</p>
+            </div>
+            <div class="content-panel" id="settings">
+                <h3>⚙️ System Settings</h3>
+                <p>Configure your application preferences and system settings. Customize the interface, manage
+                    notifications, and optimize your workflow experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Style 3: Vertical Tabs -->
+    <div class="tabs-vertical">
+        <div class="tabs-vertical-nav">
+            <div class="tab-vertical active" data-tab="profile">
+                <div class="tab-vertical-icon">👤</div>
+                Profile
+            </div>
+            <div class="tab-vertical" data-tab="security">
+                <div class="tab-vertical-icon">🔒</div>
+                Security
+            </div>
+            <div class="tab-vertical" data-tab="notifications">
+                <div class="tab-vertical-icon">🔔</div>
+                Notifications
+            </div>
+            <div class="tab-vertical" data-tab="billing">
+                <div class="tab-vertical-icon">💳</div>
+                Billing
+            </div>
+            <div class="tab-vertical" data-tab="support">
+                <div class="tab-vertical-icon">❓</div>
+                Support
+            </div>
+        </div>
+        <div class="tab-content-vertical">
+            <div class="content-panel active" id="profile">
+                <h3>👤 Profile Management</h3>
+                <p>Manage your personal information, profile picture, and account details. Keep your information
+                    up-to-date and customize your public profile appearance with our neumorphic interface design.</p>
+            </div>
+            <div class="content-panel" id="security">
+                <h3>🔒 Security Settings</h3>
+                <p>Configure your account security settings including two-factor authentication, password requirements,
+                    and login notifications. Protect your account with advanced security features.</p>
+            </div>
+            <div class="content-panel" id="notifications">
+                <h3>🔔 Notification Preferences</h3>
+                <p>Customize how and when you receive notifications. Choose between email, push notifications, and
+                    in-app alerts for different types of activities and updates.</p>
+            </div>
+            <div class="content-panel" id="billing">
+                <h3>💳 Billing & Subscription</h3>
+                <p>View your current subscription plan, payment history, and manage billing information. Upgrade or
+                    downgrade your plan as needed with transparent pricing.</p>
+            </div>
+            <div class="content-panel" id="support">
+                <h3>❓ Help & Support</h3>
+                <p>Access our comprehensive help documentation, submit support tickets, and get in touch with our
+                    customer service team for any questions or issues you may have.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Style 4: Morphing Tabs -->
+    <div class="tabs-morph">
+        <div class="tabs-morph-nav">
+            <div class="morphing-bg"></div>
+            <div class="tab-morph active" data-tab="design">Design</div>
+            <div class="tab-morph" data-tab="develop">Develop</div>
+            <div class="tab-morph" data-tab="deploy">Deploy</div>
+        </div>
+        <div class="tab-content-morph">
+            <div class="content-panel active" id="design">
+                <h3>🎨 Design Phase</h3>
+                <p>Create stunning user interfaces with modern design principles. Focus on user experience,
+                    accessibility, and visual appeal using neumorphic design patterns and contemporary aesthetics.</p>
+            </div>
+            <div class="content-panel" id="develop">
+                <h3>💻 Development Phase</h3>
+                <p>Transform designs into functional, responsive web applications. Use clean code, modern frameworks,
+                    and best practices to build scalable and maintainable solutions.</p>
+            </div>
+            <div class="content-panel" id="deploy">
+                <h3>🚀 Deployment Phase</h3>
+                <p>Launch your application to production with confidence. Implement CI/CD pipelines, monitoring, and
+                    optimization strategies for peak performance and reliability.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Style 5: Segmented Control Style -->
+    <div class="tabs-segment">
+        <div class="tabs-segment-nav">
+            <div class="tab-segment active" data-tab="monthly">Monthly</div>
+            <div class="tab-segment" data-tab="yearly">Yearly</div>
+            <div class="tab-segment" data-tab="lifetime">Lifetime</div>
+        </div>
+        <div class="tab-content-segment">
+            <div class="content-panel active" id="monthly">
+                <h3>📅 Monthly Plan</h3>
+                <p>Perfect for getting started with our service. Pay monthly with the flexibility to cancel anytime.
+                    Includes all basic features and email support for your projects.</p>
+            </div>
+            <div class="content-panel" id="yearly">
+                <h3>💰 Yearly Plan</h3>
+                <p>Best value for committed users. Save 20% with annual billing and get priority support, advanced
+                    features, and exclusive resources for your development needs.</p>
+            </div>
+            <div class="content-panel" id="lifetime">
+                <h3>⭐ Lifetime Access</h3>
+                <p>One-time payment for unlimited access. Perfect for long-term users who want to maximize their
+                    investment. Includes all future updates, premium support, and exclusive benefits.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

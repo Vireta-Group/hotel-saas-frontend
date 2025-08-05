@@ -1,0 +1,214 @@
+:root {
+  --base-color: #e6e7ee;
+  --shadow-dark: rgba(115, 128, 157, 0.4);
+  --shadow-light: rgba(255, 255, 255, 0.8);
+  --success-color: #61b15a;
+  --error-color: #e94560;
+  --warning-color: #ffa931;
+  --info-color: #3f72af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--base-color);
+}
+
+.alert {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--base-color);
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  animation: slideIn 0.3s ease;
+}
+
+.alert .icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--base-color);
+  box-shadow: inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+  flex-shrink: 0;
+}
+
+.alert .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.alert .content {
+  flex-grow: 1;
+}
+
+.alert .title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d4059;
+}
+
+.alert .message {
+  font-size: 0.95rem;
+  color: #505a6b;
+  line-height: 1.4;
+}
+
+.alert .close-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: var(--base-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #505a6b;
+  transition: all 0.3s ease;
+}
+
+.alert .close-btn:hover {
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+}
+
+.alert .close-btn:active {
+  box-shadow: inset 2px 2px 4px var(--shadow-dark),
+    inset -2px -2px 4px var(--shadow-light);
+}
+
+/* Color Variations */
+.alert.success .icon {
+  color: var(--success-color);
+}
+.alert.error .icon {
+  color: var(--error-color);
+}
+.alert.warning .icon {
+  color: var(--warning-color);
+}
+.alert.info .icon {
+  color: var(--info-color);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.alert.hide {
+  animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideOut {
+  to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+
+/* Inset Shadow Style */
+.alert.inset {
+  box-shadow: inset 8px 8px 16px var(--shadow-dark),
+    inset -8px -8px 16px var(--shadow-light);
+}
+
+.alert.inset .icon-container {
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
+.alert.inset .close-btn:hover {
+  box-shadow: inset 2px 2px 4px var(--shadow-dark),
+    inset -2px -2px 4px var(--shadow-light);
+}
+
+/* Footer Styles */
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--bg-color);
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+  width: 100%;
+}
+
+.footer-text {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-text:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  background: var(--bg-color);
+  box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+}
+
+.footer-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
+.footer-links a:active {
+  transform: translateY(0);
+  box-shadow: inset 3px 3px 6px var(--shadow-dark),
+    inset -3px -3px 6px var(--shadow-light);
+}
+
+.footer-links .github {
+  background: linear-gradient(145deg, var(--bg-color), #f0f1f6);
+}
+
+.footer-links .github:hover {
+  background: linear-gradient(145deg, #f0f1f6, var(--bg-color));
+}

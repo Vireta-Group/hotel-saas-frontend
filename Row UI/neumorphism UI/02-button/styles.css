@@ -1,0 +1,233 @@
+/* CSS variables for theme colors and shadows */
+:root {
+    --bg-color: #e0e5ec;
+    /* Light theme background color */
+    --text-color: #4d3252;
+    /* Text color */
+    --shadow-light: #ffffff80;
+    /* Light shadow color with 50% opacity */
+    --shadow-dark: #a3b1c699;
+    /* Dark shadow color with 60% opacity */
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --bg-color: #2a2a2a;
+    /* Dark theme background color */
+    --text-color: #e0e5ec;
+    /* Light text color for dark theme */
+    --shadow-light: rgba(0, 0, 0, 0.2);
+    /* Dark theme light shadow */
+    --shadow-dark: #000000cc;
+    /* Dark theme dark shadow with 80% opacity */
+}
+
+/* Main body styling */
+body {
+    background-color: var(--bg-color);
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Container for all buttons */
+.multi-button {
+    display: flex;
+    gap: 20px;
+}
+
+/* Base button styles */
+.btn,
+.btn-circle,
+.btn-flat,
+.btn-3d {
+    background-color: var(--bg-color);
+    border: none;
+    color: var(--text-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Regular button style with neomorphic shadow */
+.btn {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 9px 9px 16px var(--shadow-dark),
+        -9px -9px 16px var(--shadow-light);
+}
+
+/* Hover effect for regular button */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 12px 12px 20px var(--shadow-dark),
+        -12px -12px 20px var(--shadow-light);
+}
+
+/* Active state for regular button */
+.btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: inset 4px 4px 6px var(--shadow-dark),
+        inset -4px -4px 6px var(--shadow-light);
+}
+
+/* Flat button style (no shadow by default) */
+.btn-flat {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: none;
+}
+
+/* Hover effect for flat button */
+.btn-flat:hover {
+    box-shadow: 9px 9px 16px var(--shadow-dark),
+        -9px -9px 16px var(--shadow-light);
+}
+
+/* Active state for flat button */
+.btn-flat:active {
+    transform: scale(0.95);
+    box-shadow: inset 4px 4px 6px var(--shadow-dark),
+        inset -4px -4px 6px var(--shadow-light);
+}
+
+/* 3D button style with border effect */
+.btn-3d {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 0 0 2px var(--shadow-dark),
+                inset 0 0 0 2px var(--shadow-light);
+}
+
+/* Hover effect for 3D button */
+.btn-3d:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow-dark),
+                inset 0 0 0 2px var(--shadow-light);
+}
+
+/* Active state for 3D button */
+.btn-3d:active {
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 2px 5px var(--shadow-dark),
+                inset 0 0 0 2px var(--shadow-light);
+}
+
+/* Circular button style */
+.btn-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    font-size: 28px;
+    box-shadow: 9px 9px 16px var(--shadow-dark),
+        -9px -9px 16px var(--shadow-light);
+}
+
+/* Icon size for buttons */
+.btn i,
+.btn-circle i {
+    font-size: 24px;
+}
+
+/* Shine effect for buttons */
+.btn::after,
+.btn-circle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0.13) 0%,
+            rgba(255, 255, 255, 0.13) 77%,
+            rgba(255, 255, 255, 0.5) 92%,
+            rgba(255, 255, 255, 0.3) 100%);
+}
+
+/* Hover effect for shine */
+.btn:hover::after,
+.btn-circle:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.7s ease, opacity 0.15s ease;
+}
+
+/* Active state for circular button */
+.btn:active,
+.btn-circle:active {
+    box-shadow: inset 4px 4px 6px var(--shadow-dark),
+        inset -4px -4px 6px var(--shadow-light);
+    transform: scale(0.97);
+} 
+
+
+/* Footer styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 9px 9px 16px var(--shadow-dark),
+        -9px -9px 16px var(--shadow-light);
+}
+
+.footer-text {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 4px var(--shadow-dark);
+}
+
+/* Dark theme footer styles */
+[data-theme="dark"] .footer {
+    background-color: var(--bg-color);
+    box-shadow: 9px 9px 16px var(--shadow-dark),
+        -9px -9px 16px var(--shadow-light);
+}
+
+[data-theme="dark"] .footer-text {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .footer a {
+    color: var(--text-color);
+}
