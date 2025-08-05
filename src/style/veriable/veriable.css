@@ -31,8 +31,19 @@
   --light: #f8f9fa; /* Light color for backgrounds */
   --light-gray: #f8f9fa; /* Light gray */
   --dark: #212529;
+  --bg: #e0e0e0;
 }
 
 body {
-  background-color: var(--light-gray);
+  background-color: var(--bg);
+}
+
+.card {
+  background-color: var(--bg);
+  width: 400px;
+  height: auto;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }

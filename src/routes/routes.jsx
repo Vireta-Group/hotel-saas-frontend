@@ -45,6 +45,8 @@ import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
 import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
 import Input from "../ui/input/Input";
 import Button from "../ui/submitButton/SubmitButton";
+import SubmitButton from "../ui/submitButton/SubmitButton";
+import Demo from "../Demo";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -129,6 +131,7 @@ const router = createBrowserRouter(
             path="room-service"
             element={<RoomService></RoomService>}
           ></Route>
+          <Route path="demo" element={<Demo />} />
           <Route path="addcategoryform" element={<AddCategoryForm />} />
           <Route path="daily-sell-report" element={<DailySalesReport />} />
         </Route>
