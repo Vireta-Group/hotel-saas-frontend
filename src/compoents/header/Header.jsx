@@ -5,25 +5,20 @@ import "../../style/header/header.css";
 
 function Header({ toggleHandler }) {
   return (
-    <header className="flex ">
-      <h2>
-        <i className="uil uil-bars" id="menu-icon">
-          <FontAwesomeIcon
-            onClick={toggleHandler}
-            icon={faBars}
-            style={{ cursor: "pointer", marginRight: "10px" }}
-          />
-        </i>
-        Dashboard
-      </h2>
+    <header className="flex">
+      <ul className="nav">
+        <li tabindex="0" >
+          <i className="uil uil-bars" id="menu-icon" onClick={toggleHandler}>
+            <FontAwesomeIcon icon={faBars} style={{ cursor: "pointer" }} />
+          </i>
+        </li>
 
-      <div className="admin-box flex">
-        <img src="images/user.jpg" width="30px" height="30px" />
-        <div>
-          <h4>Koushik Saha</h4>
-          <small>Admin</small>
-        </div>
-      </div>
+        <li tabindex="0">LOGO</li>
+
+        <li className="admin-box flex" tabindex="0">
+          <img src="../../assets/images/favicon.png" width="30px" height="30px" alt="User" />
+        </li>
+      </ul>
     </header>
   );
 }

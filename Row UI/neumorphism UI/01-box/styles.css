@@ -1,0 +1,473 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Basic container styles */
+.container {
+  background-color: #e0e0e0;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+}
+
+/* Example box wrapper */
+.example-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Caption text style */
+.caption {
+  margin-top: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Step 2: Initial neomorphic box */
+.box-neomorphic-1 {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+/* Step 3: Refined shadow adjustments */
+.box-neomorphic-2 {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+}
+
+/* Step 4: Final version with subtle shadows */
+.box-neomorphic-final {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+}
+
+/* Neomorphic box with sharp corners */
+.box-neomorphic-sharp {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 0;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+}
+
+/* Neomorphic box with rounder corners */
+.box-neomorphic-round {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 100px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff,
+    0 0 20px rgba(231, 73, 0, 0.5);
+}
+
+/* Neomorphic box with pressed effect */
+.neumorphic-pressed-box {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
+}
+
+/* Neomorphic box with color overlay */
+.box-neomorphic-colored {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Color overlay effect */
+.box-neomorphic-colored::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000000, #d9d8da);
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+/* Neomorphic box with glow effect */
+.box-neomorphic-glow {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff,
+    0 0 20px rgba(231, 73, 0, 0.5);
+  position: relative;
+}
+
+/* Neomorphic box with wave animation */
+.box-neomorphic-wave {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wave animation effect */
+.box-neomorphic-wave::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(170, 167, 167, 0.1),
+    transparent
+  );
+  animation: wave 1s linear infinite;
+}
+
+/* Wave animation keyframes */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Neomorphic button with hover and active states */
+.box-neomorphic-button {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+.box-neomorphic-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 12px 12px 20px #bebebe, -12px -12px 20px #ffffff;
+}
+
+/* Button active state */
+.box-neomorphic-button:active {
+  transform: translateY(2px);
+  box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+}
+
+/* Neomorphic box with layered shadows */
+.box-neomorphic-layered {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  position: relative;
+}
+
+/* Layered shadow effects */
+.box-neomorphic-layered::before,
+.box-neomorphic-layered::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.box-neomorphic-layered::before {
+  box-shadow: 8px 8px 16px #bebebe;
+  z-index: 1;
+}
+
+.box-neomorphic-layered::after {
+  box-shadow: -8px -8px 16px #ffffff;
+  z-index: 2;
+}
+
+/* Neomorphic box with rotation effect */
+.box-neomorphic-rotate {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+/* Rotation hover effect */
+.box-neomorphic-rotate:hover {
+  transform: rotate(45deg);
+}
+
+/* Neomorphic box with pulse animation */
+.box-neomorphic-pulse {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  animation: pulse 2s infinite;
+}
+
+/* Pulse animation keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Neomorphic box with gradient animation */
+.box-neomorphic-gradient {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient animation effect */
+.box-neomorphic-gradient::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    15deg,
+    rgba(236, 0, 0, 0.1),
+    rgba(0, 4, 255, 0.2),
+    rgba(0, 255, 76, 0.1)
+  );
+  animation: gradientMove 1s linear infinite;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientMove {
+  0% {
+    transform: translate(-50%, -50%) rotate(110deg);
+  }
+  100% {
+    transform: translate(-20%, -50%) rotate(100deg);
+  }
+}
+
+/* Neomorphic glass effect box */
+.box-neomorphic-glass {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(224, 224, 224, 0.7);
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px rgba(190, 190, 190, 0.5),
+    -8px -8px 16px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Round neomorphic frame */
+.neomorphic-round-frame {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0;
+  border-radius: 100px;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  position: relative;
+}
+
+/* Inner shadow effect for round frame */
+.neomorphic-round-frame::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background-color: #e0e0e0;
+  border-radius: 100%;
+  box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
+}
+
+/* Dark theme styles */
+.dark-theme {
+  background-color: #2d2d2d;
+  padding: 50px;
+}
+
+.dark-theme .caption {
+  color: #ffffff;
+}
+
+.dark-theme .button-icon {
+  color: #ffffff;
+}
+
+/* Dark theme neomorphic boxes */
+.box-neomorphic-dark {
+  width: 200px;
+  height: 200px;
+  background-color: #2d2d2d;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #404040;
+}
+
+/* Dark theme pressed effect */
+.box-neomorphic-dark-pressed {
+  width: 200px;
+  height: 200px;
+  background-color: #2d2d2d;
+  border-radius: 50px;
+  box-shadow: inset 8px 8px 16px #1a1a1a, inset -8px -8px 16px #404040;
+}
+
+/* Dark theme glow effect */
+.box-neomorphic-dark-glow {
+  width: 200px;
+  height: 200px;
+  background-color: #2d2d2d;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #404040,
+    0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Dark theme button styles */
+.box-neomorphic-dark-button {
+  width: 200px;
+  height: 200px;
+  background-color: #2d2d2d;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #404040;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Dark theme button hover effect */
+.box-neomorphic-dark-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 12px 12px 20px #1a1a1a, -12px -12px 20px #404040;
+}
+
+/* Dark theme button active state */
+.box-neomorphic-dark-button:active {
+  transform: translateY(2px);
+  box-shadow: inset 4px 4px 8px #1a1a1a, inset -4px -4px 8px #404040;
+}
+
+/* Dark theme glass effect */
+.box-neomorphic-dark-glass {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(45, 45, 45, 0.7);
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px rgba(26, 26, 26, 0.5),
+    -8px -8px 16px rgba(64, 64, 64, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark theme colored effect */
+.box-neomorphic-dark-colored {
+  width: 200px;
+  height: 200px;
+  background-color: #2d2d2d;
+  border-radius: 50px;
+  box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #404040;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark theme color overlay */
+.box-neomorphic-dark-colored::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  opacity: 0.1;
+  mix-blend-mode: overlay;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+}
+
+.footer-text {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer a {
+  color: #ff0000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.footer a.github {
+  color: #333;
+}
+
+.dark-theme .footer a.github {
+  color: #ffffff;
+}
+
+.footer a:hover {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark theme footer styles */
+.dark-theme .footer {
+  background-color: #2d2d2d;
+  box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #404040;
+}
+
+.dark-theme .footer-text {
+  color: #ffffff;
+}

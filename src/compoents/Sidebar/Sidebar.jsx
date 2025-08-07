@@ -131,69 +131,67 @@ const Sidebar = forwardRef((props, ref) => {
 
   return (
     <div className="sidebar position-fixed" id="sidebar" ref={ref}>
-      <div className="logo">
-        <h2>
-          <FontAwesomeIcon icon={faHotel} style={{ fontSize: "22px" }} />
-          <span className="ms-2">VELZON</span>
-        </h2>
-      </div>
+      <div className="sidebar-nav">
+        <div className="logo">
+          <h2>
+            <FontAwesomeIcon icon={faHotel} style={{ fontSize: "22px" }} />
+            <span className="ms-2">VELZON</span>
+          </h2>
+        </div>
 
-      <div className="sidebar-menu">
-        <ul className="p-0">
-          {menuSections.map((section) => (
-            <li key={section.title} className="nav-section">
-              {section.singleItem ? (
-                <NavLink
-                  to={section.to}
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+        {menuSections.map((section) => (
+          <div key={section.title} className="nav-section">
+            {section.singleItem ? (
+              <NavLink
+                to={section.to}
+                className={({ isActive }) =>
+                  `sidebar ${isActive ? "active" : ""}`
+                }
+              >
+                <i className={`bi ${section.icon} sidebar-icon`}></i>
+                <span>{section.title}</span>
+              </NavLink>
+            ) : (
+              <>
+                <div
+                  className={`sidebar ${
+                    expandedSections[section.title.toLowerCase()]
+                      ? "active"
+                      : ""
+                  }`}
+                  onClick={() => toggleSection(section.title.toLowerCase())}
                 >
-                  <i className={`bi ${section.icon}`}></i>
-                  <span className="ms-2">{section.title}</span>
-                </NavLink>
-              ) : (
-                <>
-                  <div
-                    className="nav-link section-header"
-                    onClick={() => toggleSection(section.title.toLowerCase())}
-                  >
-                    <i className={`bi ${section.icon}`}></i>
-                    <span className="ms-2">{section.title}</span>
-                    <FontAwesomeIcon
-                      icon={
-                        expandedSections[section.title.toLowerCase()]
-                          ? faChevronUp
-                          : faChevronDown
-                      }
-                      className="collapse-icon ms-auto"
-                    />
-                  </div>
-                  <div
-                    className={`submenu ${
+                  <i className={`bi ${section.icon} sidebar-icon`}></i>
+                  <span>{section.title}</span>
+                  <FontAwesomeIcon
+                    icon={
                       expandedSections[section.title.toLowerCase()]
-                        ? "show"
-                        : ""
-                    }`}
-                  >
+                        ? faChevronUp
+                        : faChevronDown
+                    }
+                    className="collapse-icon ms-auto"
+                  />
+                </div>
+                {expandedSections[section.title.toLowerCase()] && (
+                  <div className="submenu">
                     {section.items.map((item) => (
                       <NavLink
                         key={item.to}
                         to={item.to}
                         className={({ isActive }) =>
-                          `nav-link submenu-item ${isActive ? "active" : ""}`
+                          `sidebar submenu-item ${isActive ? "active" : ""}`
                         }
                       >
-                        <i className={`bi ${item.icon}`}></i>
-                        <span className="ms-2">{item.label}</span>
+                        <i className={`bi ${item.icon} sidebar-icon`}></i>
+                        <span>{item.label}</span>
                       </NavLink>
                     ))}
                   </div>
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
+                )}
+              </>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
