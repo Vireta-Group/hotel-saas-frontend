@@ -6,7 +6,8 @@
 main {
   padding: 30px 20px;
   height: 200vh;
-  background-color: red;
+  padding: 10px ;
+  box-shadow: inset 4px 4px 8px #c3c9d0, inset -4px -4px 8px #ffffff;
 }
 
 .toggleContent {
