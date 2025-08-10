@@ -42,6 +42,7 @@ import RoomService from "../coreModule/restaurant/orderForm/RoomService";
 import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcategory";
 import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
 import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
+import IssueForm from "../coreModule/inventorySuppliers/issueForm/issueForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -103,7 +104,7 @@ const router = createBrowserRouter(
           <Route path="search-leave" element={<SearchLeave />} />
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="hotel-info" element={<HotelInfoForm />} />
-         
+         <Route path="issue-form" element={<IssueForm/>} />
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
           <Route path="exepenceCategorey" element={<ExpenceCategorey />} />

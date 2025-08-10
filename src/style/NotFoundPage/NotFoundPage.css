@@ -1,0 +1,26 @@
+
+.error-page-container {
+  min-height: 100vh;
+  background-color: #f6f6f6;
+  background-repeat: repeat;
+  background-size: 100% 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.error-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.error-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 350px;
+}
