@@ -6,10 +6,10 @@ import "../../style/header/header.css";
 
 const Header = forwardRef(({ toggleHandler }, ref) => {
   return (
-    <header className="main-content flex" id="main-content" ref={ref}>
+    <header className="main-content flex" ref={ref}>
       <ul className="nav">
-        <li tabindex="0">
-          <i className="uil uil-bars" id="menu-icon" onClick={toggleHandler}>
+        <li tabindex="0" onClick={toggleHandler}>
+          <i className="uil uil-bars" id="menu-icon">
             <FontAwesomeIcon icon={faBars} style={{ cursor: "pointer" }} />
           </i>
         </li>
