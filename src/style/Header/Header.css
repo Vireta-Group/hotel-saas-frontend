@@ -1,4 +1,16 @@
+/* Header Layout */
+header {
+  padding: 15px 30px;
 
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+
+  color: var(--text-white);
+  /* White text */
+}
+
+/* Flex Container */
 .flex {
   display: flex;
   align-items: center;
@@ -6,49 +18,99 @@
   flex-wrap: wrap;
 }
 
-header {
-  padding: 15px 30px;
+/* Navigation Bar Styles */
+.nav {
+  width: 100vw;
+  height: 100px;
+  background-color: var(--light);
+  /* Light background for nav */
   box-shadow: var(--shadow);
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  list-style-type: none;
 }
 
-header h2 {
-  color: #555;
+/* Logo Style */
+.nav li.logo {
+  text-align: center;
+
+  font-size: 1.2rem;
+  color: var(--dark);
+  /* Dark text color */
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(255, 255, 255, 1);
+}
+
+/* Navigation Items (excluding Logo) */
+.nav li:not(.logo) {
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.1), -4px -4px 6px rgba(255, 255, 255, 1);
+  border-radius: 10px;
+
   cursor: pointer;
-}
-
-img {
-  cursor: pointer;
-  border-radius: 30px;
-  margin-right: 15px;
-}
-
-small {
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
   color: var(--text-grey);
-  display: block;
-  margin-top: -2px;
+  /* Grey text color */
 }
 
+/* Hover & Focus Effects for Navigation Items */
+.nav li:not(.logo):hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 1);
+}
 
+.nav li:not(.logo):focus {
+  outline: none;
+  transform: scale(0.95);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 1),
+    4px 4px 10px 0 rgba(0, 0, 0, 0.1) inset, -4px -4px 10px rgba(255, 255, 255, 1) inset;
+}
 
+.nav li:not(.logo):hover,
+.nav li:not(.logo):focus {
+  color: var(--primary-blue);
+  /* Primary blue color on hover/focus */
+}
 
-@media only screen and (max-width: 530px) {
+/* Menu Icon Styling */
+.nav li i#menu-icon {
+  font-size: 1.8rem;
+  color: var(--text-grey);
+  /* Grey color for icon */
+  transition: color 0.3s ease, transform 0.2s ease-out;
+}
+
+/* Hover & Focus Effects for Menu Icon */
+.nav li i#menu-icon:hover {
+  transform: scale(1.1);
+  color: var(--primary-blue);
+  /* Change color to primary blue on hover */
+}
+
+.nav li i#menu-icon:focus {
+  color: var(--primary-blue);
+  outline: none;
+}
+
+/* Admin Box Styling */
+.nav li.admin-box {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   
-  small {
-    margin-top: 0;
-  }
+  /* Adjusted margin for profile image */
+  border-radius: 50px;
+}
 
-  header h2 {
-    display: none;
-  }
-
-  .admin-box {
-    width: 100%;
-    justify-content: right;
-    font-size: 20px;
-  }
-
-  .admin-box img {
-    width: 40px;
-    height: 40px;
-  }
+.nav li.admin-box img {
+  cursor: pointer;
+  
+  
 }

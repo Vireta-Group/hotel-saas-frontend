@@ -1,0 +1,208 @@
+:root {
+  --bg-color: #e6e9f0;
+  --text-color: #4a4b65;
+  --shadow-light: #ffffff;
+  --shadow-dark: #c8ccd8;
+  --accent-color: #6d78ff;
+  --accent-hover: #5a66e6;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  padding: 2rem;
+  color: var(--text-color);
+}
+
+.container {
+  background: var(--bg-color);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  max-width: 650px;
+  width: 100%;
+  position: relative;
+}
+
+.accordion {
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff !important;
+}
+
+.accordion-item {
+  background: var(--bg-color);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-bottom: 1px;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.accordion-header {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color);
+  transition: all 0.3s ease;
+  user-select: none;
+  border-radius: 1rem;
+}
+
+.accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-title {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.accordion-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.accordion-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.accordion-content-inner {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--text-color);
+  opacity: 0.85;
+  font-size: 1rem;
+  line-height: 1.6;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.accordion-item.active {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.accordion-item.active .accordion-header {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.accordion-item.active .accordion-title {
+  padding: 5px 15px;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+  border-radius: 3px;
+}
+
+/* Footer Styles */
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--bg-color);
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+  width: 100%;
+}
+
+.footer-text {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-text:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  background: var(--bg-color);
+  box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+}
+
+.footer-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
+.footer-links a:active {
+  transform: translateY(0);
+  box-shadow: inset 3px 3px 6px var(--shadow-dark),
+    inset -3px -3px 6px var(--shadow-light);
+}
+
+.footer-links .github {
+  background: linear-gradient(145deg, var(--bg-color), #f0f1f6);
+}
+
+.footer-links .github:hover {
+  background: linear-gradient(145deg, #f0f1f6, var(--bg-color));
+}

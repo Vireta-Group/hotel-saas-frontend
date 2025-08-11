@@ -1,31 +1,32 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { forwardRef } from "react";
 
 import "../../style/header/header.css";
 
-function Header({ toggleHandler }) {
+const Header = forwardRef(({ toggleHandler }, ref) => {
   return (
-    <header className="flex">
-      <h2>
-        <i className="uil uil-bars" id="menu-icon">
-          <FontAwesomeIcon
-            onClick={toggleHandler}
-            icon={faBars}
-            style={{ cursor: "pointer", marginRight: "10px" }}
-          />
-        </i>
-        Dashboard
-      </h2>
+    <header className="main-content flex" ref={ref}>
+      <ul className="nav">
+        <li tabindex="0" onClick={toggleHandler}>
+          <i className="uil uil-bars" id="menu-icon">
+            <FontAwesomeIcon icon={faBars} style={{ cursor: "pointer" }} />
+          </i>
+        </li>
 
-      <div className="admin-box flex">
-        <img src="images/user.jpg" width="30px" height="30px" />
-        <div>
-          <h4>Koushik Saha</h4>
-          <small>Admin</small>
-        </div>
-      </div>
+        <li tabindex="0">LOGO</li>
+
+        <li className="admin-box flex" tabindex="0">
+          <img
+            src="../../assets/images/favicon.png"
+            width="30px"
+            height="30px"
+            alt="User"
+          />
+        </li>
+      </ul>
     </header>
   );
-}
+});
 
 export default Header;
