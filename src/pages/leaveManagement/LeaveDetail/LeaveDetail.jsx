@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaCalendarPlus, FaUser, FaHistory } from "react-icons/fa";
 import RequestLeaveModal from "../../../compoents/requesModal/requesModal";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 
 const LeaveDetail = () => {
   const { employeeId } = useParams();

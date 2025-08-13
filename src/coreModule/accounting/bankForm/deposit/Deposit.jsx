@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Button, Form } from "react-bootstrap";
-import { FaArrowLeft, FaArrowUp, FaPlus } from "react-icons/fa";
+import { FaArrowUp, FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import "../../../../style/coreModule/bankFrom/deposit.css";
 

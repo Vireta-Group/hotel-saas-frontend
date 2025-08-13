@@ -33,30 +33,22 @@
   --dark: #212529;
   --bg: #e0e0e0;
 
-  /*
-
-  --bg-light: #e6e7ee;
-
-
-
+  /* button variable start  */
+  --bg-light: #e0e5ec;
   --shadow-dark: rgba(17, 12, 46, 0.08);
   --shadow-light: rgba(255, 255, 255, 0.9);
-  --text-primary: #2d3748;
-  --text-secondary: #718096;
-  --accent-color: #4a5568;
+  /* button variable end  */
 
-    --bg-dark: #2a2a2a;
-
-
-*/
-  --btn-text: #4d3252;
-  --bg-light: #e6e7ee;
-
-  --shadow-dark: rgba(17, 12, 46, 0.08);
-  --shadow-light: rgba(255, 255, 255, 0.9);
+  /* input variable start  */
+  --input-bg: #e6e7ee;
+  /* --shadow-dark: rgba(17, 12, 46, 0.08);
+  --shadow-light: rgba(255, 255, 255, 0.9); */
+  --input-text: #2d3748;
+  /* input variable end  */
 }
 
-body {
+#root {
+  height: 100vh;
   background-color: var(--bg);
 }
 
