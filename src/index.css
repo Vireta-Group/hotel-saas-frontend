@@ -1,45 +1,30 @@
-#root {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  min-height: 100vh;
-  background: var(--bg-light);
-  user-select: none;
-  outline: none;
-}
-
 /* start btn style */
-.btn {
+.bttn {
   background-color: var(--bg-light);
   border: none;
-  /* color: var(--btn-text); */
-  /* font-weight: 700; */
-  text-transform: capitalize;
+  text-transform: uppercase;
   overflow: hidden;
   transition: all 0.3s ease;
+  color: var(--input-text);
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   border-radius: 12px;
+  padding: 12px;
   box-shadow: 9px 9px 16px var(--shadow-dark),
     -9px -9px 16px var(--shadow-light);
 }
 
-.btn:hover {
+.bttn:hover {
   transform: translateY(-3px);
-  background-color: var(--bg-light);
   box-shadow: 12px 12px 20px var(--shadow-dark),
     -12px -12px 20px var(--shadow-light);
 }
 
-.btn:active {
-  background-color: var(--bg-light);
-  box-shadow: inset 4px 4px 6px var(--shadow-dark),
-    inset -4px -4px 6px var(--shadow-light);
-  transform: scale(0.97);
-}
-
-.btn::after {
+.bttn::after {
   content: "";
   position: absolute;
   top: 0;
@@ -57,37 +42,51 @@
   );
 }
 
-.btn:hover::after {
+.bttn:hover::after {
   opacity: 1;
   transform: translateX(0);
   transition: transform 0.7s ease, opacity 0.15s ease;
 }
 
+.bttn:active {
+  box-shadow: inset 4px 4px 6px var(--shadow-dark),
+    inset -4px -4px 6px var(--shadow-light);
+  transform: scale(0.97);
+}
+
+.icon-bttn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--input-bg);
+  color: var(--input-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.icon-bttn:hover {
+  transform: translateY(-2px);
+}
+
+.icon-bttn:active {
+  box-shadow: inset 2px 2px 4px var(--shadow-dark),
+    inset -2px -2px 4px var(--shadow-light);
+}
+
 /* end btn style  */
 
-/* start form-input style  */
-
-.input-wrapper input {
-  border: none;
-  outline: none;
-  background: none;
-  background-color: var(--light);
-  padding: 0.6rem 1.1rem;
+/* form style start  */
+.form-table {
+  background: var(--input-bg);
   border-radius: 20px;
-  margin: 0.5rem 0 1rem 0;
-  font-size: 1.2rem;
-  color: var(--dark);
-  box-shadow: var(--shadow-inset);
-}
-.input-wrapper {
-  width: 100%;
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-direction: column;
+  padding: 2.5rem;
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
 }
 
-.input-wrapper label {
-  font-size: 0.9rem;
-  font-weight: 400;
-  margin-left: 0.8rem;
-}
+/* form style end  */

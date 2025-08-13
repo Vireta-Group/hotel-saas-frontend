@@ -8,20 +8,35 @@ function Demo() {
   const inputRef = useRef();
 
   const style = {
-    height: "500px",
-    width: "500px",
+    height: "100%",
+    width: "100%",
+    position: "relative",
+    zIndex: 23423,
     display: "flex",
     backgroundColor: "#e6e7ee",
     justifyContent: "center",
     alignItems: "center",
+    flexDirection: "column",
   };
 
   return (
-    <div className="d-flex justify-content-center" style={style}>
-      <Input iconClass="bi bi-alarm" ref={inputRef}>
-        <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
+    <form className="form-table" style={style}>
+      <Input
+        placeholder="Enter you email"
+        isRequire={false}
+        type="email"
+        ref={inputRef}
+        style={{ width: "300px", marginBottom: "70px" }}
+      >
+        <FontAwesomeIcon icon={faEnvelope} />
       </Input>
-    </div>
+
+      <button className="bttn">click me</button>
+
+      <button className="icon-bttn">
+        <FontAwesomeIcon icon={faEnvelope} />
+      </button>
+    </form>
   );
 }
 
