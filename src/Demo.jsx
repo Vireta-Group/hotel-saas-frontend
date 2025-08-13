@@ -1,11 +1,12 @@
 // Demo.jsx
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Input from "./ui/input/Input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 
 function Demo() {
-  const inputRef = useRef();
+  const [email, setEmail] = useState("hello@gmail.com");
 
   const style = {
     height: "100%",
@@ -19,25 +20,41 @@ function Demo() {
     flexDirection: "column",
   };
 
+  const onChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const clickHandler = (e) => {
+    e.preventDefault();
+    console.log(email);
+  };
+
   return (
-    <form className="form-table" style={style}>
-      <Input
-        placeholder="Enter you email"
-        isRequire={false}
-        type="email"
-        ref={inputRef}
-        style={{ width: "300px", marginBottom: "70px" }}
-      >
-        <FontAwesomeIcon icon={faEnvelope} />
-      </Input>
+    <>
+      <form className="form-table" style={style}>
+        <Input
+          isRequire={true}
+          type="email"
+          placeholder="example@gmail.com"
+          style={{ width: "400px", margin: "60px" }}
+          value={email}
+          onChange={onChange}
+        >
+          <FontAwesomeIcon icon={faEnvelope} />
+        </Input>
 
-      <button className="bttn">click me</button>
+        <button className="bttn" type="submit" onClick={clickHandler}>
+          click me
+        </button>
+      </form>
 
-      <button className="icon-bttn">
-        <FontAwesomeIcon icon={faEnvelope} />
-      </button>
-    </form>
+      <div style={{ margin: "100px", fontSize: "2rem" }}>{email}</div>
+    </>
   );
 }
 
 export default Demo;
+
+// form > className = form-table
+// Input > isRequire, ref, style, type, placeholder, children(<FontAwesomeIcon icon={faEnvelope} />)
+// button > className = bttn
