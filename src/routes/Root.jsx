@@ -26,7 +26,6 @@ function Root() {
       <div ref={mainContent} className="main-content" id="main-content">
         <Outlet />
       </div>
-
       <Footer />
     </>
   );

@@ -1,11 +1,11 @@
-body {
+#root {
   min-height: 100vh;
   background: linear-gradient(135deg, #e3ebf0 0%, #dde7ed 100%);
 }
 
 .sidebar-nav {
-  width: 270px;
-  position: static;
+  width: 240px;
+  /* position: static; */
   height: 100%;
   background: #e3ebf0;
   border-radius: 20px;
@@ -16,19 +16,22 @@ body {
 }
 
 .sidebar {
-  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
   padding: 15px 20px;
   margin-bottom: 8px;
   border-radius: 15px;
   cursor: pointer;
   font-weight: 500;
+  font-size: 14px;
   color: #6b7280;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   align-items: center;
   gap: 10px;
-  position: relative;
   overflow: hidden;
+  transition: 0.5s left cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .sidebar::before {
@@ -69,11 +72,13 @@ body {
   text-align: center;
 }
 
-.toggleMenu {
-  width: 0px;
-  display: none;
-}
-
 .toggleContent {
   margin-left: 0px;
+}
+
+.toggleMenu {
+  left: -280px;
+}
+
+@media screen and (max-width: 768px) {
 }
