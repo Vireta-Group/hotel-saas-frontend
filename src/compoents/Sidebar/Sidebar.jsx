@@ -4,7 +4,7 @@ import {
   faChevronDown,
   faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { forwardRef, useState } from "react";
 import "../../style/sidebar/sidebar.css";
 
@@ -130,6 +130,7 @@ const Sidebar = forwardRef((props, ref) => {
   ];
 
   return (
+    // <div className="wraper-sidebar" ref={ref}>
     <div className="sidebar position-fixed" id="sidebar" ref={ref}>
       <div className="sidebar-nav">
         <div className="logo">
@@ -194,6 +195,7 @@ const Sidebar = forwardRef((props, ref) => {
         ))}
       </div>
     </div>
+    // </div>
   );
 });
 

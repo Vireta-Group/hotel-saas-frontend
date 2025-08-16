@@ -41,7 +41,8 @@ header {
   color: var(--dark);
   /* Dark text color */
   font-weight: 900;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(255, 255, 255, 1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+    -2px -2px 4px rgba(255, 255, 255, 1);
 }
 
 /* Navigation Items (excluding Logo) */
@@ -49,7 +50,8 @@ header {
   margin: 0 1rem;
   padding: 0.5rem 1.5rem;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.1), -4px -4px 6px rgba(255, 255, 255, 1);
+  box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.1),
+    -4px -4px 6px rgba(255, 255, 255, 1);
   border-radius: 10px;
 
   cursor: pointer;
@@ -61,14 +63,20 @@ header {
 /* Hover & Focus Effects for Navigation Items */
 .nav li:not(.logo):hover {
   transform: scale(1.05);
-  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 1);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1),
+    -4px -4px 10px rgba(255, 255, 255, 1);
+}
+.hamburger-icon:hover li {
+  color: var(--primary-blue);
 }
 
 .nav li:not(.logo):focus {
   outline: none;
   transform: scale(0.95);
-  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 1),
-    4px 4px 10px 0 rgba(0, 0, 0, 0.1) inset, -4px -4px 10px rgba(255, 255, 255, 1) inset;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1),
+    -4px -4px 10px rgba(255, 255, 255, 1),
+    4px 4px 10px 0 rgba(0, 0, 0, 0.1) inset,
+    -4px -4px 10px rgba(255, 255, 255, 1) inset;
 }
 
 .nav li:not(.logo):hover,
@@ -104,13 +112,11 @@ header {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
+
   /* Adjusted margin for profile image */
   border-radius: 50px;
 }
 
 .nav li.admin-box img {
   cursor: pointer;
-  
-  
 }
