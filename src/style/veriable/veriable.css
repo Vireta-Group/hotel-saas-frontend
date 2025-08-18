@@ -45,6 +45,10 @@
   --shadow-light: rgba(255, 255, 255, 0.9); */
   --input-text: #2d3748;
   /* input variable end  */
+
+  /* check box start  */
+  --checked-color: #4caf50;
+  /* check end  */
 }
 
 #root {
