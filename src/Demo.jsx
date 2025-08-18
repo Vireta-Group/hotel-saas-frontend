@@ -1,27 +1,16 @@
-// Demo.jsx
-import { useEffect, useRef, useState } from "react";
-import Input from "./ui/input/Input";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { width } from "@fortawesome/free-solid-svg-icons/fa0";
+import { useState } from "react";
+import Checkbox from "./ui/checkbox/Checkbox";
 
 function Demo() {
+  const [isChecked, setIsChecked] = useState(true);
+
+  function handler(e) {
+    setIsChecked(e.target.checked);
+  }
+
   return (
     <>
-      <form
-        className="form-table"
-        style={{ position: "relative", zIndex: "1000" }}
-      >
-        <Input
-          type="email"
-          placeholder="enter you email"
-          style={{ width: "500px" }}
-        >
-          <FontAwesomeIcon icon={faEnvelope} />
-        </Input>
-
-        <button className="bttn">click</button>
-      </form>
+      <Checkbox isChecked={isChecked} label="male" onChange={handler} />
     </>
   );
 }
