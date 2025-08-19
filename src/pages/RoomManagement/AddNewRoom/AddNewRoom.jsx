@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import PopUp from '../../../popupAlert/PopUp/PopUp'
-
 
 const amenitiesList = [
   "TV",
@@ -40,7 +38,6 @@ const defaultRoom = {
   description: "",
   amenities: [],
 };
-
 
 function AddNewRoom() {
   const [newRoom, setNewRoom] = useState(defaultRoom);

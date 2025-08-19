@@ -1,7 +1,92 @@
+/* start btn style */
+.bttn {
+  background-color: var(--bg-light);
+  border: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: var(--input-text);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 9px 9px 16px var(--shadow-dark),
+    -9px -9px 16px var(--shadow-light);
+}
 
+.bttn:hover {
+  transform: translateY(-3px);
+  box-shadow: 12px 12px 20px var(--shadow-dark),
+    -12px -12px 20px var(--shadow-light);
+}
 
+.bttn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+}
 
+.bttn:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.7s ease, opacity 0.15s ease;
+}
 
+.bttn:active {
+  box-shadow: inset 4px 4px 6px var(--shadow-dark),
+    inset -4px -4px 6px var(--shadow-light);
+  transform: scale(0.97);
+}
 
+.icon-bttn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--input-bg);
+  color: var(--input-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  transition: all 0.3s ease;
+}
 
+.icon-bttn:hover {
+  transform: translateY(-2px);
+}
 
+.icon-bttn:active {
+  box-shadow: inset 2px 2px 4px var(--shadow-dark),
+    inset -2px -2px 4px var(--shadow-light);
+}
+
+/* end btn style  */
+
+/* form style start  */
+.form-table {
+  background: var(--input-bg);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+/* form style end  */

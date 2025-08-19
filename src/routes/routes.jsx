@@ -23,14 +23,15 @@ import EmployeeJobroleProfile from "../pages/hrmPayroll/employeeJobroleProfile/E
 import SettingsAndConfigureForm from "../pages/settingsAndConfiguration/settings/SettingsAndConfigureForm";
 import SearchLeave from "../pages/leaveManagement/LeaveSearch/LeaveSearch";
 import LeaveDetail from "../pages/leaveManagement/LeaveDetail/LeaveDetail";
-import HotelInfoForm from "../hotel-info/HotelInfoForm";
+import HotelInfoForm from "../pages/hotel-info/HotelInfoForm";
+import NotFoundPage from "../notFoundPage/NotFoundPage";
 import AdminLeaveControl from "../pages/leaveManagement/AdminLeaveControl/AdminLeaveControl";
 import JobRoleAttendance from "../pages/attendanceShiftManagement/JobRoleAttendance/JobRoleAttendance";
 import ExpenceCategorey from "../coreModule/accounting/expenceCategorey/ExpenceCategorey";
 import EarnCategory from "../coreModule/accounting/earnCategory/EarnCategory";
 import BankPage from "../coreModule/accounting/bankPage/BankPage";
 import AddCategory from "../coreModule/restaurant/addCategory/AddCategory";
-
+import DailySalesReport from "../coreModule/restaurant/dailySellReport/DailySellReport";
 import Deposit from "../coreModule/accounting/bankForm/deposit/Deposit";
 import RootBankForm from "../coreModule/accounting/bankForm/rootBankForm/rootBankForm";
 import Withdraw from "../coreModule/accounting/bankForm/withdraw/Withdraw";
@@ -42,6 +43,8 @@ import AddCategoryForm from "../coreModule/restaurant/addSubCategory/AddSubcateg
 import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
 import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
 import EditTableOrder from "../coreModule/restaurant/editOrderForm/EditOrderForm";
+import IssueForm from "../coreModule/inventorySuppliers/issueForm/issueForm";
+import Demo from "../Demo";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,43 +54,17 @@ const router = createBrowserRouter(
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
           <Route path="add-table" element={<AddTableForm />} />
-          <Route path="earn-category-form" element={<EarnCategory />} />
           <Route path="earning-form" element={<EarningForm />} />
           <Route path="expense-form" element={<ExpenseForm />} />
-          <Route
-            path="SearchingRegistrate"
-            element={<SearchingRegistrate></SearchingRegistrate>}
-          />
-          <Route
-            path="userInformation"
-            element={<UserInformation></UserInformation>}
-          />
-          <Route
-            path="SearchingRegistrate"
-            element={<SearchingRegistrate></SearchingRegistrate>}
-          />
-          <Route
-            path="userInformation"
-            element={<UserInformation></UserInformation>}
-          />
-
+          <Route path="SearchingRegistrate" element={<SearchingRegistrate />} />
+          <Route path="userInformation" element={<UserInformation />} />
           <Route path="earn-category-form" element={<EarnCategory />} />
-          <Route
-            path="SearchingRegistrate"
-            element={<SearchingRegistrate></SearchingRegistrate>}
-          />
-          <Route
-            path="userInformation"
-            element={<UserInformation></UserInformation>}
-          />
           <Route path="hotel-profile" element={<HotelProfile />} />
-          <Route path="employJobRole" element={<EmployeJobroleProfile />} />
           <Route path="employJobRole" element={<EmployeJobroleProfile />} />
           <Route
             path="employee-job-profile"
             element={<EmployeeJobroleProfile />}
           />
-          <Route path="hotel-profile" element={<HotelProfile />} />
           <Route path="room-inventory" element={<RoomInventoryManagement />} />
           <Route path="asset-management" element={<AssetManagement />} />
           <Route path="office-asset" element={<OfficeAsset />} />
@@ -103,15 +80,13 @@ const router = createBrowserRouter(
           <Route path="search-leave" element={<SearchLeave />} />
           <Route path="leave-detail/:employeeId" element={<LeaveDetail />} />
           <Route path="hotel-info" element={<HotelInfoForm />} />
+          <Route path="issue-form" element={<IssueForm />} />
           <Route path="admin-leave-control" element={<AdminLeaveControl />} />
           <Route path="job-role-attendance" element={<JobRoleAttendance />} />
           <Route path="exepenceCategorey" element={<ExpenceCategorey />} />
           <Route path="bank" element={<BankPage />} />
 
-          <Route
-            path="addCategory"
-            element={<AddCategory></AddCategory>}
-          ></Route>
+          <Route path="addCategory" element={<AddCategory />} />
           <Route path="deposit" element={<Deposit />} />
           <Route path="root-bank-form" element={<RootBankForm />} />
           <Route path="withdraw" element={<Withdraw />} />
@@ -121,7 +96,15 @@ const router = createBrowserRouter(
           <Route path="room-service" element={<RoomService />}></Route>
           <Route path="addcategoryform" element={<AddCategoryForm />} />
           <Route path="edit-order-form" element={<EditTableOrder />}></Route>
+          <Route path="add-table" element={<AddTableForm />} />
+          <Route path="order-form" element={<OrderForm />} />
+          <Route path="table-order" element={<TableOrder />} />
+          <Route path="room-service" element={<RoomService />} />
+          <Route path="demo" element={<Demo />} />
+          <Route path="addcategoryform" element={<AddCategoryForm />} />
+          <Route path="daily-sell-report" element={<DailySalesReport />} />
         </Route>
+        <Route path="404" element={<NotFoundPage />} />
       </Route>
     </Route>
   )
