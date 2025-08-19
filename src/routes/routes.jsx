@@ -115,12 +115,12 @@ const router = createBrowserRouter(
           <Route path="deposit" element={<Deposit />} />
           <Route path="root-bank-form" element={<RootBankForm />} />
           <Route path="withdraw" element={<Withdraw />} />
-          <Route path="add-table" element={<AddTableForm></AddTableForm>}></Route>
-          <Route path="order-form" element={<OrderForm></OrderForm>}></Route>
-          <Route path="table-order" element={<TableOrder></TableOrder>}></Route>
-          <Route path="room-service" element={<RoomService></RoomService>}></Route>
+          <Route path="add-table" element={<AddTableForm />}></Route>
+          <Route path="order-form" element={<OrderForm />}></Route>
+          <Route path="table-order" element={<TableOrder />}></Route>
+          <Route path="room-service" element={<RoomService />}></Route>
           <Route path="addcategoryform" element={<AddCategoryForm />} />
-          <Route path="edit-order-form" element={<EditTableOrder></EditTableOrder>}></Route>
+          <Route path="edit-order-form" element={<EditTableOrder />}></Route>
         </Route>
       </Route>
     </Route>
