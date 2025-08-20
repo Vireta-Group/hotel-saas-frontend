@@ -1,0 +1,126 @@
+.dropdown-wrapper {
+  position: relative;
+  width: 320px;
+}
+
+/* Dropdown button style */
+.color-dropdown-btn {
+  position: relative;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-radius: 16px;
+  /* Neumorphic shadow effect */
+  box-shadow: 6px 6px 12px #cdd0d4, -6px -6px 12px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for dropdown button */
+.color-dropdown-btn:hover {
+  box-shadow: 5px 5px 10px #cdd0d4, -5px -5px 10px #ffffff;
+}
+
+/* Active state for dropdown button */
+.color-dropdown-btn.active {
+  box-shadow: inset 4px 4px 8px #cdd0d4, inset -4px -4px 8px #ffffff;
+}
+
+/* Text container inside button */
+.color-dropdown-btn-text {
+  font-weight: 500;
+  font-size: 16px;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown arrow icon */
+.color-dropdown-btn-icon {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #4a5568;
+  border-bottom: 2px solid #4a5568;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when dropdown is active */
+.color-dropdown-btn.active .color-dropdown-btn-icon {
+  transform: rotate(225deg);
+}
+
+/* Dropdown content container */
+.color-dropdown-content {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: #e6e7ee;
+  border-radius: 16px;
+  box-shadow: 6px 6px 12px #cdd0d4, -6px -6px 12px #ffffff;
+  overflow: hidden;
+  /* Grid layout for color items */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 20px;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Show dropdown content when active */
+.color-dropdown-content.active {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Individual color item */
+.color-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Show color items with animation */
+.color-dropdown-content.active .color-item {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Hover effect for color items */
+.color-item:hover {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Selected state for color items */
+.color-item.selected {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Color name text */
+.color-item-text {
+  font-size: 14px;
+  color: #4a5568;
+  font-weight: 400;
+}
+
+/* Bold text for selected color */
+.color-item.selected .color-item-text {
+  font-weight: 500;
+}
