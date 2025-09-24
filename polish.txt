@@ -1,0 +1,24 @@
+1. login: total page 
+2. add-table: card color not matching 
+3. earning-form: not responsive 
+4. expense-form: heading, not responsive, card size
+5. SearchingRegistrate: not responsive
+6. userInformation: status 
+7. earn-category-form: not responsive, card size
+8. hotel-profile: total page 
+9. employee-job-profile: not responsive, card size not fixing 
+10. employeeJobRole: color, input field, Button
+11. room-inventory: card not fixing, table not responsive 
+12. asset-management: card not fixing
+13. office-asset: card not fixing, 
+14. setting-and-configure-form: card not fixing
+15. registration: card problem
+16. add-room: card problem
+17. all-rooms: simple editing
+18. employee-profile: full editing, card problem
+19. search-leave: card, editing
+20. leave-detail/:employeeId: card problem 
+21. hotel-info: card r length
+22. issue-form: simple editing
+23. admin-leave-control: font problem, 
+24. 

@@ -22,7 +22,7 @@ function Root() {
   return (
     <>
       <Sidebar ref={sideBar} />
-      <Header toggleHandler={toggleHandler} ref={headerContent} />
+      <Header toggleHandler={toggleHandler} />
       <div ref={mainContent} className="main-content" id="main-content">
         <Outlet />
       </div>

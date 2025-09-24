@@ -1,11 +1,11 @@
 .container {
-  max-width: 600px;
+  /* max-width: 600px; */
   background: #f9f9f9;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 2rem auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 2rem auto;
 }
 
 h3 {

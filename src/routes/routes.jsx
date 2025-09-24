@@ -60,7 +60,7 @@ const router = createBrowserRouter(
           <Route path="userInformation" element={<UserInformation />} />
           <Route path="earn-category-form" element={<EarnCategory />} />
           <Route path="hotel-profile" element={<HotelProfile />} />
-          <Route path="employJobRole" element={<EmployeJobroleProfile />} />
+          <Route path="employeeJobRole" element={<EmployeJobroleProfile />} />
           <Route
             path="employee-job-profile"
             element={<EmployeeJobroleProfile />}
