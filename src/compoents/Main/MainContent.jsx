@@ -7,6 +7,7 @@ function MainContent() {
   return (
     <main>
       <h1>this is main</h1>
+      <h2>hello</h2>
     </main>
   );
 }

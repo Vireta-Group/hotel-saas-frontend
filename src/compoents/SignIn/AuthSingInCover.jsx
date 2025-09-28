@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./AuthPage.css";
 
-export default function AuthPage() {
+export default function AuthSignrInCover() {
   const containerRef = useRef(null);
 
   const toggle = () => {

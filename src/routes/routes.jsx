@@ -6,7 +6,6 @@ import {
 import ProtectRoutes from "./ProtectRoutes";
 import Root from "./Root";
 import MainContent from "../compoents/Main/MainContent";
-import AuthSignInCover from "../compoents/SignIn/AuthSingInCover";
 import SearchingRegistrate from "../pages/SearchingRegistrate/SearchingRegistrate";
 import HotelProfile from "../pages/HotelProfile/HotelProfile";
 import UserInformation from "../pages/userInformation/UserInformation";
@@ -45,11 +44,14 @@ import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
 import EditTableOrder from "../coreModule/restaurant/editOrderForm/EditOrderForm";
 import IssueForm from "../coreModule/inventorySuppliers/issueForm/issueForm";
 import Demo from "../Demo";
+import Input from "../ui/input/Input";
+import Button from "../ui/submitButton/SubmitButton";
+import AuthSignrInCover from "../compoents/SignIn/AuthSingInCover";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<div>page not found</div>}>
-      <Route path="/login" element={<AuthSignInCover />} />
+      <Route path="/login" element={<AuthSignrInCover></AuthSignrInCover>} />
       <Route path="/" element={<ProtectRoutes />}>
         <Route path="" element={<Root />}>
           <Route index element={<MainContent />} />
