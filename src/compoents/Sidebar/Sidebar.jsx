@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHotel,
   faChevronDown,
   faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
@@ -130,16 +129,11 @@ const Sidebar = forwardRef((props, ref) => {
   ];
 
   return (
-    <div className="sidebar position-fixed" id="sidebar" ref={ref}>
-      <div className="logo">
-        <h2>
-          <FontAwesomeIcon icon={faHotel} style={{ fontSize: "22px" }} />
-          <span className="ms-2">VELZON</span>
-        </h2>
-      </div>
+    <div className="sidebar pt-5 position-fixed" id="sidebar" ref={ref}>
+    
 
       <div className="sidebar-menu">
-        <ul className="p-0">
+        <ul className="p-0 mt-5">
           {menuSections.map((section) => (
             <li key={section.title} className="nav-section">
               {section.singleItem ? (

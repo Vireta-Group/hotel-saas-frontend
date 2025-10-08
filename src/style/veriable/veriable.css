@@ -14,12 +14,6 @@
   --text-white: #fff;
   --shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
-<<<<<<< HEAD
-
-
-  
-}
-=======
   /* box shadow */
   --shadow: 10px 10px 22px rgba(0, 0, 0, 0.2),
     -10px -10px 22px rgba(255, 255, 255, 0.75);
@@ -42,4 +36,3 @@
 body {
   background-color: var(--light-gray);
 }
->>>>>>> 9aeafea94bc1bde1340fc2e621b709dc531c9115
