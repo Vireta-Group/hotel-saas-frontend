@@ -44,8 +44,8 @@ import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
 import EditTableOrder from "../coreModule/restaurant/editOrderForm/EditOrderForm";
 import IssueForm from "../coreModule/inventorySuppliers/issueForm/issueForm";
 import Demo from "../Demo";
-import Input from "../ui/input/Input";
-import Button from "../ui/submitButton/SubmitButton";
+// import Input from "../ui/input/Input";
+// import Button from "../ui/submitButton/SubmitButton";
 import AuthSignrInCover from "../compoents/SignIn/AuthSingInCover";
 
 const router = createBrowserRouter(
