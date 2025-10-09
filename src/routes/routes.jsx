@@ -45,6 +45,7 @@ import EarningForm from "../coreModule/accounting/earningForm/EarningForm";
 import ExpenseForm from "../coreModule/accounting/expenseForm/expenseForm";
 import Input from "../ui/input/Input";
 import Button from "../ui/submitButton/SubmitButton";
+import CustomDatePicker from "../ui/datePicker/CustomDatePicker";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -133,6 +134,7 @@ const router = createBrowserRouter(
           <Route path="daily-sell-report" element={<DailySalesReport />} />
         </Route>
         <Route path="404" element={<NotFoundPage />} />
+        <Route path="datePicker" element={<CustomDatePicker/>}/>
       </Route>
     </Route>
   )
