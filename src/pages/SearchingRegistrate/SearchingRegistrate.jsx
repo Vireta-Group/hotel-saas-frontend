@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CustomDatePicker from '../../ui/datePicker/CustomDatePicker';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const countryCodes = [
@@ -16,6 +17,8 @@ const countryCodes = [
 
 function SearchingRegistrate() {
   const [selectedCode, setSelectedCode] = useState('+880');
+  const [dob, setDob] = useState(null);
+
 
   return (
     <Container
@@ -35,9 +38,14 @@ function SearchingRegistrate() {
             </Form.Group>
 
             <Form.Group controlId="dob" className="mb-3">
-              <Form.Label>Date Of Birth</Form.Label>
-              <Form.Control type="date" />
+              <CustomDatePicker
+                label="Date Of Birth"
+                selectedDate={dob}
+                onChange={(date) => setDob(date)}
+                placeholder="Select your date of birth"
+              />
             </Form.Group>
+
 
             <Form.Group controlId="mobile" className="mb-4">
               <Form.Label>Mobile Number</Form.Label>

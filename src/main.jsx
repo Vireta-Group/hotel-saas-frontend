@@ -7,6 +7,7 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // includes Popper
+import 'react-datepicker/dist/react-datepicker.css'; // for date picker
 // Font Awesome setup
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
